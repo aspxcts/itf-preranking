@@ -1,0 +1,1352 @@
+{
+  "eventId": 1100677917,
+  "drawsheetStructure": "KO",
+  "tourType": null,
+  "koGroups": [
+    {
+      "groupName": null,
+      "rounds": [
+        {
+          "roundDesc": "1st Round",
+          "roundNumber": 1,
+          "matches": [
+            {
+              "matchId": 2124482541,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800678621,
+                      "nationality": "RSA",
+                      "givenName": "John",
+                      "familyName": "Bothma",
+                      "profileLink": "/en/players/john-bothma/800678621/rsa/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800590474,
+                      "nationality": "ESP",
+                      "givenName": "Tito",
+                      "familyName": "Chavez",
+                      "profileLink": "/en/players/tito-chavez/800590474/esp/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 10,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 1,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800708219,
+                      "nationality": "EGY",
+                      "givenName": "Marwan",
+                      "familyName": "Ehab",
+                      "profileLink": "/en/players/marwan-ehab/800708219/egy/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800646359,
+                      "nationality": "EGY",
+                      "givenName": "Eyad Reda Ezzat",
+                      "familyName": "Mohamed Sherif",
+                      "profileLink": "/en/players/eyad-reda-ezzat-mohamed-sherif/800646359/egy/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 7,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 2124482542,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800602236,
+                      "nationality": "ROU",
+                      "givenName": "Alejandro Mateo",
+                      "familyName": "Berge Nourescu",
+                      "profileLink": "/en/players/alejandro-mateo-berge-nourescu/800602236/rou/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800597850,
+                      "nationality": "USA",
+                      "givenName": "Carel Aubriel",
+                      "familyName": "Ngounoue",
+                      "profileLink": "/en/players/carel-aubriel-ngounoue/800597850/usa/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 5,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 10,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800670178,
+                      "nationality": "TUN",
+                      "givenName": "Mahmoud",
+                      "familyName": "chetouane",
+                      "profileLink": "/en/players/mahmoud-chetouane/800670178/tun/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800631785,
+                      "nationality": "EGY",
+                      "givenName": "Omar",
+                      "familyName": "Kandil",
+                      "profileLink": "/en/players/omar-kandil/800631785/egy/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 1,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 7,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 2124482543,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800572955,
+                      "nationality": "RUS",
+                      "givenName": "Kirill",
+                      "familyName": "Filaretov",
+                      "profileLink": "/en/players/kirill-filaretov/800572955/rus/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800590813,
+                      "nationality": "RUS",
+                      "givenName": "Savva",
+                      "familyName": "Rybkin",
+                      "profileLink": "/en/players/savva-rybkin/800590813/rus/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 7,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 3,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800739583,
+                      "nationality": "JPN",
+                      "givenName": "Yoshihiro",
+                      "familyName": "Sakurai",
+                      "profileLink": "/en/players/yoshihiro-sakurai/800739583/jpn/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800667741,
+                      "nationality": "EGY",
+                      "givenName": "Yassin Ahmed",
+                      "familyName": "Wageh",
+                      "profileLink": "/en/players/yassin-ahmed-wageh/800667741/egy/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 5,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 2124482544,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800772607,
+                      "nationality": "AUT",
+                      "givenName": "Felix",
+                      "familyName": "Raser",
+                      "profileLink": "/en/players/felix-raser/800772607/aut/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800596852,
+                      "nationality": "GER",
+                      "givenName": "Christopher",
+                      "familyName": "Thies",
+                      "profileLink": "/en/players/christopher-thies/800596852/ger/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 7,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800793938,
+                      "nationality": "EGY",
+                      "givenName": "Mohamed",
+                      "familyName": "Genidy",
+                      "profileLink": "/en/players/mohamed-genidy/800793938/egy/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800683991,
+                      "nationality": "EGY",
+                      "givenName": "Seifelden",
+                      "familyName": "Mostafa Samih",
+                      "profileLink": "/en/players/seifelden-mostafa-samih/800683991/egy/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": 3
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 2124482545,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800708324,
+                      "nationality": "EGY",
+                      "givenName": "Yassin",
+                      "familyName": "Abdelaziz",
+                      "profileLink": "/en/players/yassin-abdelaziz/800708324/egy/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800681738,
+                      "nationality": "EGY",
+                      "givenName": "Yassin",
+                      "familyName": "Sherif",
+                      "profileLink": "/en/players/yassin-sherif/800681738/egy/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 1,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800594039,
+                      "nationality": "ESP",
+                      "givenName": "Valentin",
+                      "familyName": "Gonzalez-Galino",
+                      "profileLink": "/en/players/valentin-gonzalez-galino/800594039/esp/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800702395,
+                      "nationality": "BOT",
+                      "givenName": "Ntungamili",
+                      "familyName": "RAGUIN",
+                      "profileLink": "/en/players/ntungamili-raguin/800702395/bot/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 2124482546,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800602231,
+                      "nationality": "MAR",
+                      "givenName": "Ali",
+                      "familyName": "Missoum",
+                      "profileLink": "/en/players/ali-missoum/800602231/mar/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800695726,
+                      "nationality": "NGR",
+                      "givenName": "OLUWASEUN PETER",
+                      "familyName": "OGUNSAKIN",
+                      "profileLink": "/en/players/oluwaseun-peter-ogunsakin/800695726/ngr/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 1,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800597132,
+                      "nationality": "CZE",
+                      "givenName": "Jakub",
+                      "familyName": "Kusy",
+                      "profileLink": "/en/players/jakub-kusy/800597132/cze/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800635903,
+                      "nationality": "GER",
+                      "givenName": "Vincent",
+                      "familyName": "Reisach",
+                      "profileLink": "/en/players/vincent-reisach/800635903/ger/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 4,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 2124482547,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800637063,
+                      "nationality": "POL",
+                      "givenName": "Jan",
+                      "familyName": "Chlodnicki",
+                      "profileLink": "/en/players/jan-chlodnicki/800637063/pol/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800602130,
+                      "nationality": "POL",
+                      "givenName": "Jan",
+                      "familyName": "Sadzik",
+                      "profileLink": "/en/players/jan-sadzik/800602130/pol/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800690376,
+                      "nationality": "EGY",
+                      "givenName": "Mostafa",
+                      "familyName": "Harb",
+                      "profileLink": "/en/players/mostafa-harb/800690376/egy/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800682953,
+                      "nationality": "EGY",
+                      "givenName": "Ahmed",
+                      "familyName": "Ibrahim",
+                      "profileLink": "/en/players/ahmed-ibrahim/800682953/egy/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 1,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 2124482548,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800673010,
+                      "nationality": "TUN",
+                      "givenName": "Skander",
+                      "familyName": "Nsairi",
+                      "profileLink": "/en/players/skander-nsairi/800673010/tun/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800707189,
+                      "nationality": "RSA",
+                      "givenName": "Jeffrey",
+                      "familyName": "Strydom",
+                      "profileLink": "/en/players/jeffrey-strydom/800707189/rsa/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 5,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800654119,
+                      "nationality": "RSA",
+                      "givenName": "Connor",
+                      "familyName": "Doig",
+                      "profileLink": "/en/players/connor-doig/800654119/rsa/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800571859,
+                      "nationality": "BUL",
+                      "givenName": "Dimitar",
+                      "familyName": "Kisimov",
+                      "profileLink": "/en/players/dimitar-kisimov/800571859/bul/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 10,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 2,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            }
+          ],
+          "ties": null
+        },
+        {
+          "roundDesc": "Quarter-finals",
+          "roundNumber": 2,
+          "matches": [
+            {
+              "matchId": 2124482537,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800678621,
+                      "nationality": "RSA",
+                      "givenName": "John",
+                      "familyName": "Bothma",
+                      "profileLink": "/en/players/john-bothma/800678621/rsa/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800590474,
+                      "nationality": "ESP",
+                      "givenName": "Tito",
+                      "familyName": "Chavez",
+                      "profileLink": "/en/players/tito-chavez/800590474/esp/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 5,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": 1,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800602236,
+                      "nationality": "ROU",
+                      "givenName": "Alejandro Mateo",
+                      "familyName": "Berge Nourescu",
+                      "profileLink": "/en/players/alejandro-mateo-berge-nourescu/800602236/rou/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800597850,
+                      "nationality": "USA",
+                      "givenName": "Carel Aubriel",
+                      "familyName": "Ngounoue",
+                      "profileLink": "/en/players/carel-aubriel-ngounoue/800597850/usa/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 10,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 2124482538,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800572955,
+                      "nationality": "RUS",
+                      "givenName": "Kirill",
+                      "familyName": "Filaretov",
+                      "profileLink": "/en/players/kirill-filaretov/800572955/rus/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800590813,
+                      "nationality": "RUS",
+                      "givenName": "Savva",
+                      "familyName": "Rybkin",
+                      "profileLink": "/en/players/savva-rybkin/800590813/rus/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 3,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800772607,
+                      "nationality": "AUT",
+                      "givenName": "Felix",
+                      "familyName": "Raser",
+                      "profileLink": "/en/players/felix-raser/800772607/aut/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800596852,
+                      "nationality": "GER",
+                      "givenName": "Christopher",
+                      "familyName": "Thies",
+                      "profileLink": "/en/players/christopher-thies/800596852/ger/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 2124482539,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800594039,
+                      "nationality": "ESP",
+                      "givenName": "Valentin",
+                      "familyName": "Gonzalez-Galino",
+                      "profileLink": "/en/players/valentin-gonzalez-galino/800594039/esp/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800702395,
+                      "nationality": "BOT",
+                      "givenName": "Ntungamili",
+                      "familyName": "RAGUIN",
+                      "profileLink": "/en/players/ntungamili-raguin/800702395/bot/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 1,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800597132,
+                      "nationality": "CZE",
+                      "givenName": "Jakub",
+                      "familyName": "Kusy",
+                      "profileLink": "/en/players/jakub-kusy/800597132/cze/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800635903,
+                      "nationality": "GER",
+                      "givenName": "Vincent",
+                      "familyName": "Reisach",
+                      "profileLink": "/en/players/vincent-reisach/800635903/ger/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 4,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": "Retired",
+              "resultStatusCode": "RET",
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 2124482540,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800637063,
+                      "nationality": "POL",
+                      "givenName": "Jan",
+                      "familyName": "Chlodnicki",
+                      "profileLink": "/en/players/jan-chlodnicki/800637063/pol/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800602130,
+                      "nationality": "POL",
+                      "givenName": "Jan",
+                      "familyName": "Sadzik",
+                      "profileLink": "/en/players/jan-sadzik/800602130/pol/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 10,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800654119,
+                      "nationality": "RSA",
+                      "givenName": "Connor",
+                      "familyName": "Doig",
+                      "profileLink": "/en/players/connor-doig/800654119/rsa/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800571859,
+                      "nationality": "BUL",
+                      "givenName": "Dimitar",
+                      "familyName": "Kisimov",
+                      "profileLink": "/en/players/dimitar-kisimov/800571859/bul/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 12,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 2,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            }
+          ],
+          "ties": null
+        },
+        {
+          "roundDesc": "Semi-finals",
+          "roundNumber": 3,
+          "matches": [
+            {
+              "matchId": 2124482535,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800602236,
+                      "nationality": "ROU",
+                      "givenName": "Alejandro Mateo",
+                      "familyName": "Berge Nourescu",
+                      "profileLink": "/en/players/alejandro-mateo-berge-nourescu/800602236/rou/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800597850,
+                      "nationality": "USA",
+                      "givenName": "Carel Aubriel",
+                      "familyName": "Ngounoue",
+                      "profileLink": "/en/players/carel-aubriel-ngounoue/800597850/usa/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 5,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 10,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800572955,
+                      "nationality": "RUS",
+                      "givenName": "Kirill",
+                      "familyName": "Filaretov",
+                      "profileLink": "/en/players/kirill-filaretov/800572955/rus/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800590813,
+                      "nationality": "RUS",
+                      "givenName": "Savva",
+                      "familyName": "Rybkin",
+                      "profileLink": "/en/players/savva-rybkin/800590813/rus/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 7,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 1,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": 3,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 2124482536,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800597132,
+                      "nationality": "CZE",
+                      "givenName": "Jakub",
+                      "familyName": "Kusy",
+                      "profileLink": "/en/players/jakub-kusy/800597132/cze/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800635903,
+                      "nationality": "GER",
+                      "givenName": "Vincent",
+                      "familyName": "Reisach",
+                      "profileLink": "/en/players/vincent-reisach/800635903/ger/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 4,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800654119,
+                      "nationality": "RSA",
+                      "givenName": "Connor",
+                      "familyName": "Doig",
+                      "profileLink": "/en/players/connor-doig/800654119/rsa/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800571859,
+                      "nationality": "BUL",
+                      "givenName": "Dimitar",
+                      "familyName": "Kisimov",
+                      "profileLink": "/en/players/dimitar-kisimov/800571859/bul/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": 2,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            }
+          ],
+          "ties": null
+        },
+        {
+          "roundDesc": "Final",
+          "roundNumber": 4,
+          "matches": [
+            {
+              "matchId": 2124482534,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800602236,
+                      "nationality": "ROU",
+                      "givenName": "Alejandro Mateo",
+                      "familyName": "Berge Nourescu",
+                      "profileLink": "/en/players/alejandro-mateo-berge-nourescu/800602236/rou/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800597850,
+                      "nationality": "USA",
+                      "givenName": "Carel Aubriel",
+                      "familyName": "Ngounoue",
+                      "profileLink": "/en/players/carel-aubriel-ngounoue/800597850/usa/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800597132,
+                      "nationality": "CZE",
+                      "givenName": "Jakub",
+                      "familyName": "Kusy",
+                      "profileLink": "/en/players/jakub-kusy/800597132/cze/jt/d/",
+                      "hiddenPlayer": false
+                    },
+                    {
+                      "playerId": 800635903,
+                      "nationality": "GER",
+                      "givenName": "Vincent",
+                      "familyName": "Reisach",
+                      "profileLink": "/en/players/vincent-reisach/800635903/ger/jt/d/",
+                      "hiddenPlayer": false
+                    }
+                  ],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": false,
+                  "seeding": 4,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "TP",
+              "playStatusDesc": "To be played",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            }
+          ],
+          "ties": null
+        }
+      ]
+    }
+  ],
+  "rrGroups": null
+}

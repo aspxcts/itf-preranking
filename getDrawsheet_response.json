@@ -1,0 +1,4194 @@
+{
+  "eventId": 1100684570,
+  "drawsheetStructure": "KO",
+  "tourType": null,
+  "koGroups": [
+    {
+      "groupName": null,
+      "rounds": [
+        {
+          "roundDesc": "1st Round",
+          "roundNumber": 1,
+          "matches": [
+            {
+              "matchId": 1183459714,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800658369,
+                      "nationality": "ARG",
+                      "givenName": "Dante",
+                      "familyName": "Pagani",
+                      "profileLink": "/en/players/dante-pagani/800658369/arg/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": true,
+                  "seeding": 1,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [null, null],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": null
+                }
+              ],
+              "playStatusCode": "NP",
+              "playStatusDesc": "Not played",
+              "resultStatusDesc": "BYE",
+              "resultStatusCode": "BYE",
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459715,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800807255&player2Id=800654547",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800807255,
+                      "nationality": "BRA",
+                      "givenName": "Rafael Augusto",
+                      "familyName": "Garcia Finetto",
+                      "profileLink": "/en/players/rafael-augusto-garcia-finetto/800807255/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800654547,
+                      "nationality": "PER",
+                      "givenName": "Fabio",
+                      "familyName": "Zavalaga Uculmana",
+                      "profileLink": "/en/players/fabio-zavalaga-uculmana/800654547/per/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459716,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800711438&player2Id=800670012",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800711438,
+                      "nationality": "ARG",
+                      "givenName": "DEMIAN AGUSTIN",
+                      "familyName": "LUNA",
+                      "profileLink": "/en/players/demian-agustin-luna/800711438/arg/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 7,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800670012,
+                      "nationality": "BOL",
+                      "givenName": "Leonardo",
+                      "familyName": "Suarez",
+                      "profileLink": "/en/players/leonardo-suarez/800670012/bol/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 5,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459717,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [null, null],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": null
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800684304,
+                      "nationality": "BRA",
+                      "givenName": "Henrique",
+                      "familyName": "Queiroz",
+                      "profileLink": "/en/players/henrique-queiroz/800684304/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": true,
+                  "seeding": 16,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "NP",
+              "playStatusDesc": "Not played",
+              "resultStatusDesc": "BYE",
+              "resultStatusCode": "BYE",
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459718,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800642706,
+                      "nationality": "BRA",
+                      "givenName": "Pedro",
+                      "familyName": "Albuquerque Dietrich",
+                      "profileLink": "/en/players/pedro-albuquerque-dietrich/800642706/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": true,
+                  "seeding": 11,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [null, null],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": null
+                }
+              ],
+              "playStatusCode": "NP",
+              "playStatusDesc": "Not played",
+              "resultStatusDesc": "BYE",
+              "resultStatusCode": "BYE",
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459719,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800630024&player2Id=800691288",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800630024,
+                      "nationality": "COL",
+                      "givenName": "Lucas Martin",
+                      "familyName": "Velasco",
+                      "profileLink": "/en/players/lucas-martin-velasco/800630024/col/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800691288,
+                      "nationality": "ARG",
+                      "givenName": "Tiziano",
+                      "familyName": "Barbier",
+                      "profileLink": "/en/players/tiziano-barbier/800691288/arg/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 0,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459720,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800644080&player2Id=800656237",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800644080,
+                      "nationality": "BOL",
+                      "givenName": "Nicolas",
+                      "familyName": "Ciancaglini Rivera",
+                      "profileLink": "/en/players/nicolas-ciancaglini-rivera/800644080/bol/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 0,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "WC"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800656237,
+                      "nationality": "BRA",
+                      "givenName": "Miguel",
+                      "familyName": "Daiha",
+                      "profileLink": "/en/players/miguel-daiha/800656237/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 0,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459721,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [null, null],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": null
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800595066,
+                      "nationality": "ECU",
+                      "givenName": "Lucas",
+                      "familyName": "Yunez",
+                      "profileLink": "/en/players/lucas-yunez/800595066/ecu/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": true,
+                  "seeding": 5,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "NP",
+              "playStatusDesc": "Not played",
+              "resultStatusDesc": "BYE",
+              "resultStatusCode": "BYE",
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459722,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800600773,
+                      "nationality": "PER",
+                      "givenName": "Nicolas",
+                      "familyName": "Baena",
+                      "profileLink": "/en/players/nicolas-baena/800600773/per/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": true,
+                  "seeding": 3,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [null, null],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": null
+                }
+              ],
+              "playStatusCode": "NP",
+              "playStatusDesc": "Not played",
+              "resultStatusDesc": "BYE",
+              "resultStatusCode": "BYE",
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459723,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800737788&player2Id=800653778",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800737788,
+                      "nationality": "BRA",
+                      "givenName": "Bruno",
+                      "familyName": "Rodrigues",
+                      "profileLink": "/en/players/bruno-rodrigues/800737788/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800653778,
+                      "nationality": "ECU",
+                      "givenName": "Felipe",
+                      "familyName": "Wright",
+                      "profileLink": "/en/players/felipe-wright/800653778/ecu/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459724,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800710579&player2Id=800711481",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800710579,
+                      "nationality": "BRA",
+                      "givenName": "Tomas",
+                      "familyName": "Dummer Macedo",
+                      "profileLink": "/en/players/tomas-dummer-macedo/800710579/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 7,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800711481,
+                      "nationality": "ARG",
+                      "givenName": "joaquin",
+                      "familyName": "gaitan",
+                      "profileLink": "/en/players/joaquin-gaitan/800711481/arg/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 5,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 1,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459725,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [null, null],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": null
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800717018,
+                      "nationality": "CHI",
+                      "givenName": "Benjamin",
+                      "familyName": "perez",
+                      "profileLink": "/en/players/benjamin-perez/800717018/chi/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": true,
+                  "seeding": 13,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "NP",
+              "playStatusDesc": "Not played",
+              "resultStatusDesc": "BYE",
+              "resultStatusCode": "BYE",
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459726,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800601932,
+                      "nationality": "COL",
+                      "givenName": "Alejandro",
+                      "familyName": "Castellanos",
+                      "profileLink": "/en/players/alejandro-castellanos/800601932/col/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": true,
+                  "seeding": 12,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [null, null],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": null
+                }
+              ],
+              "playStatusCode": "NP",
+              "playStatusDesc": "Not played",
+              "resultStatusDesc": "BYE",
+              "resultStatusCode": "BYE",
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459727,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800642824&player2Id=800674983",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800642824,
+                      "nationality": "BOL",
+                      "givenName": "Oliver Andre",
+                      "familyName": "Solis Encinas",
+                      "profileLink": "/en/players/oliver-andre-solis-encinas/800642824/bol/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800674983,
+                      "nationality": "BRA",
+                      "givenName": "Lorenzo",
+                      "familyName": "Sverzut Corsini",
+                      "profileLink": "/en/players/lorenzo-sverzut-corsini/800674983/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459728,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800700226&player2Id=800660210",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800700226,
+                      "nationality": "ARG",
+                      "givenName": "Faustino",
+                      "familyName": "Boffelli",
+                      "profileLink": "/en/players/faustino-boffelli/800700226/arg/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800660210,
+                      "nationality": "VEN",
+                      "givenName": "Rodolfo Federico",
+                      "familyName": "De Andreis",
+                      "profileLink": "/en/players/rodolfo-federico-de-andreis/800660210/ven/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459729,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [null, null],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": null
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800676504,
+                      "nationality": "BRA",
+                      "givenName": "Leonardo",
+                      "familyName": "Storck Franca",
+                      "profileLink": "/en/players/leonardo-storck-franca/800676504/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": true,
+                  "seeding": 7,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "NP",
+              "playStatusDesc": "Not played",
+              "resultStatusDesc": "BYE",
+              "resultStatusCode": "BYE",
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459730,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800650301,
+                      "nationality": "BRA",
+                      "givenName": "Pedro Henrique",
+                      "familyName": "Chabalgoity",
+                      "profileLink": "/en/players/pedro-henrique-chabalgoity/800650301/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": true,
+                  "seeding": 6,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [null, null],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": null
+                }
+              ],
+              "playStatusCode": "NP",
+              "playStatusDesc": "Not played",
+              "resultStatusDesc": "BYE",
+              "resultStatusCode": "BYE",
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459731,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800753060&player2Id=800678202",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800753060,
+                      "nationality": "COL",
+                      "givenName": "Matias",
+                      "familyName": "Quintero Tobon",
+                      "profileLink": "/en/players/matias-quintero-tobon/800753060/col/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 1,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800678202,
+                      "nationality": "ARG",
+                      "givenName": "Benjamin",
+                      "familyName": "Chelia",
+                      "profileLink": "/en/players/benjamin-chelia/800678202/arg/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459732,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800695229&player2Id=800741937",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800695229,
+                      "nationality": "BRA",
+                      "givenName": "Lucas",
+                      "familyName": "Castan Moscatto",
+                      "profileLink": "/en/players/lucas-castan-moscatto/800695229/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": 5
+                    },
+                    {
+                      "score": 7,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800741937,
+                      "nationality": "BOL",
+                      "givenName": "Matias",
+                      "familyName": "Rivero Villena",
+                      "profileLink": "/en/players/matias-rivero-villena/800741937/bol/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 7,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": 7
+                    },
+                    {
+                      "score": 0,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "WC"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459733,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [null, null],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": null
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800625580,
+                      "nationality": "ECU",
+                      "givenName": "Angel",
+                      "familyName": "Veliz",
+                      "profileLink": "/en/players/angel-veliz/800625580/ecu/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": true,
+                  "seeding": 9,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "NP",
+              "playStatusDesc": "Not played",
+              "resultStatusDesc": "BYE",
+              "resultStatusCode": "BYE",
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459734,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800670455,
+                      "nationality": "VEN",
+                      "givenName": "Ignacio",
+                      "familyName": "De Armas",
+                      "profileLink": "/en/players/ignacio-de-armas/800670455/ven/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": true,
+                  "seeding": 15,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [null, null],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": null
+                }
+              ],
+              "playStatusCode": "NP",
+              "playStatusDesc": "Not played",
+              "resultStatusDesc": "BYE",
+              "resultStatusCode": "BYE",
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459735,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800652444&player2Id=800714095",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800652444,
+                      "nationality": "BRA",
+                      "givenName": "Guilherme Barbieri",
+                      "familyName": "Renner",
+                      "profileLink": "/en/players/guilherme-barbieri-renner/800652444/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 7,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800714095,
+                      "nationality": "ARG",
+                      "givenName": "Angel",
+                      "familyName": "Maffezzoli",
+                      "profileLink": "/en/players/angel-maffezzoli/800714095/arg/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 5,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459736,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800642990&player2Id=800671311",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800642990,
+                      "nationality": "BOL",
+                      "givenName": "Alejandro",
+                      "familyName": "Bejarano",
+                      "profileLink": "/en/players/alejandro-bejarano/800642990/bol/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 0,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 0,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "WC"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800671311,
+                      "nationality": "PER",
+                      "givenName": "Alessandro",
+                      "familyName": "Rubini Garcia Belaunde",
+                      "profileLink": "/en/players/alessandro-rubini-garcia-belaunde/800671311/per/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459737,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [null, null],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": null
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800654550,
+                      "nationality": "PAR",
+                      "givenName": "Alvaro Ariel",
+                      "familyName": "Frutos Alonso",
+                      "profileLink": "/en/players/alvaro-ariel-frutos-alonso/800654550/par/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": true,
+                  "seeding": 4,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "NP",
+              "playStatusDesc": "Not played",
+              "resultStatusDesc": "BYE",
+              "resultStatusCode": "BYE",
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459738,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800594151,
+                      "nationality": "URU",
+                      "givenName": "Felipe",
+                      "familyName": "Vazquez",
+                      "profileLink": "/en/players/felipe-vazquez/800594151/uru/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": true,
+                  "seeding": 8,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [null, null],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": null
+                }
+              ],
+              "playStatusCode": "NP",
+              "playStatusDesc": "Not played",
+              "resultStatusDesc": "BYE",
+              "resultStatusCode": "BYE",
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459739,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800696001&player2Id=800661480",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800696001,
+                      "nationality": "BRA",
+                      "givenName": "Carlos Eduardo",
+                      "familyName": "Lino",
+                      "profileLink": "/en/players/carlos-eduardo-lino/800696001/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800661480,
+                      "nationality": "ARG",
+                      "givenName": "Tomas",
+                      "familyName": "Re",
+                      "profileLink": "/en/players/tomas-re/800661480/arg/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459740,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800655675&player2Id=800679028",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800655675,
+                      "nationality": "PER",
+                      "givenName": "Diego Ignacio",
+                      "familyName": "Gomez Pajares",
+                      "profileLink": "/en/players/diego-ignacio-gomez-pajares/800655675/per/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800679028,
+                      "nationality": "CHI",
+                      "givenName": "Leon",
+                      "familyName": "Achurra Correa",
+                      "profileLink": "/en/players/leon-achurra-correa/800679028/chi/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459741,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [null, null],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": null
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800716347,
+                      "nationality": "BRA",
+                      "givenName": "Livas Eduardo",
+                      "familyName": "De Carvalho Damazio",
+                      "profileLink": "/en/players/livas-eduardo-de-carvalho-damazio/800716347/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": true,
+                  "seeding": 10,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "NP",
+              "playStatusDesc": "Not played",
+              "resultStatusDesc": "BYE",
+              "resultStatusCode": "BYE",
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459742,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800659871,
+                      "nationality": "BRA",
+                      "givenName": "Felipe",
+                      "familyName": "Mamede",
+                      "profileLink": "/en/players/felipe-mamede/800659871/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": true,
+                  "seeding": 14,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [null, null],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": null
+                }
+              ],
+              "playStatusCode": "NP",
+              "playStatusDesc": "Not played",
+              "resultStatusDesc": "BYE",
+              "resultStatusCode": "BYE",
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459743,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800716262&player2Id=800652309",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800716262,
+                      "nationality": "ARG",
+                      "givenName": "Estanislao",
+                      "familyName": "Lassaga",
+                      "profileLink": "/en/players/estanislao-lassaga/800716262/arg/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": 3
+                    },
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800652309,
+                      "nationality": "COL",
+                      "givenName": "Nicolas Eduardo",
+                      "familyName": "Barros Corredor",
+                      "profileLink": "/en/players/nicolas-eduardo-barros-corredor/800652309/col/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 7,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459744,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800677846&player2Id=800652294",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800677846,
+                      "nationality": "BRA",
+                      "givenName": "Filipe",
+                      "familyName": "Bullamah",
+                      "profileLink": "/en/players/filipe-bullamah/800677846/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 7,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800652294,
+                      "nationality": "BOL",
+                      "givenName": "Alexandre",
+                      "familyName": "Bobiere Rivero",
+                      "profileLink": "/en/players/alexandre-bobiere-rivero/800652294/bol/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 5,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "WC"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459745,
+              "h2hLink": "",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [null, null],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": null
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800654359,
+                      "nationality": "ECU",
+                      "givenName": "Emilio",
+                      "familyName": "Camacho",
+                      "profileLink": "/en/players/emilio-camacho/800654359/ecu/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [null, null, null, null, null],
+                  "isWinner": true,
+                  "seeding": 2,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "NP",
+              "playStatusDesc": "Not played",
+              "resultStatusDesc": "BYE",
+              "resultStatusCode": "BYE",
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            }
+          ],
+          "ties": null
+        },
+        {
+          "roundDesc": "2nd Round",
+          "roundNumber": 2,
+          "matches": [
+            {
+              "matchId": 1183459698,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800658369&player2Id=800807255",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800658369,
+                      "nationality": "ARG",
+                      "givenName": "Dante",
+                      "familyName": "Pagani",
+                      "profileLink": "/en/players/dante-pagani/800658369/arg/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 1,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800807255,
+                      "nationality": "BRA",
+                      "givenName": "Rafael Augusto",
+                      "familyName": "Garcia Finetto",
+                      "profileLink": "/en/players/rafael-augusto-garcia-finetto/800807255/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 1,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459699,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800711438&player2Id=800684304",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800711438,
+                      "nationality": "ARG",
+                      "givenName": "DEMIAN AGUSTIN",
+                      "familyName": "LUNA",
+                      "profileLink": "/en/players/demian-agustin-luna/800711438/arg/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800684304,
+                      "nationality": "BRA",
+                      "givenName": "Henrique",
+                      "familyName": "Queiroz",
+                      "profileLink": "/en/players/henrique-queiroz/800684304/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 1,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 16,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459700,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800642706&player2Id=800630024",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800642706,
+                      "nationality": "BRA",
+                      "givenName": "Pedro",
+                      "familyName": "Albuquerque Dietrich",
+                      "profileLink": "/en/players/pedro-albuquerque-dietrich/800642706/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 5,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 11,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800630024,
+                      "nationality": "COL",
+                      "givenName": "Lucas Martin",
+                      "familyName": "Velasco",
+                      "profileLink": "/en/players/lucas-martin-velasco/800630024/col/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 1,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 7,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459701,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800644080&player2Id=800595066",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800644080,
+                      "nationality": "BOL",
+                      "givenName": "Nicolas",
+                      "familyName": "Ciancaglini Rivera",
+                      "profileLink": "/en/players/nicolas-ciancaglini-rivera/800644080/bol/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "WC"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800595066,
+                      "nationality": "ECU",
+                      "givenName": "Lucas",
+                      "familyName": "Yunez",
+                      "profileLink": "/en/players/lucas-yunez/800595066/ecu/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 5,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459702,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800600773&player2Id=800737788",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800600773,
+                      "nationality": "PER",
+                      "givenName": "Nicolas",
+                      "familyName": "Baena",
+                      "profileLink": "/en/players/nicolas-baena/800600773/per/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 3,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800737788,
+                      "nationality": "BRA",
+                      "givenName": "Bruno",
+                      "familyName": "Rodrigues",
+                      "profileLink": "/en/players/bruno-rodrigues/800737788/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459703,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800710579&player2Id=800717018",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800710579,
+                      "nationality": "BRA",
+                      "givenName": "Tomas",
+                      "familyName": "Dummer Macedo",
+                      "profileLink": "/en/players/tomas-dummer-macedo/800710579/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800717018,
+                      "nationality": "CHI",
+                      "givenName": "Benjamin",
+                      "familyName": "perez",
+                      "profileLink": "/en/players/benjamin-perez/800717018/chi/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 0,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": 13,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459704,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800601932&player2Id=800642824",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800601932,
+                      "nationality": "COL",
+                      "givenName": "Alejandro",
+                      "familyName": "Castellanos",
+                      "profileLink": "/en/players/alejandro-castellanos/800601932/col/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 12,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800642824,
+                      "nationality": "BOL",
+                      "givenName": "Oliver Andre",
+                      "familyName": "Solis Encinas",
+                      "profileLink": "/en/players/oliver-andre-solis-encinas/800642824/bol/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459705,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800660210&player2Id=800676504",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800660210,
+                      "nationality": "VEN",
+                      "givenName": "Rodolfo Federico",
+                      "familyName": "De Andreis",
+                      "profileLink": "/en/players/rodolfo-federico-de-andreis/800660210/ven/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 5,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800676504,
+                      "nationality": "BRA",
+                      "givenName": "Leonardo",
+                      "familyName": "Storck Franca",
+                      "profileLink": "/en/players/leonardo-storck-franca/800676504/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 7,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 7,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459706,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800650301&player2Id=800678202",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800650301,
+                      "nationality": "BRA",
+                      "givenName": "Pedro Henrique",
+                      "familyName": "Chabalgoity",
+                      "profileLink": "/en/players/pedro-henrique-chabalgoity/800650301/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 6,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800678202,
+                      "nationality": "ARG",
+                      "givenName": "Benjamin",
+                      "familyName": "Chelia",
+                      "profileLink": "/en/players/benjamin-chelia/800678202/arg/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459707,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800695229&player2Id=800625580",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800695229,
+                      "nationality": "BRA",
+                      "givenName": "Lucas",
+                      "familyName": "Castan Moscatto",
+                      "profileLink": "/en/players/lucas-castan-moscatto/800695229/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 1,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800625580,
+                      "nationality": "ECU",
+                      "givenName": "Angel",
+                      "familyName": "Veliz",
+                      "profileLink": "/en/players/angel-veliz/800625580/ecu/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 9,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459708,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800670455&player2Id=800652444",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800670455,
+                      "nationality": "VEN",
+                      "givenName": "Ignacio",
+                      "familyName": "De Armas",
+                      "profileLink": "/en/players/ignacio-de-armas/800670455/ven/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 15,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800652444,
+                      "nationality": "BRA",
+                      "givenName": "Guilherme Barbieri",
+                      "familyName": "Renner",
+                      "profileLink": "/en/players/guilherme-barbieri-renner/800652444/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 1,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459709,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800671311&player2Id=800654550",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800671311,
+                      "nationality": "PER",
+                      "givenName": "Alessandro",
+                      "familyName": "Rubini Garcia Belaunde",
+                      "profileLink": "/en/players/alessandro-rubini-garcia-belaunde/800671311/per/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800654550,
+                      "nationality": "PAR",
+                      "givenName": "Alvaro Ariel",
+                      "familyName": "Frutos Alonso",
+                      "profileLink": "/en/players/alvaro-ariel-frutos-alonso/800654550/par/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 4,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459710,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800594151&player2Id=800661480",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800594151,
+                      "nationality": "URU",
+                      "givenName": "Felipe",
+                      "familyName": "Vazquez",
+                      "profileLink": "/en/players/felipe-vazquez/800594151/uru/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 7,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": 4
+                    },
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": 8,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800661480,
+                      "nationality": "ARG",
+                      "givenName": "Tomas",
+                      "familyName": "Re",
+                      "profileLink": "/en/players/tomas-re/800661480/arg/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 5,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 7,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459711,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800655675&player2Id=800716347",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800655675,
+                      "nationality": "PER",
+                      "givenName": "Diego Ignacio",
+                      "familyName": "Gomez Pajares",
+                      "profileLink": "/en/players/diego-ignacio-gomez-pajares/800655675/per/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": 1
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800716347,
+                      "nationality": "BRA",
+                      "givenName": "Livas Eduardo",
+                      "familyName": "De Carvalho Damazio",
+                      "profileLink": "/en/players/livas-eduardo-de-carvalho-damazio/800716347/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 7,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 10,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459712,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800659871&player2Id=800652309",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800659871,
+                      "nationality": "BRA",
+                      "givenName": "Felipe",
+                      "familyName": "Mamede",
+                      "profileLink": "/en/players/felipe-mamede/800659871/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 14,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800652309,
+                      "nationality": "COL",
+                      "givenName": "Nicolas Eduardo",
+                      "familyName": "Barros Corredor",
+                      "profileLink": "/en/players/nicolas-eduardo-barros-corredor/800652309/col/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459713,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800677846&player2Id=800654359",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800677846,
+                      "nationality": "BRA",
+                      "givenName": "Filipe",
+                      "familyName": "Bullamah",
+                      "profileLink": "/en/players/filipe-bullamah/800677846/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 0,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800654359,
+                      "nationality": "ECU",
+                      "givenName": "Emilio",
+                      "familyName": "Camacho",
+                      "profileLink": "/en/players/emilio-camacho/800654359/ecu/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 2,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            }
+          ],
+          "ties": null
+        },
+        {
+          "roundDesc": "3rd Round",
+          "roundNumber": 3,
+          "matches": [
+            {
+              "matchId": 1183459690,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800658369&player2Id=800684304",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800658369,
+                      "nationality": "ARG",
+                      "givenName": "Dante",
+                      "familyName": "Pagani",
+                      "profileLink": "/en/players/dante-pagani/800658369/arg/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 1,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800684304,
+                      "nationality": "BRA",
+                      "givenName": "Henrique",
+                      "familyName": "Queiroz",
+                      "profileLink": "/en/players/henrique-queiroz/800684304/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 1,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": 16,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459691,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800642706&player2Id=800595066",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800642706,
+                      "nationality": "BRA",
+                      "givenName": "Pedro",
+                      "familyName": "Albuquerque Dietrich",
+                      "profileLink": "/en/players/pedro-albuquerque-dietrich/800642706/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": 11,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800595066,
+                      "nationality": "ECU",
+                      "givenName": "Lucas",
+                      "familyName": "Yunez",
+                      "profileLink": "/en/players/lucas-yunez/800595066/ecu/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 5,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459692,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800600773&player2Id=800710579",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800600773,
+                      "nationality": "PER",
+                      "givenName": "Nicolas",
+                      "familyName": "Baena",
+                      "profileLink": "/en/players/nicolas-baena/800600773/per/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 3,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800710579,
+                      "nationality": "BRA",
+                      "givenName": "Tomas",
+                      "familyName": "Dummer Macedo",
+                      "profileLink": "/en/players/tomas-dummer-macedo/800710579/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459693,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800601932&player2Id=800676504",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800601932,
+                      "nationality": "COL",
+                      "givenName": "Alejandro",
+                      "familyName": "Castellanos",
+                      "profileLink": "/en/players/alejandro-castellanos/800601932/col/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 7,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 12,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800676504,
+                      "nationality": "BRA",
+                      "givenName": "Leonardo",
+                      "familyName": "Storck Franca",
+                      "profileLink": "/en/players/leonardo-storck-franca/800676504/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": 7
+                    },
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": 7,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459694,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800650301&player2Id=800625580",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800650301,
+                      "nationality": "BRA",
+                      "givenName": "Pedro Henrique",
+                      "familyName": "Chabalgoity",
+                      "profileLink": "/en/players/pedro-henrique-chabalgoity/800650301/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 7,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 6,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800625580,
+                      "nationality": "ECU",
+                      "givenName": "Angel",
+                      "familyName": "Veliz",
+                      "profileLink": "/en/players/angel-veliz/800625580/ecu/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 0,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 5,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": 9,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459695,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800670455&player2Id=800654550",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800670455,
+                      "nationality": "VEN",
+                      "givenName": "Ignacio",
+                      "familyName": "De Armas",
+                      "profileLink": "/en/players/ignacio-de-armas/800670455/ven/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": 6
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": 15,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800654550,
+                      "nationality": "PAR",
+                      "givenName": "Alvaro Ariel",
+                      "familyName": "Frutos Alonso",
+                      "profileLink": "/en/players/alvaro-ariel-frutos-alonso/800654550/par/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 7,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 4,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": "Retired",
+              "resultStatusCode": "RET",
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459696,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800661480&player2Id=800716347",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800661480,
+                      "nationality": "ARG",
+                      "givenName": "Tomas",
+                      "familyName": "Re",
+                      "profileLink": "/en/players/tomas-re/800661480/arg/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": null,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800716347,
+                      "nationality": "BRA",
+                      "givenName": "Livas Eduardo",
+                      "familyName": "De Carvalho Damazio",
+                      "profileLink": "/en/players/livas-eduardo-de-carvalho-damazio/800716347/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 10,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459697,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800659871&player2Id=800654359",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800659871,
+                      "nationality": "BRA",
+                      "givenName": "Felipe",
+                      "familyName": "Mamede",
+                      "profileLink": "/en/players/felipe-mamede/800659871/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 5,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": 14,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800654359,
+                      "nationality": "ECU",
+                      "givenName": "Emilio",
+                      "familyName": "Camacho",
+                      "profileLink": "/en/players/emilio-camacho/800654359/ecu/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 7,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 2,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            }
+          ],
+          "ties": null
+        },
+        {
+          "roundDesc": "Quarter-finals",
+          "roundNumber": 4,
+          "matches": [
+            {
+              "matchId": 1183459686,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800658369&player2Id=800595066",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800658369,
+                      "nationality": "ARG",
+                      "givenName": "Dante",
+                      "familyName": "Pagani",
+                      "profileLink": "/en/players/dante-pagani/800658369/arg/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 1,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800595066,
+                      "nationality": "ECU",
+                      "givenName": "Lucas",
+                      "familyName": "Yunez",
+                      "profileLink": "/en/players/lucas-yunez/800595066/ecu/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 1,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 1,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": 5,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459687,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800600773&player2Id=800601932",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800600773,
+                      "nationality": "PER",
+                      "givenName": "Nicolas",
+                      "familyName": "Baena",
+                      "profileLink": "/en/players/nicolas-baena/800600773/per/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 3,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800601932,
+                      "nationality": "COL",
+                      "givenName": "Alejandro",
+                      "familyName": "Castellanos",
+                      "profileLink": "/en/players/alejandro-castellanos/800601932/col/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": 12,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459688,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800650301&player2Id=800654550",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800650301,
+                      "nationality": "BRA",
+                      "givenName": "Pedro Henrique",
+                      "familyName": "Chabalgoity",
+                      "profileLink": "/en/players/pedro-henrique-chabalgoity/800650301/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 5,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 6,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800654550,
+                      "nationality": "PAR",
+                      "givenName": "Alvaro Ariel",
+                      "familyName": "Frutos Alonso",
+                      "profileLink": "/en/players/alvaro-ariel-frutos-alonso/800654550/par/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 7,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 0,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": 4,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459689,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800716347&player2Id=800654359",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800716347,
+                      "nationality": "BRA",
+                      "givenName": "Livas Eduardo",
+                      "familyName": "De Carvalho Damazio",
+                      "profileLink": "/en/players/livas-eduardo-de-carvalho-damazio/800716347/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 7,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 10,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800654359,
+                      "nationality": "ECU",
+                      "givenName": "Emilio",
+                      "familyName": "Camacho",
+                      "profileLink": "/en/players/emilio-camacho/800654359/ecu/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": 3
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": 2,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            }
+          ],
+          "ties": null
+        },
+        {
+          "roundDesc": "Semi-finals",
+          "roundNumber": 5,
+          "matches": [
+            {
+              "matchId": 1183459684,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800658369&player2Id=800600773",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800658369,
+                      "nationality": "ARG",
+                      "givenName": "Dante",
+                      "familyName": "Pagani",
+                      "profileLink": "/en/players/dante-pagani/800658369/arg/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 1,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": 1,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800600773,
+                      "nationality": "PER",
+                      "givenName": "Nicolas",
+                      "familyName": "Baena",
+                      "profileLink": "/en/players/nicolas-baena/800600773/per/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 3,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            },
+            {
+              "matchId": 1183459685,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800650301&player2Id=800716347",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800650301,
+                      "nationality": "BRA",
+                      "givenName": "Pedro Henrique",
+                      "familyName": "Chabalgoity",
+                      "profileLink": "/en/players/pedro-henrique-chabalgoity/800650301/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 6,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800716347,
+                      "nationality": "BRA",
+                      "givenName": "Livas Eduardo",
+                      "familyName": "De Carvalho Damazio",
+                      "profileLink": "/en/players/livas-eduardo-de-carvalho-damazio/800716347/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 4,
+                      "losingScore": null
+                    },
+                    null,
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": 10,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            }
+          ],
+          "ties": null
+        },
+        {
+          "roundDesc": "Final",
+          "roundNumber": 6,
+          "matches": [
+            {
+              "matchId": 1183459683,
+              "h2hLink": "/en/head-to-head/?circuitCode=jt&player1Id=800600773&player2Id=800650301",
+              "liveScoresLink": "",
+              "teams": [
+                {
+                  "players": [
+                    {
+                      "playerId": 800600773,
+                      "nationality": "PER",
+                      "givenName": "Nicolas",
+                      "familyName": "Baena",
+                      "profileLink": "/en/players/nicolas-baena/800600773/per/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 6,
+                      "losingScore": 5
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 6,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": true,
+                  "seeding": 3,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                },
+                {
+                  "players": [
+                    {
+                      "playerId": 800650301,
+                      "nationality": "BRA",
+                      "givenName": "Pedro Henrique",
+                      "familyName": "Chabalgoity",
+                      "profileLink": "/en/players/pedro-henrique-chabalgoity/800650301/bra/jt/s/",
+                      "hiddenPlayer": false
+                    },
+                    null
+                  ],
+                  "scores": [
+                    {
+                      "score": 7,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 2,
+                      "losingScore": null
+                    },
+                    {
+                      "score": 3,
+                      "losingScore": null
+                    },
+                    null,
+                    null
+                  ],
+                  "isWinner": false,
+                  "seeding": 6,
+                  "tieNationCode": null,
+                  "entryStatus": "DA"
+                }
+              ],
+              "playStatusCode": "PC",
+              "playStatusDesc": "Played and completed",
+              "resultStatusDesc": null,
+              "resultStatusCode": null,
+              "MatchTypeCode": null,
+              "CircuitCode": null
+            }
+          ],
+          "ties": null
+        }
+      ]
+    }
+  ],
+  "rrGroups": null
+}

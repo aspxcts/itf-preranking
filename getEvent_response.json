@@ -1,0 +1,115 @@
+{
+  "tournamentId": 1100202118,
+  "tourType": "N",
+  "circuitCode": "JT",
+  "filters": [
+    {
+      "subFilter": [
+        {
+          "subFilter": [
+            {
+              "subFilter": [
+                {
+                  "subFilter": null,
+                  "filterName": "Drawsheet Structure",
+                  "dataName": "drawsheetStructureCode",
+                  "valueDesc": "Knock-out",
+                  "valueCode": "KO"
+                }
+              ],
+              "filterName": "Event Type",
+              "dataName": "eventClassificationCode",
+              "valueDesc": "Main Draw",
+              "valueCode": "M"
+            }
+          ],
+          "filterName": "Match Type",
+          "dataName": "matchTypeCode",
+          "valueDesc": "Singles",
+          "valueCode": "S"
+        },
+        {
+          "subFilter": [
+            {
+              "subFilter": [
+                {
+                  "subFilter": null,
+                  "filterName": "Drawsheet Structure",
+                  "dataName": "drawsheetStructureCode",
+                  "valueDesc": "Knock-out",
+                  "valueCode": "KO"
+                }
+              ],
+              "filterName": "Event Type",
+              "dataName": "eventClassificationCode",
+              "valueDesc": "Main Draw",
+              "valueCode": "M"
+            }
+          ],
+          "filterName": "Match Type",
+          "dataName": "matchTypeCode",
+          "valueDesc": "Doubles",
+          "valueCode": "D"
+        }
+      ],
+      "filterName": "Player Type",
+      "dataName": "playerTypeCode",
+      "valueDesc": "Boys",
+      "valueCode": "B"
+    },
+    {
+      "subFilter": [
+        {
+          "subFilter": [
+            {
+              "subFilter": [
+                {
+                  "subFilter": null,
+                  "filterName": "Drawsheet Structure",
+                  "dataName": "drawsheetStructureCode",
+                  "valueDesc": "Knock-out",
+                  "valueCode": "KO"
+                }
+              ],
+              "filterName": "Event Type",
+              "dataName": "eventClassificationCode",
+              "valueDesc": "Main Draw",
+              "valueCode": "M"
+            }
+          ],
+          "filterName": "Match Type",
+          "dataName": "matchTypeCode",
+          "valueDesc": "Singles",
+          "valueCode": "S"
+        },
+        {
+          "subFilter": [
+            {
+              "subFilter": [
+                {
+                  "subFilter": null,
+                  "filterName": "Drawsheet Structure",
+                  "dataName": "drawsheetStructureCode",
+                  "valueDesc": "Knock-out",
+                  "valueCode": "KO"
+                }
+              ],
+              "filterName": "Event Type",
+              "dataName": "eventClassificationCode",
+              "valueDesc": "Main Draw",
+              "valueCode": "M"
+            }
+          ],
+          "filterName": "Match Type",
+          "dataName": "matchTypeCode",
+          "valueDesc": "Doubles",
+          "valueCode": "D"
+        }
+      ],
+      "filterName": "Player Type",
+      "dataName": "playerTypeCode",
+      "valueDesc": "Girls",
+      "valueCode": "G"
+    }
+  ]
+}

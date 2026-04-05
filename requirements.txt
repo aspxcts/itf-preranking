@@ -1,0 +1,14 @@
+# ITF Junior Pre-Ranking Pipeline
+#
+# First-time setup:
+#   pip install -r requirements.txt
+#   playwright install chromium
+
+playwright>=1.43.0
+google-cloud-firestore>=2.16.0
+google-cloud-storage>=2.16.0
+
+# Web server (replaces Node.js / server.js)
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+python-multipart>=0.0.9
