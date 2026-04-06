@@ -61,20 +61,31 @@
         font-weight: 500;
         letter-spacing: 0.2px;
         white-space: nowrap;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        color: var(--muted);
+      }
+      .header-meta {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: wrap;
       }
       .week-badge {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        color: var(--muted);
-      }
-      .checked-badge {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        color: var(--muted);
+        color: var(--text);
+        font-weight: 600;
       }
       .checked-badge.stale {
         border-color: var(--amber);
         color: var(--amber);
+      }
+      .checked-badge.running {
+        border-color: #7cc8f8;
+        color: #7cc8f8;
+      }
+      .checked-badge.error {
+        border-color: var(--red);
+        color: var(--red);
       }
       header p {
         font-size: 0.78rem;
@@ -181,12 +192,13 @@
       /* ── Help button */
       .help-btn {
         margin-left: auto;
-        padding: 5px 13px;
-        border-radius: 7px;
-        border: 1px solid var(--border);
+        padding: 10px 18px;
+        border-radius: 0;
+        border: none;
+        border-bottom: 2px solid transparent;
         background: transparent;
         color: var(--muted);
-        font-size: 0.8rem;
+        font-size: 0.84rem;
         font-weight: 600;
         cursor: pointer;
         transition:
@@ -195,7 +207,7 @@
       }
       .help-btn:hover {
         color: var(--text);
-        border-color: var(--accent);
+        border-bottom-color: var(--border);
       }
 
       /* ── Login button */
@@ -1492,12 +1504,10 @@
   <body>
     <header>
       <h1>ITF Junior Rankings Estimator</h1>
-      <span class="badge week-badge" id="week-label">loading…</span>
-      <span class="badge checked-badge" id="checked-label"
-        >Last checked: …</span
-      >
-      <div id="pipeline-status" class="pipeline-status"></div>
-      <p>Estimated standings based on this week's tournament results</p>
+      <div class="header-meta">
+        <span class="badge week-badge" id="week-label">loading…</span>
+        <span class="badge checked-badge" id="checked-label">checking…</span>
+      </div>
     </header>
 
     <div class="nav-bar">
@@ -1841,8 +1851,8 @@
           const d = new Date(Math.max(...timestamps));
           const stale = Date.now() - d.getTime() > 24 * 3600 * 1000; // stale after 24h
           const el = document.getElementById("checked-label");
-          el.textContent = `Last checked: ${fmtUtc(d)}`;
-          if (stale) el.classList.add("stale");
+          el.textContent = `Updated ${fmtUtc(d)}`;
+          el.className = "badge checked-badge" + (stale ? " stale" : "");
         }
 
         buildWiPlayerMap();
@@ -3356,12 +3366,9 @@
       let _wasRefreshing = false;
 
       function _updateStatusBanner(status) {
-        const el = document.getElementById("pipeline-status");
+        const el = document.getElementById("checked-label");
         if (!el) return;
-        if (!status) {
-          el.textContent = "";
-          return;
-        }
+        if (!status) return;
         const phase = status.phase || "idle";
         const running = status.refreshing || status.sweeping;
         const PHASE_LABELS = {
@@ -3372,20 +3379,14 @@
           uploading: "uploading to cloud",
         };
         if (running) {
-          el.textContent = `⚙️ Pipeline running: ${PHASE_LABELS[phase] || phase}`;
-          el.className = "pipeline-status running";
+          el.textContent = `⚙️ Updating: ${PHASE_LABELS[phase] || phase}…`;
+          el.className = "badge checked-badge running";
         } else if (phase === "error" && status.last_error) {
-          el.textContent = `⚠️ Last run failed: ${status.last_error.slice(0, 100)}`;
-          el.className = "pipeline-status error";
-        } else if (status.last_success_at) {
-          const d = new Date(status.last_success_at);
-          const stale = Date.now() - d.getTime() > 25 * 3600 * 1000;
-          el.textContent = `✅ Data updated ${fmtUtc(d)}${stale ? " (may be stale)" : ""}`;
-          el.className = "pipeline-status" + (stale ? " stale" : " ok");
-        } else {
-          el.textContent = "Pipeline: awaiting first run";
-          el.className = "pipeline-status";
+          el.textContent = `⚠️ Last run failed`;
+          el.className = "badge checked-badge error";
+          el.title = status.last_error.slice(0, 200);
         }
+        // Non-running states: text is set by the data load timestamps below
       }
 
       async function checkForUpdates() {
@@ -3395,7 +3396,10 @@
           const status = await res.json();
           const el = document.getElementById("checked-label");
           if (status.refreshing) {
-            if (el) el.textContent = "Refreshing data\u2026";
+            if (el) {
+              el.textContent = "⚙️ Updating data…";
+              el.className = "badge checked-badge running";
+            }
             _wasRefreshing = true;
             return;
           }
@@ -3452,33 +3456,31 @@
 
         <h3>What is this?</h3>
         <p>
-          This tool estimates ITF Junior ranking points and ranking positions in
-          real time during a tournament week — before the official ITF list is
-          published. Hover over any column heading for a quick explanation.
+          This tool shows current ITF Junior rankings and projects live ranking
+          positions in real time during a tournament week — before the official
+          ITF list is updated. Hover over any column heading for a quick
+          explanation.
         </p>
 
         <h3>Rankings tab</h3>
+        <p>Shows the current official ITF rankings for the week.</p>
         <ul>
           <li>
-            <span class="term">Rank</span> — Official ITF ranking at the start
-            of this week.
+            <span class="term">Rank</span> — Official ITF ranking position at
+            the start of this week.
           </li>
           <li>
-            <span class="term">±Rank</span> — Estimated rank movement once this
-            week's results are applied.
+            <span class="term">Movement</span> — ITF's published rank movement
+            from the previous week (▲ = climbed, ▼ = dropped).
           </li>
           <li>
-            <span class="term">Tournament</span> — Which tournament(s) the
-            player entered this week.
+            <span class="term">Tournament</span> — Tournament(s) the player
+            competed in this week.
           </li>
+          <li><span class="term">Born</span> — Player's birth year.</li>
           <li>
-            <span class="term">±Points</span> — Net points change: new points
-            earned <em>minus</em> any that drop off (results older than 52
-            weeks).
-          </li>
-          <li>
-            <span class="term">Total</span> — Estimated new ranking total after
-            this week.
+            <span class="term">Points</span> — Official ITF ranking points
+            total.
           </li>
         </ul>
         <p style="margin-top: 8px">
@@ -3488,26 +3490,32 @@
 
         <h3>Live Rankings tab</h3>
         <p>
-          Shows rankings updated in real time as tournament draws progress.
-          Players with
+          Shows live projected rankings based on this week's in-progress
+          tournament results. Players with
           <span style="color: #ef4444; font-weight: 700">red badges</span> next
-          to their name are losing points this week as an old result expires off
-          their 52-week total.
+          to their name are losing points as an old result expires off their
+          52-week total.
         </p>
         <ul>
           <li>
-            <span class="term">Live Rank</span> — Projected position right now.
+            <span class="term">Rank</span> — Official ITF rank at the start of
+            the week.
           </li>
           <li>
-            <span class="term">±Rank</span> — Change vs start of week. Green ▲ =
-            moved up, Red ▼ = dropped.
+            <span class="term">Live Rank</span> — Projected position based on
+            results so far this week.
           </li>
           <li>
-            <span class="term">Pts Gained</span> — Net points this week (new
-            results minus dropped results).
+            <span class="term">±Rank</span> — Movement between official rank and
+            live rank. Green ▲ = climbed, Red ▼ = dropped.
           </li>
           <li>
-            <span class="term">Live Total</span> — Projected ranking total.
+            <span class="term">Pts Gained</span> — Net points gained this week
+            (new results minus any expiring results).
+          </li>
+          <li>
+            <span class="term">Live Total</span> — Projected ranking points
+            total after this week.
           </li>
         </ul>
 
@@ -3544,48 +3552,19 @@
 
         <h3>Data freshness</h3>
         <p>
-          The "Last checked" badge at the top of the page shows when data was
-          last fetched from the ITF website. Data refreshes automatically every
-          30 minutes. If it shows
+          The <span class="term">Updated</span> badge at the top of the page
+          shows when data was last fetched from the ITF website. Data refreshes
+          automatically every 12 hours via a scheduled pipeline. If it turns
           <span style="color: var(--amber)">amber</span>, the data is older than
-          48 hours — this can happen if the server is restarting or ITF's site
-          is down.
+          24 hours — this can happen if the server is restarting or ITF's site
+          is temporarily unavailable. While the pipeline is running the badge
+          will show the current phase.
         </p>
       </div>
     </div>
 
     <style>
-      /* ── Pipeline status banner */
-      .pipeline-status {
-        font-size: 0.75rem;
-        padding: 3px 10px;
-        border-radius: 12px;
-        display: inline-block;
-        margin-top: 4px;
-        background: var(--surface);
-        color: var(--muted);
-        border: 1px solid var(--border);
-      }
-      .pipeline-status.running {
-        background: #1a2a3a;
-        color: #7cc8f8;
-        border-color: #7cc8f8;
-      }
-      .pipeline-status.ok {
-        background: #122212;
-        color: #5cb85c;
-        border-color: #5cb85c;
-      }
-      .pipeline-status.stale {
-        background: #2a1f00;
-        color: #f0a020;
-        border-color: #f0a020;
-      }
-      .pipeline-status.error {
-        background: #2a1212;
-        color: var(--red);
-        border-color: var(--red);
-      }
+      /* pipeline states now use .checked-badge modifier classes */
     </style>
   </body>
 </html>
