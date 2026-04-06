@@ -203,6 +203,23 @@ def _week_monday(anchor: datetime.date) -> datetime.date:
     return anchor - datetime.timedelta(days=anchor.weekday())
 
 
+def _pipeline_date() -> datetime.date:
+    """Return the effective UTC date for pipeline week calculations.
+
+    On Monday before 16:00 UTC the new ITF week has technically begun but
+    tournament results are not yet available.  Returning Sunday keeps the
+    pipeline targeting the previous (still-live) ranking week until the
+    afternoon, when real results start appearing.
+    """
+    now = datetime.datetime.now(datetime.timezone.utc)
+    d = now.date()
+    # Monday grace period: before 16:00 UTC treat Monday as Sunday so the
+    # pipeline continues to use last week's Monday as its target.
+    if d.weekday() == 0 and now.hour < 16:
+        d -= datetime.timedelta(days=1)
+    return d
+
+
 def _output_generated_at() -> Optional[str]:
     try:
         data = json.loads(
@@ -227,7 +244,7 @@ async def _do_refresh() -> None:
         from calculate_rankings import run as calc_run
         from merge_rankings import run as merge_run
 
-        monday = _week_monday(datetime.date.today())
+        monday = _week_monday(_pipeline_date())
 
         _set_status("main")
         await main_run(headless=True, week_anchor=monday)
@@ -260,7 +277,7 @@ async def _do_sweep() -> None:
     print("[sweep] Starting expiry sweep…")
     try:
         from expiry_sweep import run as sweep_run
-        monday = _week_monday(datetime.date.today())
+        monday = _week_monday(_pipeline_date())
         _set_status("sweep")
         await sweep_run(headless=True, week_anchor=monday)
         _set_status("uploading")
