@@ -129,6 +129,32 @@ async def run(headless: bool, week_monday: datetime.date) -> None:
             return_exceptions=True,
         )
 
+        # Retry players that failed on the first pass (rate-limit / transient)
+        failed_pids = [
+            pid for pid, r in zip(unique_players, ranking_results)
+            if isinstance(r, Exception)
+        ]
+        if failed_pids:
+            print(f"[calc] Retrying {len(failed_pids)} failed breakdown(s)…")
+            await asyncio.sleep(3)
+            retry_results = await asyncio.gather(
+                *[
+                    _limited(sem, fetch_ranking_points(session, pid))
+                    for pid in failed_pids
+                ],
+                return_exceptions=True,
+            )
+            # Splice retried results back into ranking_results
+            retry_map = dict(zip(failed_pids, retry_results))
+            ranking_results = [
+                retry_map.get(pid, r)
+                for pid, r in zip(unique_players, ranking_results)
+            ]
+            remaining = sum(1 for r in ranking_results if isinstance(r, Exception))
+            if remaining:
+                print(f"[calc] {remaining} player(s) still failed after retry — will use estimate.")
+
+
     # ── Save raw ranking breakdowns (used by the What-if frontend) ─────────────
     player_breakdowns: dict[str, dict] = {}
     for pid, rdata in zip(unique_players, ranking_results):
@@ -165,7 +191,7 @@ async def run(headless: bool, week_monday: datetime.date) -> None:
     bd_latest = Path("output") / "latest_player_breakdowns.json"
     with open(bd_latest, "w", encoding="utf-8") as f:
         json.dump(bd_output, f, indent=2, ensure_ascii=False)
-    print(f"[calc] Breakdown data written → {bd_path} ({len(merged_breakdowns)} players total)")
+    print(f"[calc] Breakdown data written -> {bd_path} ({len(merged_breakdowns)} players total)")
 
     # ── Simulate each player ──────────────────────────────────────────────────
     output_players: list[dict] = []
@@ -269,7 +295,7 @@ async def run(headless: bool, week_monday: datetime.date) -> None:
 
     print(
         f"[calc] Done. {len(output_players)} players calculated "
-        f"({errors} errors) → {out_path}"
+        f"({errors} errors) -> {out_path}"
     )
     if output_players:
         print("\nTop 10 estimated movers this week:")

@@ -2196,8 +2196,14 @@
             const ncSAvail = (bd.singles_non_countable || [])
               .filter((e) => !isYearAgo(e, yar) && +e.points > 0)
               .map((e) => +e.points);
-            const s6noNc = [...survCS].sort((a, b) => b - a).slice(0, 6).reduce((s, v) => s + v, 0);
-            const s6withNc = [...survCS, ...ncSAvail].sort((a, b) => b - a).slice(0, 6).reduce((s, v) => s + v, 0);
+            const s6noNc = [...survCS]
+              .sort((a, b) => b - a)
+              .slice(0, 6)
+              .reduce((s, v) => s + v, 0);
+            const s6withNc = [...survCS, ...ncSAvail]
+              .sort((a, b) => b - a)
+              .slice(0, 6)
+              .reduce((s, v) => s + v, 0);
             // Doubles
             const survCD = (bd.doubles_countable || [])
               .filter((e) => !isYearAgo(e, yar))
@@ -2205,20 +2211,45 @@
             const ncDAvail = (bd.doubles_non_countable || [])
               .filter((e) => !isYearAgo(e, yar) && +e.points > 0)
               .map((e) => +e.points);
-            const d6noNc = [...survCD].sort((a, b) => b - a).slice(0, 6).reduce((s, v) => s + v, 0);
-            const d6withNc = [...survCD, ...ncDAvail].sort((a, b) => b - a).slice(0, 6).reduce((s, v) => s + v, 0);
-            expiryReplacement = +((s6withNc - s6noNc) + (d6withNc - d6noNc) * 0.25).toFixed(2);
+            const d6noNc = [...survCD]
+              .sort((a, b) => b - a)
+              .slice(0, 6)
+              .reduce((s, v) => s + v, 0);
+            const d6withNc = [...survCD, ...ncDAvail]
+              .sort((a, b) => b - a)
+              .slice(0, 6)
+              .reduce((s, v) => s + v, 0);
+            expiryReplacement = +(
+              s6withNc -
+              s6noNc +
+              (d6withNc - d6noNc) * 0.25
+            ).toFixed(2);
           } else {
-            // No breakdown data: fall back to pre-calculated values from merged
-            // rankings (which were computed correctly via calculate_rankings.py).
-            livePtsDelta = +(r.points_change || 0);
-            liveTotal = r.total_points;
+            // No breakdown data available (fetch failed during pipeline run or
+            // results arrived after the breakdown was generated).
+            // Prefer the pre-calculated delta from calculate_rankings.py if
+            // non-zero. Otherwise fall back to raw sum of this week's points
+            // as a rough estimate so players aren't shown with zero change.
+            if (r.points_change) {
+              livePtsDelta = +r.points_change;
+              liveTotal = r.total_points;
+            } else {
+              const rawS = (liveS[pid] || []).reduce((s, v) => s + +v, 0);
+              const rawD = (liveD[pid] || []).reduce(
+                (s, v) => s + +v * 0.25,
+                0,
+              );
+              livePtsDelta = +(rawS + rawD).toFixed(4);
+              liveTotal = +(r.total_points + livePtsDelta).toFixed(4);
+            }
           }
 
           return {
             ...r,
             live_total: liveTotal,
             live_pts_delta: livePtsDelta,
+            pts_estimated:
+              !bd && !r.points_change && (liveS[pid] || liveD[pid]),
             expiry_loss: expiryLoss,
             expiry_replacement: expiryReplacement,
           };
@@ -2310,7 +2341,7 @@
                   : `<td class="r rc flat">—</td>`;
             const pdHtml =
               r.live_pts_delta > 0
-                ? `<td class="r pc up">+${r.live_pts_delta.toFixed(2)}</td>`
+                ? `<td class="r pc up">${r.pts_estimated ? "~+" : "+"}${r.live_pts_delta.toFixed(2)}</td>`
                 : r.live_pts_delta < 0
                   ? `<td class="r pc down">${r.live_pts_delta.toFixed(2)}</td>`
                   : `<td class="r pc flat">—</td>`;

@@ -75,7 +75,7 @@ def _save_breakdowns(data: dict) -> None:
     path = Path("output") / "latest_player_breakdowns.json"
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
-    print(f"[sweep] Breakdowns written → {path}")
+    print(f"[sweep] Breakdowns written -> {path}")
 
 
 # ─────────────────────────────────────────────────────────────────────────────

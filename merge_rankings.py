@@ -164,12 +164,12 @@ async def run(headless: bool, week_monday: datetime.date) -> None:
     out_path = Path("output") / f"merged_rankings_{week_start}.json"
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
-    print(f"[merge] Written → {out_path}")
+    print(f"[merge] Written -> {out_path}")
 
     latest_path = Path("output") / "latest_merged_rankings.json"
     with open(latest_path, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
-    print(f"[merge] Written → {latest_path}")
+    print(f"[merge] Written -> {latest_path}")
 
     header = f"  {'Rank':>4}  {'Player':<30}  {'±Rank':>6}  {'Tournament':<25}  {'±Pts':>7}  {'Total':>9}"
     sep    = "  " + "-" * (len(header) - 2)
