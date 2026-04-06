@@ -156,6 +156,10 @@
         white-space: nowrap;
         letter-spacing: 0.01em;
       }
+      .expiry-rep {
+        color: #4ade80;
+        margin-left: 3px;
+      }
 
       /* ── Tooltips */
       [data-tip] {
@@ -2158,6 +2162,7 @@
           let liveTotal, livePtsDelta;
 
           let expiryLoss = 0;
+          let expiryReplacement = 0;
           if (bd) {
             // Baseline = historical best-6 WITH NO current-week points.
             // This ensures livePtsDelta reflects the true net gain this week
@@ -2181,6 +2186,28 @@
               expiringS.reduce((s, e) => s + (+e.points || 0), 0) +
               expiringD.reduce((s, e) => s + (+e.points || 0) * 0.25, 0);
             expiryLoss = expiryLoss > 0 ? +expiryLoss.toFixed(2) : 0;
+
+            // Replacement: non-countable historical results that slide into
+            // the top-6 once the expiring countable entries are removed.
+            // Singles: pool(surviving countable only) vs pool(surviving + nc)
+            const survCS = (bd.singles_countable || [])
+              .filter((e) => !isYearAgo(e, yar))
+              .map((e) => +e.points);
+            const ncSAvail = (bd.singles_non_countable || [])
+              .filter((e) => !isYearAgo(e, yar) && +e.points > 0)
+              .map((e) => +e.points);
+            const s6noNc = [...survCS].sort((a, b) => b - a).slice(0, 6).reduce((s, v) => s + v, 0);
+            const s6withNc = [...survCS, ...ncSAvail].sort((a, b) => b - a).slice(0, 6).reduce((s, v) => s + v, 0);
+            // Doubles
+            const survCD = (bd.doubles_countable || [])
+              .filter((e) => !isYearAgo(e, yar))
+              .map((e) => +e.points);
+            const ncDAvail = (bd.doubles_non_countable || [])
+              .filter((e) => !isYearAgo(e, yar) && +e.points > 0)
+              .map((e) => +e.points);
+            const d6noNc = [...survCD].sort((a, b) => b - a).slice(0, 6).reduce((s, v) => s + v, 0);
+            const d6withNc = [...survCD, ...ncDAvail].sort((a, b) => b - a).slice(0, 6).reduce((s, v) => s + v, 0);
+            expiryReplacement = +((s6withNc - s6noNc) + (d6withNc - d6noNc) * 0.25).toFixed(2);
           } else {
             // No breakdown data: fall back to pre-calculated values from merged
             // rankings (which were computed correctly via calculate_rankings.py).
@@ -2193,6 +2220,7 @@
             live_total: liveTotal,
             live_pts_delta: livePtsDelta,
             expiry_loss: expiryLoss,
+            expiry_replacement: expiryReplacement,
           };
         });
 
@@ -2289,7 +2317,7 @@
             const changed = r.live_pts_delta !== 0 ? " wi-row" : "";
             return `<tr class="${changed}">
             <td class="${rankClass} r">${itfRank}</td>
-            <td>${escHtml(r.name)}<span style="font-size:0.7rem;color:var(--muted);margin-left:5px">${escHtml(r.nationality || "")}</span>${r.expiry_loss > 0 ? `<span class="expiry-badge">−${r.expiry_loss.toFixed(2)} pts expiring</span>` : ""}</td>
+            <td>${escHtml(r.name)}<span style="font-size:0.7rem;color:var(--muted);margin-left:5px">${escHtml(r.nationality || "")}</span>${r.expiry_loss > 0 ? `<span class="expiry-badge">−${r.expiry_loss.toFixed(2)} exp${r.expiry_replacement > 0 ? ` <span class="expiry-rep">+${r.expiry_replacement.toFixed(2)} rep</span>` : ""}</span>` : ""}</td>
             <td class="${liveRankClass} r">${r.live_rank}</td>
             ${rdHtml}
             ${pdHtml}
@@ -3494,7 +3522,9 @@
           tournament results. Players with
           <span style="color: #ef4444; font-weight: 700">red badges</span> next
           to their name are losing points as an old result expires off their
-          52-week total.
+          52-week total. If historical non-countable results slide up to replace
+          the expiring ones, the replacement amount is shown in green next to
+          the expiry value.
         </p>
         <ul>
           <li>
