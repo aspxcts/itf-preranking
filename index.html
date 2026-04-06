@@ -2,18 +2,27 @@
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-68XRTNZRM4"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-68XRTNZRM4"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-68XRTNZRM4');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-68XRTNZRM4");
     </script>
     <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3740590687443352" crossorigin="anonymous"></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3740590687443352"
+      crossorigin="anonymous"
+    ></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ITF Junior Rankings Estimator</title>
+    <title>ITF Junior Rankings</title>
     <style>
       :root {
         --bg: #0f1117;
@@ -915,19 +924,177 @@
         .card-grid {
           grid-template-columns: 1fr;
         }
-        /* Table: allow horizontal scroll, hide tournament column */
-        .table-wrap {
-          max-height: calc(100vh - 150px);
-          border-radius: 8px;
+        /* Rankings & Live: card layout replaces cramped table on mobile */
+        #view-rankings .table-wrap,
+        #view-live .table-wrap {
+          border: none;
+          background: transparent;
+          max-height: none;
+          overflow: visible;
+          border-radius: 0;
         }
-        table th:nth-child(4),
-        table td:nth-child(4) {
+        #view-rankings table,
+        #view-live table {
+          border-collapse: separate;
+          border-spacing: 0 6px;
+        }
+        #view-rankings thead,
+        #view-live thead {
           display: none;
         }
-        td,
-        thead th {
-          padding: 8px 10px;
-          font-size: 0.78rem;
+        /* placeholder cell spans all grid columns */
+        #view-rankings tbody .placeholder,
+        #view-live tbody .placeholder {
+          grid-column: 1 / -1;
+          padding: 16px !important;
+          text-align: center;
+        }
+
+        /* ── Rankings cards ─────────────────────────────────────────
+           Col 1 (46px) : Rank — spans both rows
+           Col 2 (1fr)  : row1=Name, row2=Tournament · Born
+           Col 3 (auto) : row1=Movement, row2=Points
+        ─────────────────────────────────────────────────────────── */
+        #view-rankings tbody tr {
+          display: grid;
+          grid-template-columns: 46px 1fr auto;
+          grid-template-rows: auto auto;
+          background: var(--surface);
+          border: 1px solid var(--border);
+          border-radius: 10px;
+        }
+        #view-rankings tbody tr.wi-row {
+          background: rgba(99, 102, 241, 0.07);
+        }
+        #view-rankings tbody td {
+          padding: 0;
+          border: none;
+          white-space: normal;
+          font-size: 0.82rem;
+        }
+        #view-rankings tbody td:nth-child(1) { /* Rank */
+          grid-area: 1 / 1 / 3 / 2;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1rem;
+          font-weight: 700;
+          border-right: 1px solid var(--border);
+        }
+        #view-rankings tbody td:nth-child(2) { /* Name */
+          grid-area: 1 / 2 / 2 / 3;
+          padding: 9px 12px 3px;
+          font-weight: 600;
+          font-size: 0.87rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        #view-rankings tbody td:nth-child(3) { /* Movement */
+          grid-area: 1 / 3 / 2 / 4;
+          padding: 9px 12px 3px;
+          text-align: right;
+        }
+        #view-rankings tbody td:nth-child(4) { /* Tournament */
+          grid-area: 2 / 2 / 3 / 3;
+          padding: 0 12px 9px;
+          font-size: 0.72rem;
+          color: var(--muted);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          display: block !important;
+        }
+        #view-rankings tbody td:nth-child(4)[data-born]::after {
+          content: " · " attr(data-born);
+        }
+        #view-rankings tbody td:nth-child(5) { /* Born — folded into Tournament */
+          display: none !important;
+        }
+        #view-rankings tbody td:nth-child(6) { /* Points */
+          grid-area: 2 / 3 / 3 / 4;
+          padding: 0 12px 9px;
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: var(--accent);
+          text-align: right;
+        }
+
+        /* ── Live Rankings cards ─────────────────────────────────────
+           Col 1 (50px) : row1=ITF Rank, row2=→ Live Rank
+           Col 2 (1fr)  : row1=Name + nat + expiry, row2=Pts Gained
+           Col 3 (auto) : row1=±Rank, row2=Live Total
+        ─────────────────────────────────────────────────────────── */
+        #view-live tbody tr {
+          display: grid;
+          grid-template-columns: 50px 1fr auto;
+          grid-template-rows: auto auto;
+          background: var(--surface);
+          border: 1px solid var(--border);
+          border-radius: 10px;
+        }
+        #view-live tbody tr.wi-row {
+          background: rgba(99, 102, 241, 0.07);
+        }
+        #view-live tbody td {
+          padding: 0;
+          border: none;
+          white-space: normal;
+          font-size: 0.82rem;
+        }
+        #view-live tbody td:nth-child(1) { /* ITF Rank */
+          grid-area: 1 / 1 / 2 / 2;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 700;
+          font-size: 0.9rem;
+          padding: 9px 4px 3px;
+          border-right: 1px solid var(--border);
+          border-bottom: 1px solid var(--border);
+        }
+        #view-live tbody td:nth-child(2) { /* Name + nat + expiry */
+          grid-area: 1 / 2 / 2 / 3;
+          padding: 9px 12px 3px;
+          font-weight: 600;
+          font-size: 0.87rem;
+          min-width: 0;
+        }
+        #view-live tbody td:nth-child(3) { /* → Live Rank */
+          grid-area: 2 / 1 / 3 / 2;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.85rem;
+          font-weight: 700;
+          padding: 3px 4px 9px;
+          border-right: 1px solid var(--border);
+          color: var(--accent);
+          gap: 2px;
+        }
+        #view-live tbody td:nth-child(3)::before {
+          content: "→";
+          font-size: 0.65rem;
+          font-weight: 400;
+          color: var(--muted);
+        }
+        #view-live tbody td:nth-child(4) { /* ±Rank */
+          grid-area: 1 / 3 / 2 / 4;
+          padding: 9px 10px 3px;
+          text-align: right;
+        }
+        #view-live tbody td:nth-child(5) { /* Pts Gained */
+          grid-area: 2 / 2 / 3 / 3;
+          padding: 3px 12px 9px;
+          font-size: 0.82rem;
+          text-align: left;
+        }
+        #view-live tbody td:nth-child(6) { /* Live Total */
+          grid-area: 2 / 3 / 3 / 4;
+          padding: 3px 10px 9px;
+          font-size: 0.82rem;
+          font-weight: 700;
+          text-align: right;
         }
         /* Modal: full-screen bottom sheet on mobile */
         .modal-overlay {
@@ -2100,11 +2267,12 @@
                   : `<td class="r rc flat">—</td>`;
             const tournClass = r.tournaments !== "-" ? "tourn played" : "tourn";
             const wiClass = r._wi ? " wi-row" : "";
+            const born = r.birth_year ? String(r.birth_year) : "";
             return `<tr class="${wiClass}">
         <td class="${rankClass} r">${r.itf_rank}</td>
         <td>${escHtml(r.name)}</td>
         ${rcHtml}
-        <td class="${tournClass}" title="${escHtml(r.tournaments)}">${escHtml(r.tournaments)}</td>
+        <td class="${tournClass}" data-born="${escHtml(born)}" title="${escHtml(r.tournaments)}">${escHtml(r.tournaments)}</td>
         <td class="r">${r.birth_year || "—"}</td>
         <td class="r total">${(r.itf_points || 0).toFixed(2)}</td>
       </tr>`;
