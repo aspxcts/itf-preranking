@@ -119,12 +119,15 @@ async def run(headless: bool, week_monday: datetime.date) -> None:
             name = f"{p.get('playerGivenName', '')} {p.get('playerFamilyName', '')}".strip()
             old_rank = int(p.get("rank") or 0)
             merged.append({
-                "player_id":    pid,
-                "name":         name,
-                "old_rank":     old_rank,
-                "total_points": pts,
-                "delta":        est["delta"] if est else 0.0,
-                "tournaments":  " / ".join(sorted(player_tournaments.get(pid, set()))) or "-",
+                "player_id":      pid,
+                "name":           name,
+                "old_rank":       old_rank,
+                "total_points":   pts,
+                "delta":          est["delta"] if est else 0.0,
+                "tournaments":    " / ".join(sorted(player_tournaments.get(pid, set()))) or "-",
+                "rank_movement":  int(p.get("rankMovement") or 0),
+                "birth_year":     p.get("birthYear"),
+                "itf_points":     float(p.get("points") or 0),
             })
 
         merged.sort(key=lambda x: x["total_points"], reverse=True)
@@ -134,13 +137,17 @@ async def run(headless: bool, week_monday: datetime.date) -> None:
             old_rank = row["old_rank"]
             rank_change = (old_rank - new_rank) if old_rank else 0
             result.append({
-                "rank":          new_rank,
-                "player_id":     str(row["player_id"]),
-                "name":          row["name"],
-                "rank_change":   rank_change,
-                "tournaments":   row["tournaments"],
-                "points_change": round(row["delta"], 2),
-                "total_points":  round(row["total_points"], 2),
+                "rank":           new_rank,
+                "player_id":      str(row["player_id"]),
+                "name":           row["name"],
+                "itf_rank":       row["old_rank"],
+                "rank_change":    rank_change,
+                "rank_movement":  row.get("rank_movement", 0),
+                "birth_year":     row.get("birth_year"),
+                "tournaments":    row["tournaments"],
+                "points_change":  round(row["delta"], 2),
+                "total_points":   round(row["total_points"], 2),
+                "itf_points":     round(row.get("itf_points", 0), 2),
             })
         return result
 

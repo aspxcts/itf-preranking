@@ -1550,38 +1550,38 @@
               <tr>
                 <th
                   class="r sorted"
-                  data-col="rank"
-                  data-tip="Official ITF ranking at the start of this week"
+                  data-col="itf_rank"
+                  data-tip="Official ITF ranking position at the start of this week"
                 >
                   Rank<span class="sort-arrow">▲</span>
                 </th>
                 <th data-col="name">Player<span class="sort-arrow"></span></th>
                 <th
                   class="r"
-                  data-col="rank_change"
-                  data-tip="Estimated rank movement after this week's results are processed (+ = moved up)"
+                  data-col="rank_movement"
+                  data-tip="Official ITF rank movement from the previous week's rankings (+ = moved up)"
                 >
-                  ±Rank<span class="sort-arrow"></span>
+                  Movement<span class="sort-arrow"></span>
                 </th>
                 <th
                   data-col="tournaments"
                   data-tip="Tournament(s) the player competed in this week"
                 >
-                  Tournament<span class="sort-arrow"></span>
+                  Current Tournament<span class="sort-arrow"></span>
                 </th>
                 <th
                   class="r"
-                  data-col="points_change"
-                  data-tip="Net change in ranking points this week (new points earned minus any dropped results)"
+                  data-col="birth_year"
+                  data-tip="Player's birth year"
                 >
-                  ±Points<span class="sort-arrow"></span>
+                  Born<span class="sort-arrow"></span>
                 </th>
                 <th
                   class="r"
-                  data-col="total_points"
-                  data-tip="Estimated new ranking points total after this week"
+                  data-col="itf_points"
+                  data-tip="Official ITF ranking points total"
                 >
-                  Total<span class="sort-arrow"></span>
+                  Points<span class="sort-arrow"></span>
                 </th>
               </tr>
             </thead>
@@ -1650,7 +1650,7 @@
               <tr>
                 <th
                   class="r sorted"
-                  data-live-col="rank"
+                  data-live-col="itf_rank"
                   data-tip="Player's official ITF ranking at the start of this week"
                 >
                   Rank<span class="sort-arrow">▲</span>
@@ -1757,7 +1757,7 @@
       let pointsData = null; // latest_points_earned.json
       let breakdownData = null; // latest_player_breakdowns.json (may be null)
       let gender = "boys";
-      let sortCol = "rank";
+      let sortCol = "itf_rank";
       let sortDir = 1;
       let filterStr = "";
       let currentView = "rankings";
@@ -1778,7 +1778,7 @@
       async function loadAll() {
         // Fetch status first: learn GCS base URL and current pipeline state
         const status = await fetch("/api/status")
-          .then((r) => r.ok ? r.json() : null)
+          .then((r) => (r.ok ? r.json() : null))
           .catch(() => null);
 
         const BASE = status?.gcs_url || "/output"; // fallback for local dev
@@ -1786,8 +1786,14 @@
 
         if (status?.refreshing || status?.sweeping) {
           const phase = status.phase || "running";
-          const label = { main: "fetching tournament data", calculate: "calculating breakdowns",
-            merge: "merging rankings", sweep: "expiry sweep", uploading: "uploading" }[phase] || phase;
+          const label =
+            {
+              main: "fetching tournament data",
+              calculate: "calculating breakdowns",
+              merge: "merging rankings",
+              sweep: "expiry sweep",
+              uploading: "uploading",
+            }[phase] || phase;
           document.getElementById("tbody").innerHTML =
             `<tr><td colspan="6" class="placeholder">⏳ Pipeline running (${label}) — data will appear automatically…</td></tr>`;
           setTimeout(checkForUpdates, 15_000);
@@ -1797,13 +1803,13 @@
         try {
           const [r1, r2, r3] = await Promise.allSettled([
             fetch(`${BASE}/latest_merged_rankings.json`).then((r) =>
-              r.ok ? r.json() : Promise.reject("__nodata__")
+              r.ok ? r.json() : Promise.reject("__nodata__"),
             ),
             fetch(`${BASE}/latest_points_earned.json`).then((r) =>
-              r.ok ? r.json() : null
+              r.ok ? r.json() : null,
             ),
             fetch(`${BASE}/latest_player_breakdowns.json`).then((r) =>
-              r.ok ? r.json() : null
+              r.ok ? r.json() : null,
             ),
           ]);
 
@@ -2007,6 +2013,15 @@
         if (!rankingsData) return;
         let rows = getOverlaidRows(gender);
 
+        // Normalise rows: back-fill new field names from old equivalents so
+        // the UI works correctly even when the GCS data pre-dates this schema.
+        rows = rows.map((r) => ({
+          ...r,
+          itf_rank: r.itf_rank ?? r.rank,
+          itf_points: r.itf_points ?? r.total_points,
+          rank_movement: r.rank_movement ?? r.rank_change,
+        }));
+
         // Filter
         if (filterStr)
           rows = rows.filter((r) => r.name.toLowerCase().includes(filterStr));
@@ -2045,34 +2060,29 @@
         document.getElementById("tbody").innerHTML = rows
           .map((r) => {
             const rankClass =
-              r.rank === 1
+              r.itf_rank === 1
                 ? "rank gold"
-                : r.rank === 2
+                : r.itf_rank === 2
                   ? "rank silver"
-                  : r.rank === 3
+                  : r.itf_rank === 3
                     ? "rank bronze"
                     : "rank";
+            const mv = r.rank_movement;
             const rcHtml =
-              r.rank_change > 0
-                ? `<td class="r rc up">▲ ${r.rank_change}</td>`
-                : r.rank_change < 0
-                  ? `<td class="r rc down">▼ ${Math.abs(r.rank_change)}</td>`
+              mv > 0
+                ? `<td class="r rc up">▲ ${mv}</td>`
+                : mv < 0
+                  ? `<td class="r rc down">▼ ${Math.abs(mv)}</td>`
                   : `<td class="r rc flat">—</td>`;
-            const pcHtml =
-              r.points_change > 0
-                ? `<td class="r pc up">+${r.points_change.toFixed(2)}</td>`
-                : r.points_change < 0
-                  ? `<td class="r pc down">${r.points_change.toFixed(2)}</td>`
-                  : `<td class="r pc flat">—</td>`;
             const tournClass = r.tournaments !== "-" ? "tourn played" : "tourn";
             const wiClass = r._wi ? " wi-row" : "";
             return `<tr class="${wiClass}">
-        <td class="${rankClass} r">${r.rank}</td>
+        <td class="${rankClass} r">${r.itf_rank}</td>
         <td>${escHtml(r.name)}</td>
         ${rcHtml}
         <td class="${tournClass}" title="${escHtml(r.tournaments)}">${escHtml(r.tournaments)}</td>
-        ${pcHtml}
-        <td class="r total">${r.total_points.toFixed(2)}</td>
+        <td class="r">${r.birth_year || "—"}</td>
+        <td class="r total">${(r.itf_points || 0).toFixed(2)}</td>
       </tr>`;
           })
           .join("");
@@ -2181,7 +2191,15 @@
         return rows.map((row, i) => ({
           ...row,
           live_rank: i + 1,
-          live_rank_delta: row.rank - (i + 1), // positive = climbed
+          // Baseline rank = official ITF rank before this week.
+          // New data stores it as itf_rank; old data only has rank (estimated
+          // new rank) + rank_change (ITF_rank - estimated_new_rank), so we
+          // reconstruct: estimated_rank + rank_change = ITF_rank.
+          live_rank_delta:
+            (row.itf_rank != null
+              ? row.itf_rank
+              : row.rank + (row.rank_change || 0)) -
+            (i + 1), // positive = climbed vs official ITF rank
         }));
       }
 
@@ -2228,12 +2246,13 @@
 
         document.getElementById("live-tbody").innerHTML = rows
           .map((r) => {
+            const itfRank = r.itf_rank || r.rank;
             const rankClass =
-              r.rank === 1
+              itfRank === 1
                 ? "rank gold"
-                : r.rank === 2
+                : itfRank === 2
                   ? "rank silver"
-                  : r.rank === 3
+                  : itfRank === 3
                     ? "rank bronze"
                     : "rank";
             const liveRankClass =
@@ -2259,7 +2278,7 @@
                   : `<td class="r pc flat">—</td>`;
             const changed = r.live_pts_delta !== 0 ? " wi-row" : "";
             return `<tr class="${changed}">
-            <td class="${rankClass} r">${r.rank}</td>
+            <td class="${rankClass} r">${itfRank}</td>
             <td>${escHtml(r.name)}<span style="font-size:0.7rem;color:var(--muted);margin-left:5px">${escHtml(r.nationality || "")}</span>${r.expiry_loss > 0 ? `<span class="expiry-badge">−${r.expiry_loss.toFixed(2)} pts expiring</span>` : ""}</td>
             <td class="${liveRankClass} r">${r.live_rank}</td>
             ${rdHtml}
@@ -3339,7 +3358,10 @@
       function _updateStatusBanner(status) {
         const el = document.getElementById("pipeline-status");
         if (!el) return;
-        if (!status) { el.textContent = ""; return; }
+        if (!status) {
+          el.textContent = "";
+          return;
+        }
         const phase = status.phase || "idle";
         const running = status.refreshing || status.sweeping;
         const PHASE_LABELS = {
@@ -3544,10 +3566,26 @@
         color: var(--muted);
         border: 1px solid var(--border);
       }
-      .pipeline-status.running  { background: #1a2a3a; color: #7cc8f8; border-color: #7cc8f8; }
-      .pipeline-status.ok       { background: #122212; color: #5cb85c; border-color: #5cb85c; }
-      .pipeline-status.stale    { background: #2a1f00; color: #f0a020; border-color: #f0a020; }
-      .pipeline-status.error    { background: #2a1212; color: var(--red); border-color: var(--red); }
+      .pipeline-status.running {
+        background: #1a2a3a;
+        color: #7cc8f8;
+        border-color: #7cc8f8;
+      }
+      .pipeline-status.ok {
+        background: #122212;
+        color: #5cb85c;
+        border-color: #5cb85c;
+      }
+      .pipeline-status.stale {
+        background: #2a1f00;
+        color: #f0a020;
+        border-color: #f0a020;
+      }
+      .pipeline-status.error {
+        background: #2a1212;
+        color: var(--red);
+        border-color: var(--red);
+      }
     </style>
   </body>
 </html>
