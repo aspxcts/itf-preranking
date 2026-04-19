@@ -25,16 +25,16 @@
     <title>ITF Junior Rankings</title>
     <style>
       :root {
-        --bg: #0f1117;
-        --surface: #1a1d27;
-        --border: #272a38;
-        --text: #e2e8f0;
-        --muted: #5a6380;
-        --green: #22c55e;
-        --red: #ef4444;
-        --gold: #f59e0b;
+        --bg: #f4f6fb;
+        --surface: #ffffff;
+        --border: #dde1ed;
+        --text: #111827;
+        --muted: #6b7280;
+        --green: #16a34a;
+        --red: #dc2626;
+        --gold: #d97706;
         --accent: #6366f1;
-        --amber: #f59e0b;
+        --amber: #d97706;
       }
       *,
       *::before,
@@ -191,7 +191,7 @@
         bottom: calc(100% + 7px);
         left: 50%;
         transform: translateX(-50%);
-        background: #1e2130;
+        background: var(--surface);
         color: var(--text);
         border: 1px solid var(--border);
         border-radius: 7px;
@@ -576,24 +576,24 @@
         white-space: nowrap;
       }
       .cat-J500 {
-        background: rgba(168, 85, 247, 0.18);
-        color: #c084fc;
+        background: rgba(168, 85, 247, 0.12);
+        color: #7c3aed;
       }
       .cat-J300 {
-        background: rgba(99, 102, 241, 0.18);
-        color: #818cf8;
+        background: rgba(99, 102, 241, 0.12);
+        color: #4f46e5;
       }
       .cat-J200 {
-        background: rgba(6, 182, 212, 0.18);
-        color: #22d3ee;
+        background: rgba(6, 182, 212, 0.12);
+        color: #0891b2;
       }
       .cat-J100 {
-        background: rgba(34, 197, 94, 0.18);
-        color: #4ade80;
+        background: rgba(34, 197, 94, 0.12);
+        color: #15803d;
       }
       .cat-J60 {
-        background: rgba(107, 114, 128, 0.18);
-        color: #9ca3af;
+        background: rgba(107, 114, 128, 0.12);
+        color: #4b5563;
       }
       .surf-badge {
         font-size: 0.67rem;
@@ -602,24 +602,24 @@
         border-radius: 4px;
       }
       .surf-Clay {
-        background: rgba(217, 119, 6, 0.18);
-        color: #fbbf24;
+        background: rgba(217, 119, 6, 0.12);
+        color: #b45309;
       }
       .surf-Hard {
-        background: rgba(59, 130, 246, 0.18);
-        color: #93c5fd;
+        background: rgba(59, 130, 246, 0.12);
+        color: #1d4ed8;
       }
       .surf-Grass {
-        background: rgba(22, 163, 74, 0.18);
-        color: #86efac;
+        background: rgba(22, 163, 74, 0.12);
+        color: #15803d;
       }
       .surf-Carpet {
-        background: rgba(124, 58, 237, 0.18);
-        color: #c4b5fd;
+        background: rgba(124, 58, 237, 0.12);
+        color: #6d28d9;
       }
       .surf-IndoorHard {
-        background: rgba(37, 99, 235, 0.18);
-        color: #93c5fd;
+        background: rgba(37, 99, 235, 0.12);
+        color: #1e40af;
       }
       .ev-badge {
         font-size: 0.63rem;
@@ -629,20 +629,20 @@
         letter-spacing: 0.1px;
       }
       .ev-BS {
-        background: rgba(96, 165, 250, 0.18);
-        color: #60a5fa;
+        background: rgba(96, 165, 250, 0.15);
+        color: #1d4ed8;
       }
       .ev-GS {
-        background: rgba(244, 114, 182, 0.18);
-        color: #f472b6;
+        background: rgba(244, 114, 182, 0.15);
+        color: #be185d;
       }
       .ev-BD {
-        background: rgba(59, 130, 246, 0.18);
-        color: #93c5fd;
+        background: rgba(59, 130, 246, 0.15);
+        color: #1e40af;
       }
       .ev-GD {
-        background: rgba(236, 72, 153, 0.18);
-        color: #ec4899;
+        background: rgba(236, 72, 153, 0.15);
+        color: #9d174d;
       }
       .empty-note {
         grid-column: 1/-1;
@@ -972,7 +972,8 @@
           white-space: normal;
           font-size: 0.82rem;
         }
-        #view-rankings tbody td:nth-child(1) { /* Rank */
+        #view-rankings tbody td:nth-child(1) {
+          /* Rank */
           grid-area: 1 / 1 / 3 / 2;
           display: flex;
           align-items: center;
@@ -981,7 +982,8 @@
           font-weight: 700;
           border-right: 1px solid var(--border);
         }
-        #view-rankings tbody td:nth-child(2) { /* Name */
+        #view-rankings tbody td:nth-child(2) {
+          /* Name */
           grid-area: 1 / 2 / 2 / 3;
           padding: 9px 12px 3px;
           font-weight: 600;
@@ -990,12 +992,14 @@
           text-overflow: ellipsis;
           white-space: nowrap;
         }
-        #view-rankings tbody td:nth-child(3) { /* Movement */
+        #view-rankings tbody td:nth-child(3) {
+          /* Movement */
           grid-area: 1 / 3 / 2 / 4;
           padding: 9px 12px 3px;
           text-align: right;
         }
-        #view-rankings tbody td:nth-child(4) { /* Tournament */
+        #view-rankings tbody td:nth-child(4) {
+          /* Tournament */
           grid-area: 2 / 2 / 3 / 3;
           padding: 0 12px 9px;
           font-size: 0.72rem;
@@ -1008,10 +1012,12 @@
         #view-rankings tbody td:nth-child(4)[data-born]::after {
           content: " · " attr(data-born);
         }
-        #view-rankings tbody td:nth-child(5) { /* Born — folded into Tournament */
+        #view-rankings tbody td:nth-child(5) {
+          /* Born — folded into Tournament */
           display: none !important;
         }
-        #view-rankings tbody td:nth-child(6) { /* Points */
+        #view-rankings tbody td:nth-child(6) {
+          /* Points */
           grid-area: 2 / 3 / 3 / 4;
           padding: 0 12px 9px;
           font-size: 0.85rem;
@@ -1042,7 +1048,8 @@
           white-space: normal;
           font-size: 0.82rem;
         }
-        #view-live tbody td:nth-child(1) { /* ITF Rank */
+        #view-live tbody td:nth-child(1) {
+          /* ITF Rank */
           grid-area: 1 / 1 / 2 / 2;
           display: flex;
           align-items: center;
@@ -1053,14 +1060,16 @@
           border-right: 1px solid var(--border);
           border-bottom: 1px solid var(--border);
         }
-        #view-live tbody td:nth-child(2) { /* Name + nat + expiry */
+        #view-live tbody td:nth-child(2) {
+          /* Name + nat + expiry */
           grid-area: 1 / 2 / 2 / 3;
           padding: 9px 12px 3px;
           font-weight: 600;
           font-size: 0.87rem;
           min-width: 0;
         }
-        #view-live tbody td:nth-child(3) { /* → Live Rank */
+        #view-live tbody td:nth-child(3) {
+          /* → Live Rank */
           grid-area: 2 / 1 / 3 / 2;
           display: flex;
           align-items: center;
@@ -1078,18 +1087,21 @@
           font-weight: 400;
           color: var(--muted);
         }
-        #view-live tbody td:nth-child(4) { /* ±Rank */
+        #view-live tbody td:nth-child(4) {
+          /* ±Rank */
           grid-area: 1 / 3 / 2 / 4;
           padding: 9px 10px 3px;
           text-align: right;
         }
-        #view-live tbody td:nth-child(5) { /* Pts Gained */
+        #view-live tbody td:nth-child(5) {
+          /* Pts Gained */
           grid-area: 2 / 2 / 3 / 3;
           padding: 3px 12px 9px;
           font-size: 0.82rem;
           text-align: left;
         }
-        #view-live tbody td:nth-child(6) { /* Live Total */
+        #view-live tbody td:nth-child(6) {
+          /* Live Total */
           grid-area: 2 / 3 / 3 / 4;
           padding: 3px 10px 9px;
           font-size: 0.82rem;
@@ -1283,7 +1295,7 @@
         background: var(--surface);
         border: 1px dashed var(--border);
         border-radius: 6px;
-        color: var(--fg);
+        color: var(--text);
         font-size: 0.74rem;
         padding: 0 6px;
         cursor: pointer;
@@ -1303,7 +1315,7 @@
       .bracket-slot-sel select.sel-locked {
         border-style: solid;
         border-color: var(--border);
-        background: rgba(30, 30, 40, 0.5);
+        background: rgba(200, 205, 215, 0.4);
         opacity: 0.6;
         cursor: default;
       }
@@ -1327,7 +1339,7 @@
       .btn-sm {
         background: var(--surface);
         border: 1px solid var(--border);
-        color: var(--fg);
+        color: var(--text);
         border-radius: 6px;
         padding: 5px 12px;
         font-size: 0.79rem;
@@ -2778,13 +2790,13 @@
         if (fIdx < 0) fIdx = 3;
         const drawCols = ALL_ROUNDS.slice(fIdx);
         // Derive draw size from max draw_position — correctly handles 64-draw
-        // tournaments (J60 etc.) where getDrawInfo otherwise underestimates.
+        // tournaments where draw positions span 1-64 but first scored round is R32.
         // Exclude sentinel 9999 (player not found in R1; position unknown).
         const maxPos = Math.max(
-          ...evRes.map((r) =>
-            r.draw_position && r.draw_position < 9999 ? r.draw_position : 0,
-          ),
           0,
+          ...evRes
+            .filter((r) => r.draw_position && r.draw_position < 9999)
+            .map((r) => r.draw_position),
         );
         let drawSize = 1 << (drawCols.length - 1); // fallback from round count
         if (maxPos > 0) {
@@ -2792,7 +2804,14 @@
           while (sz < maxPos) sz <<= 1;
           if (sz > drawSize) drawSize = sz;
         }
-        return { drawCols, drawSize };
+        // levelOffset: number of preliminary rounds before the first scored round.
+        // For a standard 32-draw with 6 scored rounds: log2(32) - 5 = 0.
+        // For a 64-draw with 6 scored rounds (R32..W): log2(64) - 5 = 1.
+        // This means the first scored column (ci=0) has drawSize >> levelOffset slots,
+        // and each draw_position maps to slot floor((pos-1) / 2^levelOffset).
+        const levelOffset =
+          Math.round(Math.log2(drawSize)) - (drawCols.length - 1);
+        return { drawCols, drawSize, levelOffset };
       }
 
       // Singles: sort by draw_position (from parser) so top of draw = slot 0
@@ -2857,27 +2876,26 @@
 
       // Build a full slot array of size `count` for a given round,
       // placing identified units in their correct draw slots and null elsewhere.
-      function buildSlotArray(allUnits, drawSize, roundIdx) {
-        const factor = 1 << roundIdx; // 2^ci
-        const numSlots = drawSize >> roundIdx;
+      // Place units into a slot array.
+      // factor  = how many draw_positions map to one slot (1<<(ci+levelOffset))
+      // numSlots = total slots in this column (drawSize >> (ci+levelOffset))
+      function buildSlotArray(allUnits, factor, numSlots) {
         const slots = new Array(numSlots).fill(null);
-        const overflow = []; // units with no valid draw_position
+        const overflow = []; // units missing a valid draw_position
         for (const unit of allUnits) {
           const rawPos = (unit.draw_position ?? 9999) - 1; // 0-based
           const si = Math.floor(rawPos / factor);
           if (si >= 0 && si < numSlots && slots[si] === null) {
             slots[si] = unit;
           } else if (rawPos < 0 || rawPos >= numSlots * factor) {
-            // draw_position out of range (e.g. 9999 = legacy data with no position info)
+            // draw_position out of range — treat as legacy data with no position
             overflow.push(unit);
           }
         }
-        // Fill remaining empty slots sequentially with overflow units
-        if (overflow.length) {
-          let oi = 0;
-          for (let si = 0; si < numSlots && oi < overflow.length; si++) {
-            if (slots[si] === null) slots[si] = overflow[oi++];
-          }
+        // Pack overflow players into any remaining empty slots
+        let oi = 0;
+        for (let si = 0; si < numSlots && oi < overflow.length; si++) {
+          if (slots[si] === null) slots[si] = overflow[oi++];
         }
         return slots;
       }
@@ -2899,7 +2917,7 @@
           const evRes = t.results.filter((r) => r.event === ev);
           if (!evRes.length) continue;
           const isD = ev.endsWith("D");
-          const { drawCols, drawSize } = getDrawInfo(evRes);
+          const { drawCols, drawSize, levelOffset } = getDrawInfo(evRes);
           const allUnits = isD
             ? extractDoublesPairs(evRes)
             : extractSinglesUnits(evRes);
@@ -2920,8 +2938,9 @@
 
           for (let ci = 0; ci < drawCols.length; ci++) {
             const round = drawCols[ci];
-            const slotH = BASE_SLOT_H * (1 << ci); // doubles each round
-            const numSlots = drawSize >> ci;
+            const factor = 1 << (ci + levelOffset);
+            const numSlots = drawSize >> (ci + levelOffset);
+            const slotH = BASE_SLOT_H * factor;
             const isW = round === "W",
               isF = round === "F";
 
@@ -2932,7 +2951,7 @@
                 ALL_ROUNDS.indexOf(u.round_reached ?? u.p1?.round_reached) >=
                 ri,
             );
-            const slots = buildSlotArray(reachUnits, drawSize, ci);
+            const slots = buildSlotArray(reachUnits, factor, numSlots);
 
             content += `<div class="bracket-round">
               <div class="bracket-round-label">${escHtml(ROUND_LABELS[round] || round)}</div>
@@ -3186,7 +3205,7 @@
           if (!evRes.length) continue;
           anyEv = true;
           const isD = ev.endsWith("D");
-          const { drawCols, drawSize } = getDrawInfo(evRes);
+          const { drawCols, drawSize, levelOffset } = getDrawInfo(evRes);
           const allUnits = isD
             ? extractDoublesPairs(evRes)
             : extractSinglesUnits(evRes);
@@ -3196,13 +3215,17 @@
           const ep = simPicks[tKey][ev];
           for (let ci = 0; ci < drawCols.length; ci++) {
             const r = drawCols[ci],
-              n = drawSize >> ci;
+              n = drawSize >> (ci + levelOffset);
             if (!ep[r] || ep[r].length !== n) ep[r] = new Array(n).fill(null);
           }
 
           // Auto-fill R1 from draw order (locked, not editable)
           const r1Round = drawCols[0];
-          const r1Slots = buildSlotArray(allUnits, drawSize, 0);
+          const r1Slots = buildSlotArray(
+            allUnits,
+            1 << levelOffset,
+            drawSize >> levelOffset,
+          );
           r1Slots.forEach((unit, si) => {
             if (unit && ep[r1Round][si] === null) ep[r1Round][si] = unit.id;
           });
@@ -3217,8 +3240,9 @@
 
           for (let ci = 0; ci < drawCols.length; ci++) {
             const round = drawCols[ci];
-            const numSlots = drawSize >> ci;
-            const slotH = BASE_SLOT_H * (1 << ci);
+            const factor = 1 << (ci + levelOffset);
+            const numSlots = drawSize >> (ci + levelOffset);
+            const slotH = BASE_SLOT_H * factor;
             const isLast = ci === drawCols.length - 1;
             const pts = ptsForRound(cat, isD ? "doubles" : "singles", round);
             const ptsLabel = pts !== null ? `+${pts}` : "";
@@ -3227,7 +3251,7 @@
               <div class="bracket-round-label">${escHtml(ROUND_LABELS[round] || round)}</div>
               <div class="bracket-round-slots">`;
 
-            const slotArr = buildSlotArray(allUnits, drawSize, ci);
+            const slotArr = buildSlotArray(allUnits, factor, numSlots);
 
             for (let si = 0; si < numSlots; si++) {
               const pairCls = isLast
@@ -3371,11 +3395,11 @@
           const evRes = t.results.filter((r) => r.event === ev);
           if (!evRes.length) continue;
           const isD = ev.endsWith("D");
-          const { drawCols, drawSize } = getDrawInfo(evRes);
+          const { drawCols, drawSize, levelOffset } = getDrawInfo(evRes);
           if (!simPicks[tKey][ev]) simPicks[tKey][ev] = {};
           const ep = simPicks[tKey][ev];
           for (let ci = 0; ci < drawCols.length; ci++) {
-            const n = drawSize >> ci;
+            const n = drawSize >> (ci + levelOffset);
             ep[drawCols[ci]] = new Array(n).fill(null);
           }
 
@@ -3392,7 +3416,11 @@
                     ?.round_reached;
               return rr && ALL_ROUNDS.indexOf(rr) >= ri;
             });
-            const slotArr = buildSlotArray(reachUnits, drawSize, ci);
+            const slotArr = buildSlotArray(
+              reachUnits,
+              1 << (ci + levelOffset),
+              drawSize >> (ci + levelOffset),
+            );
             slotArr.forEach((unit, si) => {
               if (unit) ep[round][si] = unit.id;
             });

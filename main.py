@@ -29,8 +29,7 @@ from pathlib import Path
 from src.browser import BrowserSession
 from src.api import (
     fetch_calendar,
-    fetch_drawsheet,
-    fetch_event_filters,
+    fetch_drawsheets_via_page,
     fetch_rankings,
 )
 from src.parser import parse_drawsheet, PlayerResult
@@ -90,91 +89,80 @@ async def run(headless: bool, week_anchor: datetime.date) -> None:
         for t in tournaments:
             print(f"       {t['category']:5s}  {t['name']}")
 
-        # ── 3. Event filters for all tournaments (parallel, rate-limited) ─────
-        print("[main] Fetching event filters…")
-        ef_results = await asyncio.gather(
-            *[
-                _limited(sem, fetch_event_filters(session, t["tournamentKey"]))
-                for t in tournaments
-            ],
-            return_exceptions=True,
-        )
+        # ── 3. Fetch draw pages for all tournaments (parallel, rate-limited) ──
+        # Navigate to each tournament's draws-and-results page.  The React app
+        # fires GetEventFilters + GetDrawsheet natively; we intercept both
+        # responses.  We then use the intercepted tournamentId to fire in-page
+        # fetch() calls for any events not auto-loaded (GS / BD / GD).
+        # No external GetEventFilters burst → no rewarms → cleaner session.
 
-        # ── 4. Build drawsheet fetch tasks ───────────────────────────────────
-        drawsheet_coros: list = []
-        drawsheet_meta: list[tuple[dict, str, str]] = []  # (tournament, pt, mt)
+        _STANDARD_EVENTS = [("B", "S"), ("G", "S"), ("B", "D"), ("G", "D")]
 
-        for tournament, ef in zip(tournaments, ef_results):
-            tkey = tournament["tournamentKey"]
-            if isinstance(ef, Exception):
-                print(f"[warn] Event filters failed for {tkey}: {ef}")
+        draw_page_tasks: list = []   # gathered coroutines
+        draw_page_meta: list = []    # (tournament_dict, [(pt, mt)])
+
+        for tournament in tournaments:
+            tournament_link = tournament.get("tournamentLink", "")
+            if not tournament_link:
                 continue
+            draw_page_tasks.append(
+                _limited(sem, fetch_drawsheets_via_page(session, tournament_link))
+            )
+            draw_page_meta.append((tournament, _STANDARD_EVENTS))
 
-            t_id      = ef["tournamentId"]
-            tour_type = ef["tourType"]
-
-            for pt_code, mt_code, ec_code, ds_code in ef["events"]:
-                # Only process Main Draw Knockout events
-                if ec_code != "M" or ds_code != "KO":
-                    continue
-                drawsheet_coros.append(
-                    _limited(
-                        sem,
-                        fetch_drawsheet(
-                            session, t_id, tour_type,
-                            pt_code, mt_code, ec_code, ds_code,
-                        ),
-                    )
-                )
-                drawsheet_meta.append((tournament, pt_code, mt_code))
-
-        # ── 5. Fetch all drawsheets (parallel, rate-limited) ────────────────
-        print(f"[main] Fetching {len(drawsheet_coros)} drawsheets…")
-        drawsheet_results = await asyncio.gather(
-            *drawsheet_coros, return_exceptions=True
+        # ── 4. Wait for all draw pages ──────────────────────────────────────
+        print(f"[main] Fetching {len(draw_page_tasks)} tournament draw pages…")
+        draw_page_results = await asyncio.gather(
+            *draw_page_tasks, return_exceptions=True
         )
 
-        # ── 6. Parse results, map to points ──────────────────────────────────
+        # ── 5. Parse results, map to points ──────────────────────────────────
         tournament_output: dict[str, dict] = {}
 
-        for (tournament, pt_code, mt_code), drawsheet in zip(
-            drawsheet_meta, drawsheet_results
+        for (tournament, events), draws_by_event in zip(
+            draw_page_meta, draw_page_results
         ):
             tkey     = tournament["tournamentKey"]
             category = tournament["category"]
 
-            if isinstance(drawsheet, Exception):
-                print(f"[warn] Drawsheet error {tkey} {pt_code}{mt_code}: {drawsheet}")
+            if isinstance(draws_by_event, Exception):
+                print(f"[warn] Drawsheet error {tkey}: {draws_by_event}")
                 continue
 
-            player_results: list[PlayerResult] = parse_drawsheet(
-                drawsheet, category, pt_code, mt_code, points_table
-            )
+            for pt_code, mt_code in events:
+                drawsheet = draws_by_event.get((pt_code, mt_code))
+                if drawsheet is None:
+                    print(f"[warn] No drawsheet captured for {tkey} {pt_code}{mt_code}")
+                    continue
 
-            if tkey not in tournament_output:
-                tournament_output[tkey] = {
-                    "tournament_key": tkey,
-                    "name":           tournament["name"],
-                    "category":       category,
-                    "surface":        tournament.get("surfaceDesc"),
-                    "location":       tournament.get("location"),
-                    "host_nation":    tournament.get("hostNation"),
-                    "results":        [],
-                }
+                player_results: list[PlayerResult] = parse_drawsheet(
+                    drawsheet, category, pt_code, mt_code, points_table
+                )
 
-            for pr in player_results:
-                ranked = rankings_by_id.get(pr.player_id, {})
-                tournament_output[tkey]["results"].append({
-                    "player_id":      pr.player_id,
-                    "name":           f"{pr.given_name} {pr.family_name}".strip(),
-                    "nationality":    pr.nationality,
-                    "event":          pr.event,
-                    "round_reached":  pr.round_reached,
-                    "points":         pr.points,
-                    "draw_position":  pr.draw_position,
-                    "current_rank":   ranked.get("rank"),
-                    "current_points": ranked.get("points"),
-                })
+                if tkey not in tournament_output:
+                    tournament_output[tkey] = {
+                        "tournament_key": tkey,
+                        "name":           tournament["name"],
+                        "category":       category,
+                        "surface":        tournament.get("surfaceDesc"),
+                        "location":       tournament.get("location"),
+                        "host_nation":    tournament.get("hostNation"),
+                        "results":        [],
+                    }
+
+                for pr in player_results:
+                    ranked = rankings_by_id.get(pr.player_id, {})
+                    tournament_output[tkey]["results"].append({
+                        "player_id":      pr.player_id,
+                        "name":           f"{pr.given_name} {pr.family_name}".strip(),
+                        "nationality":    pr.nationality,
+                        "event":          pr.event,
+                        "round_reached":  pr.round_reached,
+                        "points":         pr.points,
+                        "draw_position":  pr.draw_position,
+                        "current_rank":   ranked.get("rank"),
+                        "current_points": ranked.get("points"),
+                    })
 
         # ── 7. Write output ───────────────────────────────────────────────────
         output = {

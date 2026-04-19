@@ -8,9 +8,13 @@ from the captured browser requests in the companion *.js files.
 
 from __future__ import annotations
 
-from src.browser import BrowserSession
+import asyncio
+import json as _json
+
+from src.browser import BrowserSession, SessionError
 
 _BASE = "https://www.itftennis.com/tennis/api"
+_WWW = "https://www.itftennis.com"
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -156,8 +160,188 @@ def _walk_filter_tree(
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Drawsheet
+# Drawsheet  (navigate to the draws page and intercept the API response)
 # ─────────────────────────────────────────────────────────────────────────────
+
+async def fetch_drawsheets_via_page(
+    session: BrowserSession,
+    tournament_link: str,
+) -> dict[tuple[str, str], dict]:
+    """
+    Fetch all drawsheet data for a tournament autonomously:
+
+      1. Navigate to the tournament's draw-results page.
+      2. Intercept the GetEventFilters GET the page fires natively —
+         extracts tournamentId/tourType without any external API call.
+      3. Intercept GetDrawsheet POSTs the page fires (auto-fires Boys Singles).
+      4. Fire in-page fetch() for any remaining events using the extracted ID,
+         using the same same-origin context so Incapsula allows the requests.
+
+    Returns:
+        dict keyed by (playerTypeCode, matchTypeCode) → raw API response.
+    """
+    _STANDARD_EVENTS = [("B", "S"), ("G", "S"), ("B", "D"), ("G", "D")]
+    draws_url = f"{_WWW}{tournament_link}draw-results/"
+    captured: dict[tuple[str, str], dict] = {}
+    ef_data: dict = {}   # populated from the page's own GetEventFilters GET
+
+    # Wait out any in-progress rewarm before opening the page
+    if session.context is None:
+        async with session._rewarm_lock:
+            pass  # release immediately — just waits for rewarm to finish
+    if session.context is None:
+        raise SessionError(
+            f"fetch_drawsheets_via_page: no browser context for {tournament_link}"
+        )
+
+    try:
+        page = await session.context.new_page()
+    except Exception as _np_err:
+        # Context may have been closed by a concurrent rewarm between the
+        # is-None check and new_page().  Wait for the rewarm and retry once.
+        async with session._rewarm_lock:
+            pass
+        if session.context is None:
+            raise SessionError(
+                f"fetch_drawsheets_via_page: no browser context for {tournament_link}"
+            )
+        page = await session.context.new_page()
+    title = "unknown"
+    try:
+        # ── Intercept: capture GetEventFilters + GetDrawsheet responses ───────
+        async def _on_response(response):
+            url = response.url
+            if "GetEventFilters" in url:
+                try:
+                    data = await response.json()
+                    ef_data["tournamentId"] = data.get("tournamentId")
+                    ef_data["tourType"]     = data.get("tourType", "N")
+                except Exception:
+                    pass
+            elif "GetDrawsheet" in url:
+                try:
+                    req_data = _json.loads(response.request.post_data or "{}")
+                    key = (
+                        req_data.get("playerTypeCode", "?"),
+                        req_data.get("matchTypeCode", "?"),
+                    )
+                    data = await response.json()
+                    captured[key] = data
+                except Exception:
+                    pass
+
+        page.on("response", _on_response)
+
+        # ── Navigate: React fires GetEventFilters then GetDrawsheet(BS) ──────
+        await page.goto(draws_url, wait_until="load", timeout=60_000)
+        await page.wait_for_timeout(5_000)
+
+        # ── In-page fetch: fire remaining events using the page's own ID ─────
+        tid = ef_data.get("tournamentId")
+        if tid is not None:
+            _JS = """
+                async ({tournamentId, tourType, pt, mt}) => {
+                    try {
+                        await fetch('/tennis/api/TournamentApi/GetDrawsheet', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Accept': '*/*',
+                            },
+                            body: JSON.stringify({
+                                tournamentId, tourType, weekNumber: 0,
+                                playerTypeCode: pt, matchTypeCode: mt,
+                                eventClassificationCode: 'M',
+                                drawsheetStructureCode: 'KO',
+                            }),
+                        });
+                    } catch (e) {}
+                    return null;
+                }
+            """
+            ttyp = ef_data.get("tourType", "N")
+            for pt, mt in _STANDARD_EVENTS:
+                if (pt, mt) in captured:
+                    continue
+                await page.evaluate(
+                    _JS,
+                    {"tournamentId": tid, "tourType": ttyp, "pt": pt, "mt": mt},
+                )
+                await page.wait_for_timeout(2_000)
+
+        title = await page.title()
+    except Exception as e:
+        raise SessionError(f"fetch_drawsheets_via_page {tournament_link}: {e}") from e
+    finally:
+        # ── Always close the draw page before any external API calls ─────────
+        # This prevents context rewarns (triggered by session.get/post below)
+        # from destroying a still-open page and cascading failures.
+        try:
+            await asyncio.wait_for(page.close(), timeout=5.0)
+        except Exception:
+            pass
+
+    # ── Fallback: if GetEventFilters wasn't intercepted (SSR / Incapsula-blocked
+    #    XHR), call it directly.  The draw page is already closed so any rewarm
+    #    triggered here won't destroy in-flight pages. ─────────────────────────
+    tid = ef_data.get("tournamentId")
+    if tid is None:
+        tournament_key = tournament_link.rstrip("/").split("/")[-1]
+        print(
+            f"[draws] {tournament_key}: GetEventFilters not intercepted"
+            f" — falling back to direct GET"
+        )
+        try:
+            ef_resp = await session.get(
+                f"{_BASE}/TournamentApi/GetEventFilters",
+                params={"tournamentKey": tournament_key},
+            )
+            tid = ef_resp.get("tournamentId")
+            if tid:
+                ef_data["tournamentId"] = tid
+                ef_data["tourType"] = ef_resp.get("tourType", "N")
+                print(f"[draws] {tournament_key}: fallback tid={tid}")
+            else:
+                print(
+                    f"[draws] {tournament_key}: fallback returned no"
+                    f" tournamentId (draw not published yet?)"
+                )
+        except Exception as _ef_err:
+            print(
+                f"[draws] {tournament_key}: GetEventFilters fallback"
+                f" failed: {_ef_err}"
+            )
+
+    # ── Secondary fallback: issue draw POSTs directly for any events not
+    #    yet captured (covers in-page fetch being blocked by Incapsula). ───────
+    if tid is not None:
+        ttyp = ef_data.get("tourType", "N")
+        for pt, mt in _STANDARD_EVENTS:
+            if (pt, mt) in captured:
+                continue
+            try:
+                data = await session.post(
+                    f"{_BASE}/TournamentApi/GetDrawsheet",
+                    body={
+                        "tournamentId": tid,
+                        "tourType": ttyp,
+                        "weekNumber": 0,
+                        "playerTypeCode": pt,
+                        "matchTypeCode": mt,
+                        "eventClassificationCode": "M",
+                        "drawsheetStructureCode": "KO",
+                    },
+                )
+                captured[(pt, mt)] = data
+            except Exception:
+                pass  # event may not exist for this tournament
+
+    print(
+        f"[draws] {tournament_link.split('/')[-2]}: "
+        f"tid={tid}  title={title!r}  captured={list(captured.keys())}"
+    )
+    return captured
+
 
 async def fetch_drawsheet(
     session: BrowserSession,
@@ -169,15 +353,8 @@ async def fetch_drawsheet(
     draw_structure_code: str = "KO",
 ) -> dict:
     """
-    POST to GetDrawsheet and return the raw response dict.
-
-    Args:
-        tournament_id:     Numeric ID from GetEventFilters response.
-        tour_type:         "N" for standard junior tournaments.
-        player_type_code:  "B" or "G".
-        match_type_code:   "S" (singles) or "D" (doubles).
-        event_class_code:  "M" = Main Draw (default).
-        draw_structure_code: "KO" = Knockout (default).
+    Low-level drawsheet POST kept for compatibility.
+    Prefer fetch_drawsheets_via_page() for new callers.
     """
     return await session.post(
         f"{_BASE}/TournamentApi/GetDrawsheet",

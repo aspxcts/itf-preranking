@@ -60,16 +60,17 @@ _OUTPUT_FILES = [
 ]
 
 
-def _gcs_upload_sync() -> None:
-    """Upload all latest_*.json output files to GCS (blocking)."""
+def _gcs_upload_sync(files: list[str] | None = None) -> None:
+    """Upload the specified (or all) latest_*.json output files to GCS (blocking)."""
     if not GCS_BUCKET:
         print("[gcs] GCS_BUCKET not set — skipping upload.")
         return
+    upload_files = files if files is not None else _OUTPUT_FILES
     try:
         from google.cloud import storage
         client = storage.Client()
         bucket = client.bucket(GCS_BUCKET)
-        for fname in _OUTPUT_FILES:
+        for fname in upload_files:
             local = Path("output") / fname
             if not local.exists():
                 print(f"[gcs] {fname} missing locally — skipping.")
@@ -248,6 +249,14 @@ async def _do_refresh() -> None:
 
         _set_status("main")
         await main_run(headless=True, week_anchor=monday)
+        # Upload only latest_points_earned.json immediately so the bracket tab
+        # reflects new results as soon as drawsheets are parsed, without
+        # waiting for the slower calculate / merge phases.
+        # Do NOT upload merged_rankings or player_breakdowns here — they contain
+        # data from the previous run (loaded from GCS at startup) and would
+        # create a GCS inconsistency if calc/merge later fails or produces
+        # different data.
+        await asyncio.to_thread(_gcs_upload_sync, ["latest_points_earned.json"])
 
         _set_status("calculate")
         await calc_run(headless=True, week_monday=monday)
@@ -352,15 +361,15 @@ async def api_status():
 @app.post("/api/refresh")
 async def api_refresh(request: Request):
     _require_scheduler(request)
-    asyncio.create_task(_do_refresh())
-    return {"status": "started"}
+    await _do_refresh()
+    return {"status": "ok"}
 
 
 @app.post("/api/sweep")
 async def api_sweep(request: Request):
     _require_scheduler(request)
-    asyncio.create_task(_do_sweep())
-    return {"status": "started"}
+    await _do_sweep()
+    return {"status": "ok"}
 
 
 @app.get("/")

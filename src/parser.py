@@ -138,8 +138,11 @@ def parse_drawsheet(
                 continue
 
             # ── Record winner data for active-player tracking ──────────────
+            # Use == True (not `is True`) so that integer 1 is also accepted,
+            # since some ITF API responses return isWinner as 0/1 rather than
+            # false/true.
             winner_team = next(
-                (t for t in teams if t.get("isWinner") is True), None
+                (t for t in teams if t.get("isWinner") == True), None  # noqa: E712
             )
             if winner_team:
                 for player in winner_team.get("players") or []:

@@ -30,6 +30,7 @@ Auth strategy — mirrors itf_preseeding/auth.py exactly:
 
 from __future__ import annotations
 
+import asyncio
 import json as _json
 import os
 from datetime import datetime, timezone
@@ -57,6 +58,11 @@ _LOGIN_URL = (
     "&response_mode=form_post&response_type=id_token&scope=openid"
     "&clientId=itf-players-portal"
 )
+# Real ITF page used as the navigation host for POST fetch() calls.
+# Landing on a real page seeds Incapsula incap_ses_* cookies for the
+# draw-results sub-application and provides a legitimate Referer header,
+# so Chromium's fetch() is accepted by Incapsula on GCP IPs.
+_POST_FROM_URL = "https://www.itftennis.com/en/draw-results/"
 _USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
@@ -117,11 +123,15 @@ def _save_relay_cookies(cookies: list[dict]) -> None:
         print(f"[browser] Could not save relay cookies: {e}")
 
 
-def _load_firestore_cookies(max_age_hours: float = 20.0) -> Optional[list[dict]]:
+def _load_firestore_cookies(max_age_hours: float = 20.0, min_cookies: int = 6) -> Optional[list[dict]]:
     """Load warm-up cookies saved by a previous login or pipeline run.
 
     Ignores cookies older than *max_age_hours* so a stale entry from a
     prior run can't block a fresh login from taking effect.
+
+    Ignores entries with fewer than *min_cookies* cookies — a bare-minimum
+    Incapsula entry (2 cookies) from a failed anonymous warm-up is not usable
+    on GCP IPs and should not be trusted.
     """
     try:
         from google.cloud import firestore
@@ -141,6 +151,9 @@ def _load_firestore_cookies(max_age_hours: float = 20.0) -> Optional[list[dict]]
             cookies = data.get("cookies", [])
             print(f"[browser] Loaded {len(cookies)} cookies from Firestore "
                   f"(saved {data.get('saved_at', '?')})")
+            if len(cookies) < min_cookies:
+                print(f"[browser] Too few cached cookies ({len(cookies)} < {min_cookies}) — ignoring.")
+                return None
             return cookies
     except Exception as e:
         print(f"[browser] Could not load Firestore cookies: {e}")
@@ -203,6 +216,11 @@ class BrowserSession:
         self.context: Optional[BrowserContext] = None
         self._launch_args: list[str] = []
         self._saved_relay = False
+        # Serialise concurrent rewarms: only the first failing coroutine for a
+        # given context generation performs the actual invalidate+rewarm; all
+        # others wait, then retry on the new (already-warmed) context.
+        self._rewarm_lock = asyncio.Lock()
+        self._context_generation = 0
 
     async def __aenter__(self) -> "BrowserSession":
         self._pw = await async_playwright().start()
@@ -317,17 +335,26 @@ class BrowserSession:
         else:
             print("[browser] No ITF_EMAIL/ITF_PASSWORD set -- using basic www warm-up only.")
 
-        await page.close()
+        try:
+            await asyncio.wait_for(page.close(), timeout=10.0)
+        except Exception:
+            pass
 
         cookies = await self.context.cookies()
         incap = [c for c in cookies if "incap" in c["name"].lower() or "visid" in c["name"].lower()]
         print(f"[browser] Warm-up done -- {len(cookies)} total cookies, {len(incap)} Incapsula.")
-        _save_firestore_cookies(cookies)
+        # Only persist if the warm-up produced a meaningful session.
+        # 2 bare Incapsula cookies (timed-out GCP warm-up) are not sufficient
+        # for GetPlayerRankings; caching them just causes the next pipeline run
+        # to trust and reuse garbage cookies.
+        if len(cookies) > 5:
+            _save_firestore_cookies(cookies)
+        else:
+            print(f"[browser] Warm-up yielded only {len(cookies)} cookies -- not caching to Firestore.")
 
-    async def _invalidate_and_rewarm(self) -> None:
+    async def _do_rewarm(self) -> None:
+        """Perform invalidate+rewarm. Must be called while holding _rewarm_lock."""
         _delete_firestore_cookies()
-        # Also clear the relay so subsequent pipeline steps don't reuse
-        # cookies that just failed an Incapsula challenge.
         try:
             from google.cloud import firestore
             db = firestore.Client(
@@ -338,15 +365,29 @@ class BrowserSession:
         except Exception as e:
             print(f"[browser] Could not clear relay: {e}")
         if self.context:
-            await self.context.close()
+            try:
+                await asyncio.wait_for(self.context.close(), timeout=10.0)
+            except Exception:
+                pass
             self.context = None
+        self._context_generation += 1
         await self._warm_up()
+
+    async def _invalidate_and_rewarm(self) -> None:
+        async with self._rewarm_lock:
+            await self._do_rewarm()
 
     async def __aexit__(self, *_) -> None:
         if self.context:
-            await self.context.close()
+            try:
+                await asyncio.wait_for(self.context.close(), timeout=10.0)
+            except Exception:
+                pass
         if self._browser:
-            await self._browser.close()
+            try:
+                await asyncio.wait_for(self._browser.close(), timeout=10.0)
+            except Exception:
+                pass
         if self._pw:
             await self._pw.stop()
 
@@ -360,9 +401,18 @@ class BrowserSession:
         full_url = f"{url}?{urlencode(params)}" if params else url
 
         for attempt in range(2):
+            # If a concurrent rewarm is in progress (context=None), wait for it
+            # to finish before attempting the GET rather than failing immediately.
+            if self.context is None:
+                async with self._rewarm_lock:
+                    pass  # release immediately; just used to wait out the rewarm
+            if self.context is None:
+                raise SessionError(f"GET {url} -> no browser context (concurrent rewarm?)")
+            gen = self._context_generation
             data = None
-            page = await self.context.new_page()
+            page = None
             try:
+                page = await self.context.new_page()
                 async with page.expect_response(
                     lambda r: url in r.url,
                     timeout=30_000,
@@ -373,23 +423,40 @@ class BrowserSession:
                     data = await response.json()
                 except Exception:
                     pass  # Incapsula challenge page (HTML) — data stays None
+                # A 4xx/5xx HTTP status is a real API error, not an Incapsula
+                # challenge — don't rewarm for it (rewarm won't help).
+                if data is None and response.status >= 400:
+                    raise SessionError(f"GET {url} -> HTTP {response.status}")
             except Exception as e:
                 print(f"[browser] page.goto error (attempt {attempt + 1}): {e}")
             finally:
-                await page.close()
+                if page is not None:
+                    try:
+                        await asyncio.wait_for(page.close(), timeout=5.0)
+                    except Exception:
+                        pass  # page may belong to a context already closed by a concurrent rewarm
             if data is not None:
                 # After first successful GET, persist the current context cookies to
                 # Firestore relay so subsequent pipeline steps (e.g. merge_rankings.py)
                 # can reuse this warm authenticated session without re-logging in.
-                if not self._saved_relay:
-                    current = await self.context.cookies()
-                    _save_relay_cookies(current)
-                    self._saved_relay = True
+                if not self._saved_relay and self.context is not None:
+                    try:
+                        current = await self.context.cookies()
+                        _save_relay_cookies(current)
+                        self._saved_relay = True
+                    except Exception:
+                        pass  # context may have been replaced by concurrent rewarm
                 return data
 
             if attempt == 0:
-                print(f"[browser] No JSON captured from {url} -- invalidating and re-warming...")
-                await self._invalidate_and_rewarm()
+                # Serialised rewarm: only the coroutine that first observed
+                # a failure for this context generation does the work; all
+                # others wait for it to finish, then retry on the new context.
+                async with self._rewarm_lock:
+                    if self._context_generation == gen:
+                        print(f"[browser] No JSON captured from {url} -- invalidating and re-warming...")
+                        await self._do_rewarm()
+                    # else: already rewarmed by a concurrent coroutine; just retry
                 continue
 
             raise SessionError(f"GET {url} -> no JSON captured after re-warm-up")
@@ -398,24 +465,78 @@ class BrowserSession:
 
     async def post(self, url: str, body: dict) -> dict:
         """
-        POST using context.request (APIRequestContext) which shares the
-        authenticated cookies without triggering a page navigation.
+        POST via fetch() from a real Chromium page that has first navigated to
+        the exact same API URL (as a no-op GET seed).
+
+        The GET navigation to the API URL seeds the Incapsula incap_ses_* session
+        cookie for that exact path, so the subsequent fetch() POST from that page
+        is accepted by Incapsula on GCP IPs.
         """
-        resp = await self.context.request.post(
-            url,
-            headers={
-                "accept": "application/json, text/plain, */*",
-                "accept-language": "en-US,en;q=0.9",
-                "content-type": "application/json",
-            },
-            data=body,
-            timeout=30_000,
-        )
-        if not resp.ok:
-            text = await resp.text()
-            raise SessionError(f"POST {url} -> HTTP {resp.status}: {text[:300]}")
-        try:
-            return await resp.json()
-        except Exception as e:
-            text = await resp.text()
-            raise SessionError(f"POST {url} -> non-JSON response: {text[:300]!r}") from e
+        from urllib.parse import urlencode
+
+        _FETCH_JS = """
+            async ({url, body}) => {
+                const resp = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'accept': 'application/json, text/plain, */*',
+                        'content-type': 'application/json',
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify(body),
+                });
+                const text = await resp.text();
+                if (!resp.ok) throw new Error('HTTP ' + resp.status + ': ' + text.slice(0, 200));
+                try { return JSON.parse(text); }
+                catch (e) { throw new Error('non-JSON: ' + text.slice(0, 200)); }
+            }
+        """
+
+        for attempt in range(2):
+            # Wait out any concurrent rewarm rather than failing immediately.
+            if self.context is None:
+                async with self._rewarm_lock:
+                    pass  # release immediately; just waits for in-progress rewarm
+            if self.context is None:
+                raise SessionError(f"POST {url} -> no browser context")
+            gen = self._context_generation
+            page = None
+            try:
+                page = await self.context.new_page()
+                # Navigate to the exact API URL as GET first.
+                # This seeds Incapsula incap_ses_* cookies for the endpoint path
+                # even though the GET response itself may not be valid JSON.
+                seed_url = f"{url}?{urlencode(body)}" if body else url
+                try:
+                    await page.goto(seed_url, wait_until="commit", timeout=20_000)
+                except Exception:
+                    pass  # seed navigation may fail (405/HTML) — that's OK
+                # Now fire the POST from this page.  The browser has the right
+                # incap_ses_* cookies for this endpoint and the Referer will
+                # point at the same API path.
+                result = await page.evaluate(_FETCH_JS, {"url": url, "body": body})
+                return result
+            except Exception as e:
+                print(f"[browser] POST error (attempt {attempt + 1}): {e}")
+            finally:
+                if page is not None:
+                    try:
+                        await asyncio.wait_for(page.close(), timeout=5.0)
+                    except Exception:
+                        pass
+
+            if attempt == 0:
+                async with self._rewarm_lock:
+                    if self._context_generation == gen:
+                        email = os.environ.get("ITF_EMAIL", "")
+                        if email:
+                            print(f"[browser] POST {url} failed — invalidating and re-warming...")
+                            await self._do_rewarm()
+                        else:
+                            raise SessionError(
+                                f"POST {url} -> Incapsula challenge; "
+                                "set ITF_EMAIL/ITF_PASSWORD in Cloud Run env vars to authenticate."
+                            )
+                continue
+
+            raise SessionError(f"POST {url} -> failed after re-warm")
