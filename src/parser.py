@@ -215,6 +215,48 @@ def parse_drawsheet(
             draw_position=draw_pos_by_player.get(pid, 9999),
         ))
 
+    # ── Add not-yet-played first-round players ─────────────────────────────────
+    # Players whose R1 match is scheduled but not yet played have no match
+    # results and never enter winner_data, so they'd be invisible in the bracket.
+    # Add them with points=0 so they appear in their correct R32 slot while
+    # their half of the draw shows as empty in later rounds.
+    all_result_pids: set[int] = {r.player_id for r in results}
+    # Determine the shallowest tracked tier for R1 players.
+    # For a 32-draw: r1_depth=4 → "R32".  For a 64-draw: r1_depth=5 → no tier
+    # at depth 5, so we walk up to depth 4 → "R32".  For a 16-draw: 3 → "R16".
+    r1_depth = total_rounds - 1
+    entry_tier: str | None = None
+    for d in range(r1_depth, -1, -1):
+        t = _DEPTH_TO_LOSER_TIER.get(d)
+        if t is not None:
+            entry_tier = t
+            break
+
+    if first_round is not None and entry_tier is not None:
+        for match in first_round.get("matches") or []:
+            if match.get("resultStatusCode") == "BYE":
+                continue  # bye players are handled via winner_data
+            if match.get("playStatusCode") in _COMPLETED_STATUS:
+                continue  # already processed above
+            for team in match.get("teams") or []:
+                for player in team.get("players") or []:
+                    if player is None:
+                        continue
+                    pid = player["playerId"]
+                    if pid in all_result_pids:
+                        continue
+                    results.append(PlayerResult(
+                        player_id=pid,
+                        given_name=player.get("givenName", ""),
+                        family_name=player.get("familyName", ""),
+                        nationality=player.get("nationality", ""),
+                        event=event_code,
+                        round_reached=entry_tier,
+                        points=0,
+                        draw_position=draw_pos_by_player.get(pid, 9999),
+                    ))
+                    all_result_pids.add(pid)  # guard against duplicate entries
+
     return results
 
 
