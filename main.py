@@ -117,7 +117,21 @@ async def run(headless: bool, week_anchor: datetime.date) -> None:
         )
 
         # ── 5. Parse results, map to points ──────────────────────────────────
+        # Pre-populate ALL calendar tournaments so they appear in the output
+        # even when their drawsheets haven't been published yet or returned
+        # no results (the UI renders them as "pending" cards).
         tournament_output: dict[str, dict] = {}
+        for tournament in tournaments:
+            tkey = tournament["tournamentKey"]
+            tournament_output[tkey] = {
+                "tournament_key": tkey,
+                "name":           tournament["name"],
+                "category":       tournament["category"],
+                "surface":        tournament.get("surfaceDesc"),
+                "location":       tournament.get("location"),
+                "host_nation":    tournament.get("hostNation"),
+                "results":        [],
+            }
 
         for (tournament, events), draws_by_event in zip(
             draw_page_meta, draw_page_results
@@ -138,17 +152,6 @@ async def run(headless: bool, week_anchor: datetime.date) -> None:
                 player_results: list[PlayerResult] = parse_drawsheet(
                     drawsheet, category, pt_code, mt_code, points_table
                 )
-
-                if tkey not in tournament_output:
-                    tournament_output[tkey] = {
-                        "tournament_key": tkey,
-                        "name":           tournament["name"],
-                        "category":       category,
-                        "surface":        tournament.get("surfaceDesc"),
-                        "location":       tournament.get("location"),
-                        "host_nation":    tournament.get("hostNation"),
-                        "results":        [],
-                    }
 
                 for pr in player_results:
                     ranked = rankings_by_id.get(pr.player_id, {})
