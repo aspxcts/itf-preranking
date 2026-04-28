@@ -1,0 +1,546 @@
+{
+  "tournamentDetails": [
+    {
+      "heading": "Promo Name",
+      "description": "J200 Sumter",
+      "linkType": "None"
+    },
+    {
+      "heading": "Grade",
+      "description": "J200",
+      "linkType": "None"
+    },
+    {
+      "heading": "Nation",
+      "description": "USA",
+      "linkType": "None"
+    },
+    {
+      "heading": "Region",
+      "description": "North America",
+      "linkType": "None"
+    },
+    {
+      "heading": "Hospitality",
+      "description": "Bed & Breakfast from R16 Singles and QF Doubles only",
+      "linkType": "None"
+    },
+    {
+      "heading": "Is hospitality on offer to local players residing within 50km of the tournament venue?",
+      "description": "Yes",
+      "linkType": "None"
+    },
+    {
+      "heading": "Hospitality offered as 'Per diem'?",
+      "description": "No",
+      "linkType": "None"
+    },
+    {
+      "heading": "Surface",
+      "description": "Outdoor, Clay, Red Clay",
+      "linkType": "None"
+    },
+    {
+      "heading": "Entry deadline",
+      "description": "07 April by 14:00 GMT",
+      "linkType": "None"
+    },
+    {
+      "heading": "Withdrawal deadline",
+      "description": "14 April by 14:00 GMT",
+      "linkType": "None"
+    },
+    {
+      "heading": "Draw format",
+      "description": "Elimination",
+      "linkType": "None"
+    }
+  ],
+  "tennisEvents": [
+    {
+      "heading": null,
+      "header": [
+        "Event",
+        "Dates",
+        "Sign-In Date",
+        "Scoring Format",
+        "Draw Size"
+      ],
+      "rows": [
+        ["Boys Singles Main Draw", "27 Apr - 03 May 2026", null, "", "32"],
+        [
+          "Boys Singles Qualifying Draw",
+          "25 Apr - 26 Apr 2026",
+          "By 18:00 local time on 24th Apr 2026",
+          "",
+          "32"
+        ],
+        [
+          "Boys Doubles Main Draw",
+          "27 Apr - 03 May 2026",
+          "By 12:00 local time on 27th Apr 2026",
+          "",
+          "16"
+        ],
+        ["Girls Singles Main Draw", "27 Apr - 03 May 2026", null, "", "32"],
+        [
+          "Girls Singles Qualifying Draw",
+          "25 Apr - 26 Apr 2026",
+          "By 18:00 local time on 24th Apr 2026",
+          "",
+          "32"
+        ],
+        [
+          "Girls Doubles Main Draw",
+          "27 Apr - 03 May 2026",
+          "By 12:00 local time on 27th Apr 2026",
+          "",
+          "16"
+        ]
+      ],
+      "notes": ""
+    }
+  ],
+  "tournamentInformation": {
+    "list": [
+      {
+        "heading": "Surface",
+        "description": "Outdoor, Clay, Red Clay",
+        "linkType": "None"
+      },
+      {
+        "heading": "Official ball",
+        "description": "Wilson US Open Extra Duty (2 ball)",
+        "linkType": "None"
+      },
+      {
+        "heading": "Entry Fee",
+        "description": "Main Draw Players- $110.00 USD\nQualifiying Players- $80.00 USD",
+        "linkType": "Multiline"
+      },
+      {
+        "heading": "Sign in method",
+        "description": null,
+        "linkType": "None"
+      },
+      {
+        "heading": "First day of practice",
+        "description": null,
+        "linkType": "None"
+      },
+      {
+        "heading": "Doctor (Name, Email, Telephone)",
+        "description": "",
+        "linkType": "None"
+      }
+    ],
+    "additionalInformation": [
+      {
+        "heading": "Additional information",
+        "description": null,
+        "linkType": "Multiline"
+      }
+    ],
+    "bottomList": []
+  },
+  "tournamentOfficials": [
+    {
+      "heading": "ITF Supervisor",
+      "details": [
+        {
+          "heading": "Name",
+          "description": "FARRELLY, Meg (USA), White",
+          "linkType": "None"
+        },
+        {
+          "heading": "Mobile",
+          "description": "+1 8438869898",
+          "linkType": "Telephone"
+        },
+        {
+          "heading": "Email",
+          "description": "MEGPHOTOGIRL@AOL.COM",
+          "linkType": "Email"
+        }
+      ],
+      "contact": [
+        {
+          "heading": "Before Tournament",
+          "items": [
+            {
+              "heading": "Tel",
+              "description": null,
+              "linkType": "Telephone"
+            }
+          ]
+        },
+        {
+          "heading": "During Tournament",
+          "items": [
+            {
+              "heading": "Tel",
+              "description": null,
+              "linkType": "Telephone"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Tournament Director",
+      "details": [
+        {
+          "heading": "Name",
+          "description": "Brian Hodge",
+          "linkType": "None"
+        },
+        {
+          "heading": "Mobile",
+          "description": "1-803-774-3969\t\t\t\t",
+          "linkType": "Telephone"
+        },
+        {
+          "heading": "Email",
+          "description": "ptctournaments@sumtersc.gov",
+          "linkType": "Email"
+        }
+      ],
+      "contact": [
+        {
+          "heading": "Before Tournament",
+          "items": [
+            {
+              "heading": "Tel",
+              "description": null,
+              "linkType": "Telephone"
+            }
+          ]
+        },
+        {
+          "heading": "During Tournament",
+          "items": [
+            {
+              "heading": "Tel",
+              "description": null,
+              "linkType": "Telephone"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "onSiteServices": [
+    {
+      "heading": "Stringing Fee",
+      "description": null,
+      "linkType": "None"
+    },
+    {
+      "heading": "Massage Fee",
+      "description": null,
+      "linkType": "None"
+    }
+  ],
+  "tournamentSiteInformation": {
+    "heading": "Palmetto Tennis Center ",
+    "details": [
+      {
+        "heading": "Address",
+        "description": "400 Theatre Drive, Sumter, SC, 29150, USA",
+        "linkType": "None"
+      },
+      {
+        "heading": "Tel",
+        "description": null,
+        "linkType": "Telephone"
+      },
+      {
+        "heading": "Email",
+        "description": null,
+        "linkType": "Email"
+      },
+      {
+        "heading": "Website",
+        "description": null,
+        "linkType": "Website"
+      }
+    ]
+  },
+  "tournamentTravelGuidelines": {
+    "details": [
+      {
+        "heading": "Nearest airport",
+        "description": "Charleston International Airport ",
+        "linkType": "Multiline"
+      },
+      {
+        "heading": "Airport transfers",
+        "description": null,
+        "linkType": "Multiline"
+      },
+      {
+        "heading": "Nearest train station",
+        "description": null,
+        "linkType": "Multiline"
+      },
+      {
+        "heading": "Train station transfers",
+        "description": null,
+        "linkType": "Multiline"
+      }
+    ],
+    "additionalInformation": [
+      {
+        "heading": "Travel from previous week",
+        "description": null,
+        "linkType": "Multiline"
+      },
+      {
+        "heading": "Visa invitation contact",
+        "description": null,
+        "linkType": "Multiline"
+      },
+      {
+        "heading": "Visa Information",
+        "description": "See Tournament Information | Additional Information above",
+        "linkType": "Multiline"
+      },
+      {
+        "heading": "Public Health / Travel restrictions",
+        "description": null,
+        "linkType": "Multiline"
+      },
+      {
+        "heading": "Travel note",
+        "description": null,
+        "linkType": "Multiline"
+      }
+    ]
+  },
+  "prizeMoneyInformation": null,
+  "tournamentAccommodation": [
+    {
+      "details": {
+        "heading": "TBD",
+        "details": [
+          {
+            "heading": "Address",
+            "description": "",
+            "linkType": "None"
+          },
+          {
+            "heading": "Website",
+            "description": null,
+            "linkType": "Website"
+          },
+          {
+            "heading": "Tel",
+            "description": null,
+            "linkType": "Telephone"
+          },
+          {
+            "heading": "Email",
+            "description": null,
+            "linkType": "Email"
+          }
+        ]
+      },
+      "roomRates": {
+        "heading": null,
+        "header": ["Room Type", "Rate", "Breakfast Included", "Tax Included"],
+        "rows": [
+          ["Single", "", "", ""],
+          ["Double", "", "", ""],
+          ["Triple", "", "", ""]
+        ],
+        "notes": null
+      },
+      "usefulInformation": [
+        {
+          "heading": "Booking Deadline Date",
+          "description": null,
+          "linkType": "None"
+        },
+        {
+          "heading": "Distance to venue",
+          "description": null,
+          "linkType": "Multiline"
+        },
+        {
+          "heading": "Transport from hotel to site",
+          "description": null,
+          "linkType": "Multiline"
+        }
+      ],
+      "additionalInformation": [
+        {
+          "heading": "Additional Information",
+          "description": null,
+          "linkType": "Multiline"
+        }
+      ]
+    },
+    {
+      "details": {
+        "heading": "Hyatt Place",
+        "details": [
+          {
+            "heading": "Address",
+            "description": "18 N Main St , Sumter, SC, USA",
+            "linkType": "None"
+          },
+          {
+            "heading": "Website",
+            "description": null,
+            "linkType": "Website"
+          },
+          {
+            "heading": "Tel",
+            "description": null,
+            "linkType": "Telephone"
+          },
+          {
+            "heading": "Email",
+            "description": null,
+            "linkType": "Email"
+          }
+        ]
+      },
+      "roomRates": {
+        "heading": null,
+        "header": ["Room Type", "Rate", "Breakfast Included", "Tax Included"],
+        "rows": [
+          ["Single", "175.00 USD", "No", "No"],
+          ["Double", "175.00 USD", "No", "No"],
+          ["Triple", "175.00 USD", "No", "No"]
+        ],
+        "notes": null
+      },
+      "usefulInformation": [
+        {
+          "heading": "Booking Deadline Date",
+          "description": null,
+          "linkType": "None"
+        },
+        {
+          "heading": "Distance to venue",
+          "description": null,
+          "linkType": "Multiline"
+        },
+        {
+          "heading": "Transport from hotel to site",
+          "description": null,
+          "linkType": "Multiline"
+        }
+      ],
+      "additionalInformation": [
+        {
+          "heading": "Additional Information",
+          "description": null,
+          "linkType": "Multiline"
+        }
+      ]
+    }
+  ],
+  "tournamentNationalAssociation": null,
+  "tournamentEventOrganiser": [
+    {
+      "heading": "Name",
+      "description": "Junior Competition Department",
+      "linkType": "None"
+    },
+    {
+      "heading": "Association",
+      "description": "United States Tennis Association",
+      "linkType": "None"
+    },
+    {
+      "heading": "Website",
+      "description": "http://www.usta.com",
+      "linkType": "Website"
+    },
+    {
+      "heading": "Tel",
+      "description": "+1 (844) 872-8667\t\t",
+      "linkType": "Telephone"
+    },
+    {
+      "heading": "Email",
+      "description": "itfentries@usta.com",
+      "linkType": "Email"
+    }
+  ],
+  "tournamentSafeguardingInformation": {
+    "eventSafeguardingDetails": {
+      "heading": "Safeguarding Officer",
+      "details": [
+        {
+          "heading": "Event safeguarding officer",
+          "description": null,
+          "linkType": "None"
+        },
+        {
+          "heading": "Event safeguarding officer telephone",
+          "description": null,
+          "linkType": "Telephone"
+        },
+        {
+          "heading": "Event safeguarding officer email",
+          "description": null,
+          "linkType": "Email"
+        }
+      ]
+    },
+    "hostNationSafeguardingDetails": {
+      "heading": "ITF Safeguarding Contact",
+      "details": [
+        {
+          "heading": "Contact name",
+          "description": "ITF Confidential Safeguarding Contact",
+          "linkType": "None"
+        },
+        {
+          "heading": "Contact number",
+          "description": "+442083924701",
+          "linkType": "Telephone"
+        },
+        {
+          "heading": "Contact email",
+          "description": "safeguarding@itftennis.com",
+          "linkType": "Email"
+        }
+      ]
+    },
+    "itfSafeguardingDetails": {
+      "heading": "Statutory Safeguarding Authority (in host nation)",
+      "details": [
+        {
+          "heading": "Authority name",
+          "description": "Sumter City County Law Enforcement",
+          "linkType": "None"
+        },
+        {
+          "heading": "Telephone number",
+          "description": "(803) 436-2700",
+          "linkType": "Telephone"
+        },
+        {
+          "heading": "Email",
+          "description": null,
+          "linkType": "Email"
+        }
+      ]
+    }
+  },
+  "tournamentSupplementaryInformation": null,
+  "isFactsheetPublished": true,
+  "circuit": {
+    "id": "4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+    "name": "Junior",
+    "code": "J"
+  },
+  "tournamentHeading": "J200 Sumter",
+  "tournamentSubHeading": "J200 Sumter",
+  "tournamentDate": "27 April - 03 May 2026",
+  "entryClosedToForeignCompetitors": false
+}

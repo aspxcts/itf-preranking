@@ -197,7 +197,16 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Merge estimated rankings with current rankings")
     parser.add_argument("--headless", action="store_true")
     parser.add_argument("--week", default=None, metavar="YYYY-MM-DD")
+    parser.add_argument(
+        "--fresh",
+        action="store_true",
+        help="Clear Firestore session cookie cache before starting (use for local runs).",
+    )
     args = parser.parse_args()
+
+    if args.fresh:
+        from src.browser import clear_session_cache
+        clear_session_cache()
 
     anchor = datetime.date.fromisoformat(args.week) if args.week else datetime.date.today()
     monday = _week_monday(anchor)

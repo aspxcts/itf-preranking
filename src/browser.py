@@ -33,9 +33,24 @@ from __future__ import annotations
 import asyncio
 import json as _json
 import os
+import random
 from datetime import datetime, timezone
 from typing import Optional
 from urllib.parse import urlencode
+
+try:
+    from playwright_stealth import Stealth as _Stealth
+    _STEALTH = _Stealth()
+    _HAS_STEALTH = True
+except ImportError:
+    _STEALTH = None  # type: ignore[assignment]
+    _HAS_STEALTH = False
+
+
+async def _apply_stealth(ctx) -> None:
+    """Apply playwright-stealth to a BrowserContext if the library is available."""
+    if _HAS_STEALTH and _STEALTH is not None:
+        await _STEALTH.apply_stealth_async(ctx)
 
 from playwright.async_api import (
     async_playwright,
@@ -63,10 +78,82 @@ _LOGIN_URL = (
 # draw-results sub-application and provides a legitimate Referer header,
 # so Chromium's fetch() is accepted by Incapsula on GCP IPs.
 _POST_FROM_URL = "https://www.itftennis.com/en/draw-results/"
-_USER_AGENT = (
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
-)
+# Rotate across several realistic Chrome versions so the same fingerprint
+# isn't presented on every run.  Versions 130-134 cover 2024-2025 release
+# cycle; all are on Windows NT 10.0 to match the most common desktop UA.
+_USER_AGENTS: list[str] = [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
+]
+# Kept for backwards-compat with any code that still references the old name.
+_USER_AGENT = _USER_AGENTS[0]
+
+# ── JavaScript stealth patch injected before every page load ────────────────
+# Patches the most common automation-detection vectors inspected by Incapsula:
+#   • navigator.webdriver → remove (true in automation, absent in real Chrome)
+#   • navigator.plugins   → realistic fake list (empty in headless Chrome)
+#   • navigator.languages → match Accept-Language header
+#   • hardwareConcurrency / deviceMemory → typical desktop values
+#   • window.chrome.runtime → present in real Chrome, absent in headless
+#   • cdc_* globals  → leaked by ChromeDriver; delete them
+#   • Notification.permission → 'default' (headless reports 'denied')
+_STEALTH_INIT_SCRIPT = """
+(() => {
+    // navigator.webdriver
+    Object.defineProperty(navigator, 'webdriver', {
+        get: () => undefined,
+        configurable: true,
+    });
+
+    // navigator.plugins — needs at least 3 to look real
+    const fakePlugins = [
+        { name: 'Chrome PDF Plugin',      filename: 'internal-pdf-viewer', description: 'Portable Document Format' },
+        { name: 'Chrome PDF Viewer',      filename: 'mhjfbmdgcfjbbpaeojofohoefgiehjai', description: '' },
+        { name: 'Native Client',          filename: 'internal-nacl-plugin',  description: '' },
+    ];
+    Object.defineProperty(navigator, 'plugins', {
+        get: () => fakePlugins,
+        configurable: true,
+    });
+    Object.defineProperty(navigator, 'mimeTypes', {
+        get: () => [{ type: 'application/pdf', suffixes: 'pdf', description: '', enabledPlugin: fakePlugins[0] }],
+        configurable: true,
+    });
+
+    // navigator.languages
+    Object.defineProperty(navigator, 'languages', {
+        get: () => ['en-US', 'en'],
+        configurable: true,
+    });
+
+    // navigator.hardwareConcurrency / deviceMemory — common desktop values
+    const cores = [4, 8][Math.round(Math.random())];
+    Object.defineProperty(navigator, 'hardwareConcurrency', { get: () => cores });
+    try {
+        Object.defineProperty(navigator, 'deviceMemory', { get: () => cores });
+    } catch(_) {}
+
+    // window.chrome — headless Chrome doesn't expose this
+    if (!window.chrome) {
+        window.chrome = { runtime: {}, loadTimes: function(){}, csi: function(){}, app: {} };
+    }
+
+    // Delete CDP / ChromeDriver leak globals
+    for (const key of Object.getOwnPropertyNames(window)) {
+        if (key.startsWith('cdc_') || key.startsWith('__webdriver')) {
+            try { delete window[key]; } catch(_) {}
+        }
+    }
+
+    // Notification.permission — headless reports 'denied'; real browsers 'default'
+    try {
+        Object.defineProperty(Notification, 'permission', { get: () => 'default' });
+    } catch(_) {}
+})();
+"""
 _FIRESTORE_COLLECTION = "itf_sessions"
 _FIRESTORE_DOC = "incapsula_cookies"
 _PIPELINE_RELAY_DOC = "pipeline_relay_cookies"  # Separate doc for authenticated pipeline relay
@@ -187,6 +274,34 @@ def _delete_firestore_cookies() -> None:
         print(f"[browser] Could not delete Firestore cookies: {e}")
 
 
+def clear_session_cache() -> None:
+    """
+    Delete ALL cached session cookies from Firestore (both the persisted
+    incapsula_cookies doc and the pipeline_relay_cookies doc).
+
+    Call this before starting a local pipeline run to ensure the browser
+    performs a fresh warm-up on the local machine, rather than reusing
+    burned/exhausted GCP session cookies that were saved to Firestore by
+    a previous Cloud Run pipeline run.
+
+        python main.py --fresh          # clears cookies then runs pipeline
+        python calculate_rankings.py --fresh
+        python merge_rankings.py --fresh
+    """
+    print("[browser] Clearing all cached session cookies from Firestore…")
+    _delete_firestore_cookies()
+    try:
+        from google.cloud import firestore
+        db = firestore.Client(
+            project=os.environ.get("GOOGLE_CLOUD_PROJECT", "itf-live-rankings")
+        )
+        db.collection(_FIRESTORE_COLLECTION).document(_PIPELINE_RELAY_DOC).delete()
+        print("[browser] Pipeline relay cookies cleared.")
+    except Exception as e:
+        print(f"[browser] Could not clear relay cookies: {e}")
+    print("[browser] Session cache cleared — next warm-up will be a fresh login.")
+
+
 # ---------------------------------------------------------------------------
 # BrowserSession
 # ---------------------------------------------------------------------------
@@ -225,8 +340,13 @@ class BrowserSession:
     async def __aenter__(self) -> "BrowserSession":
         self._pw = await async_playwright().start()
         in_container = os.environ.get("K_SERVICE") or os.environ.get("DOCKER_ENV")
+        # --disable-blink-features=AutomationControlled removes navigator.webdriver=true
+        # at the Chrome engine level — the single biggest Incapsula tell.
+        _stealth_arg = "--disable-blink-features=AutomationControlled"
         self._launch_args = (
-            ["--no-sandbox", "--disable-setuid-sandbox"] if in_container else []
+            ["--no-sandbox", "--disable-setuid-sandbox", _stealth_arg]
+            if in_container
+            else [_stealth_arg]
         )
         self._browser = await self._pw.chromium.launch(
             headless=self.headless, args=self._launch_args
@@ -238,7 +358,7 @@ class BrowserSession:
         relay_cookies = _load_relay_cookies()
         if relay_cookies:
             print(f"[browser] Using relay cookies ({len(relay_cookies)} cookies) -- skipping warm-up.")
-            self.context = await self._browser.new_context(user_agent=_USER_AGENT)
+            self.context = await self._make_stealth_context()
             await self.context.add_cookies(relay_cookies)
             return self
 
@@ -248,7 +368,7 @@ class BrowserSession:
         saved_cookies = _load_firestore_cookies()
         if saved_cookies:
             print("[browser] Reusing saved cookies -- skipping warm-up.")
-            self.context = await self._browser.new_context(user_agent=_USER_AGENT)
+            self.context = await self._make_stealth_context()
             await self.context.add_cookies(saved_cookies)
             return self
 
@@ -267,10 +387,7 @@ class BrowserSession:
         email = os.environ.get("ITF_EMAIL", "")
         password = os.environ.get("ITF_PASSWORD", "")
 
-        self.context = await self._browser.new_context(
-            viewport={"width": 1280, "height": 800},
-            user_agent=_USER_AGENT,
-        )
+        self.context = await self._make_stealth_context()
         page = await self.context.new_page()
 
         # Step 1: www.itftennis.com warm-up (seed Incapsula cookies for www)
@@ -351,6 +468,41 @@ class BrowserSession:
             _save_firestore_cookies(cookies)
         else:
             print(f"[browser] Warm-up yielded only {len(cookies)} cookies -- not caching to Firestore.")
+
+    async def _make_stealth_context(self) -> BrowserContext:
+        """
+        Create a new BrowserContext with all stealth patches applied:
+          • randomised viewport + locale/timezone
+          • rotating User-Agent from the _USER_AGENTS pool
+          • Sec-CH-UA / Accept-Language extra headers
+          • JS init script masking navigator.webdriver, plugins, etc.
+          • playwright-stealth library (patches ~15 additional vectors)
+        """
+        ua = random.choice(_USER_AGENTS)
+        # Extract Chrome major version from UA string for Sec-CH-UA header.
+        import re as _re
+        m = _re.search(r'Chrome/(\d+)', ua)
+        chrome_ver = m.group(1) if m else "130"
+        nt_ver = "11.0" if "NT 11.0" in ua else "10.0"
+
+        width  = random.choice([1280, 1366, 1440, 1536, 1920])
+        height = random.choice([768, 800, 864, 900, 1080])
+
+        context = await self._browser.new_context(
+            viewport={"width": width, "height": height},
+            user_agent=ua,
+            locale="en-US",
+            timezone_id="America/New_York",
+            extra_http_headers={
+                "Accept-Language": "en-US,en;q=0.9",
+                "Sec-CH-UA": f'"Chromium";v="{chrome_ver}", "Google Chrome";v="{chrome_ver}", "Not-A.Brand";v="24"',
+                "Sec-CH-UA-Mobile": "?0",
+                "Sec-CH-UA-Platform": f'"Windows"',
+            },
+        )
+        await context.add_init_script(_STEALTH_INIT_SCRIPT)
+        await _apply_stealth(context)
+        return context
 
     async def _do_rewarm(self) -> None:
         """Perform invalidate+rewarm. Must be called while holding _rewarm_lock."""
@@ -480,7 +632,12 @@ class BrowserSession:
                     method: 'POST',
                     headers: {
                         'accept': 'application/json, text/plain, */*',
+                        'accept-language': 'en-US,en;q=0.9',
                         'content-type': 'application/json',
+                        'priority': 'u=1, i',
+                        'sec-fetch-dest': 'empty',
+                        'sec-fetch-mode': 'cors',
+                        'sec-fetch-site': 'same-origin',
                     },
                     credentials: 'include',
                     body: JSON.stringify(body),

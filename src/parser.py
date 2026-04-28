@@ -45,6 +45,23 @@ _DEPTH_TO_LOSER_TIER: dict[int, str] = {
 _COMPLETED_STATUS = {"PC", "WO", "RET", "DEF"}
 
 
+def count_completed_matches(drawsheet: dict) -> int:
+    """
+    Return the total number of completed matches across all rounds in a
+    drawsheet.  Used by the drawsheet cache to decide which version of a
+    captured drawsheet is more authoritative: more completed matches means
+    further into the tournament and therefore preferred over a version that
+    captures fewer rounds.
+    """
+    total = 0
+    for group in drawsheet.get("koGroups") or []:
+        for rnd in group.get("rounds") or []:
+            for match in rnd.get("matches") or []:
+                if match.get("playStatusCode") in _COMPLETED_STATUS:
+                    total += 1
+    return total
+
+
 @dataclass
 class PlayerResult:
     """Points earned by one player in one event of one tournament."""

@@ -30,9 +30,10 @@ import argparse
 import asyncio
 import datetime
 import json
+import random
 from pathlib import Path
 
-from src.browser import BrowserSession
+from src.browser import BrowserSession, clear_session_cache
 from src.api import (
     fetch_calendar,
     fetch_event_filters,
@@ -92,7 +93,7 @@ async def run(headless: bool, week_anchor: datetime.date) -> None:
     print(f"[sweep] Expiry window       : {date_from} – {date_to}  (52 weeks ago)")
 
     points_table = load_points_table()
-    sem = asyncio.Semaphore(5)
+    sem = asyncio.Semaphore(3)  # calendar / event-filter / drawsheet fetches
 
     async with BrowserSession(headless=headless) as session:
 
@@ -179,15 +180,56 @@ async def run(headless: bool, week_anchor: datetime.date) -> None:
             print("[sweep] All expiring players already covered — nothing to fetch.")
             return
 
-        # ── 7. Fetch ranking breakdowns for missing players ───────────────────
-        to_fetch_list = sorted(to_fetch)
-        print(f"[sweep] Fetching {len(to_fetch_list)} ranking breakdown(s)…")
+        # ── 7. Fetch ranking breakdowns for missing players (batched) ───────────
+        # Mirrors the full_breakdown path in calculate_rankings.py:
+        #   - Batches of 15 players, Semaphore(2) = 2 concurrent tabs
+        #   - 0.5-2 s per-slot jitter to avoid burst patterns
+        #   - 15-35 s cooldown + context restart + re-warm between batches
+        _BATCH_SIZE  = 15
+        _COOLDOWN_MIN = 15.0
+        _COOLDOWN_MAX = 35.0
+        sem_bp = asyncio.Semaphore(2)
 
-        breakdown_results = await asyncio.gather(
-            *[_limited(sem, fetch_ranking_points(session, pid))
-              for pid in to_fetch_list],
-            return_exceptions=True,
+        async def _fetch_one(pid: int):
+            async with sem_bp:
+                await asyncio.sleep(random.uniform(0.5, 2.0))
+                return await fetch_ranking_points(session, pid)
+
+        to_fetch_list = sorted(to_fetch)
+        breakdown_results: list = []
+        total_bp = len(to_fetch_list)
+        print(
+            f"[sweep] Fetching {total_bp} ranking breakdown(s) "
+            f"in batches of {_BATCH_SIZE}, "
+            f"cooldown {_COOLDOWN_MIN:.0f}-{_COOLDOWN_MAX:.0f}s between batches..."
         )
+
+        for batch_start in range(0, total_bp, _BATCH_SIZE):
+            batch = to_fetch_list[batch_start:batch_start + _BATCH_SIZE]
+
+            if batch_start > 0:
+                cooldown = random.uniform(_COOLDOWN_MIN, _COOLDOWN_MAX)
+                print(
+                    f"[sweep] Batch {batch_start // _BATCH_SIZE + 1} of "
+                    f"{(total_bp + _BATCH_SIZE - 1) // _BATCH_SIZE} -- "
+                    f"cooldown {cooldown:.0f}s, restarting context..."
+                )
+                if session.context is not None:
+                    try:
+                        await asyncio.wait_for(session.context.close(), timeout=10.0)
+                    except Exception:
+                        pass
+                    session.context = None
+                clear_session_cache()
+                await asyncio.sleep(cooldown)
+                print("[sweep] Re-warming session for next batch...")
+                await session._warm_up()
+
+            batch_results = await asyncio.gather(
+                *[_fetch_one(pid) for pid in batch],
+                return_exceptions=True,
+            )
+            breakdown_results.extend(batch_results)
 
     # ── 8. Merge into latest_player_breakdowns.json ───────────────────────────
     merged = existing

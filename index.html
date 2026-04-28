@@ -1987,22 +1987,6 @@
         const BASE = status?.gcs_url || "/output"; // fallback for local dev
         _updateStatusBanner(status);
 
-        if (status?.refreshing || status?.sweeping) {
-          const phase = status.phase || "running";
-          const label =
-            {
-              main: "fetching tournament data",
-              calculate: "calculating breakdowns",
-              merge: "merging rankings",
-              sweep: "expiry sweep",
-              uploading: "uploading",
-            }[phase] || phase;
-          document.getElementById("tbody").innerHTML =
-            `<tr><td colspan="6" class="placeholder">⏳ Pipeline running (${label}) — data will appear automatically…</td></tr>`;
-          setTimeout(checkForUpdates, 15_000);
-          return;
-        }
-
         try {
           const [r1, r2, r3] = await Promise.allSettled([
             fetch(`${BASE}/latest_merged_rankings.json`).then((r) =>

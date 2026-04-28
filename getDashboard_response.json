@@ -1,0 +1,2198 @@
+{
+  "filterViewModels": [
+    {
+      "labelKey": "labelFilterCategory",
+      "filterKey": "Category",
+      "options": [
+        {
+          "label": "M15",
+          "name": "M15"
+        },
+        {
+          "label": "JGS",
+          "name": "JGS"
+        },
+        {
+          "label": "J500",
+          "name": "J500"
+        },
+        {
+          "label": "J300",
+          "name": "J300"
+        },
+        {
+          "label": "J200",
+          "name": "J200"
+        }
+      ]
+    },
+    {
+      "labelKey": "labelFilterSingleMainDrawFormat",
+      "filterKey": "SingleMainDrawFormat",
+      "options": [
+        {
+          "label": "Elimination",
+          "name": "KO"
+        }
+      ]
+    },
+    {
+      "labelKey": "labelFilterSurface",
+      "filterKey": "Surface",
+      "options": [
+        {
+          "label": "Clay",
+          "name": "C"
+        },
+        {
+          "label": "Grass",
+          "name": "G"
+        },
+        {
+          "label": "Hard",
+          "name": "H"
+        }
+      ]
+    },
+    {
+      "labelKey": "labelFilterVenueType",
+      "filterKey": "VenueType",
+      "options": [
+        {
+          "label": "Outdoor",
+          "name": "O"
+        }
+      ]
+    }
+  ],
+  "calendarEventsViewModels": [
+    {
+      "date": "2026-04-13T00:00:00",
+      "circuits": [
+        {
+          "key": "20260413",
+          "id": "462b4eb7-a5b8-42dc-9ba0-95a855690a7f",
+          "code": "M",
+          "name": "Pro",
+          "deadlineDays": 10,
+          "deadlineCountdown": {
+            "deadlineDate": "0001-01-01T00:00:00",
+            "deadlineType": "passed"
+          },
+          "doublesDeadlineCountdown": {
+            "deadlineDate": "0001-01-01T00:00:00",
+            "deadlineType": "passed"
+          },
+          "nextEntryPriority": 2,
+          "maxEntriesPerWeek": 6,
+          "tournaments": [
+            {
+              "tennisEventId": "14b000ea-ac7a-42cb-9cfb-df785403ef6f",
+              "name": "M15 Orlando",
+              "meta": [
+                "M15 Orlando, FL",
+                "$15000",
+                "Orlando",
+                "USA",
+                "Clay",
+                "Outdoor",
+                "North America",
+                "Alternates: 65"
+              ],
+              "enter": false,
+              "withdraw": true,
+              "factsheet": "/factsheet?tournamentId=14b000ea-ac7a-42cb-9cfb-df785403ef6f&circuitId=462b4eb7-a5b8-42dc-9ba0-95a855690a7f",
+              "entry": "/entries?tournamentId=14b000ea-ac7a-42cb-9cfb-df785403ef6f&circuitId=462b4eb7-a5b8-42dc-9ba0-95a855690a7f",
+              "categoryCode": "M15",
+              "category": "M15",
+              "countryCode": "USA",
+              "country": "USA",
+              "surfaceCode": "C",
+              "prizeMoney": 15000.0,
+              "surface": "Clay",
+              "venueTypeCode": "O",
+              "venueType": "Outdoor",
+              "entryData": [
+                {
+                  "entryId": "ac7948ce-ffbd-4286-aa78-9efe9728312e",
+                  "entryListId": "c7f7cd53-fc26-42b9-8d44-048deaa32e2e",
+                  "tournamentId": "00000000-0000-0000-0000-000000000000",
+                  "priority": 1,
+                  "matchType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Singles",
+                    "code": "S"
+                  },
+                  "playerType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Men",
+                    "code": "M"
+                  },
+                  "ageCategory": null,
+                  "entryStatus": "Confirmed",
+                  "partnerId": null,
+                  "partnerName": "",
+                  "isProtectedRanking": false,
+                  "isMainDrawOnly": false,
+                  "publicPaymentId": null,
+                  "paymentProviderPublicPaymentId": null
+                }
+              ],
+              "supportsMainDrawOnly": false,
+              "supportsProtectedRanking": false,
+              "supportsDoublesProtectedRanking": false,
+              "entrySupported": true,
+              "startDate": "2026-04-13T00:00:00",
+              "endDate": "2026-04-19T00:00:00",
+              "withdrawalDeadlineDate": "2026-03-31T14:00:00",
+              "freezeDeadlineDate": "2026-04-09T14:00:00",
+              "sectionCode": "A",
+              "maxYearlyTournamentEntriesReached": false,
+              "ageEligibility": {
+                "isTooYoung": false,
+                "isTooOld": false,
+                "isEligible": true
+              },
+              "statusCode": "",
+              "isFactsheetPublished": true,
+              "isWorldChampionship": false,
+              "seniorsWorldChampionshipEntryFee": 150.0,
+              "seniorsWorldChampionshipItfFee": 0.0,
+              "isPaidTournament": false,
+              "seniorsPaidTournamentItfFee": 12.0,
+              "singleMainDrawFormatCode": null,
+              "singleMainDrawFormat": null
+            }
+          ],
+          "suspended": false
+        }
+      ]
+    },
+    {
+      "date": "2026-04-20T00:00:00",
+      "circuits": [
+        {
+          "key": "20260420",
+          "id": "462b4eb7-a5b8-42dc-9ba0-95a855690a7f",
+          "code": "M",
+          "name": "Pro",
+          "deadlineDays": 10,
+          "deadlineCountdown": {
+            "deadlineDate": "2026-04-16T14:00:00",
+            "deadlineType": "freeze"
+          },
+          "doublesDeadlineCountdown": {
+            "deadlineDate": "2026-04-16T14:00:00",
+            "deadlineType": "freeze"
+          },
+          "nextEntryPriority": 2,
+          "maxEntriesPerWeek": 6,
+          "tournaments": [
+            {
+              "tennisEventId": "9ccfaee9-1255-4003-9465-5b1d5b25b497",
+              "name": "M15 Orlando, FL",
+              "meta": [
+                "M15 Orlando, FL",
+                "$15000",
+                "Orlando",
+                "USA",
+                "Clay",
+                "Outdoor",
+                "North America",
+                "Alternates: 63"
+              ],
+              "enter": false,
+              "withdraw": true,
+              "factsheet": "/factsheet?tournamentId=9ccfaee9-1255-4003-9465-5b1d5b25b497&circuitId=462b4eb7-a5b8-42dc-9ba0-95a855690a7f",
+              "entry": "/entries?tournamentId=9ccfaee9-1255-4003-9465-5b1d5b25b497&circuitId=462b4eb7-a5b8-42dc-9ba0-95a855690a7f",
+              "categoryCode": "M15",
+              "category": "M15",
+              "countryCode": "USA",
+              "country": "USA",
+              "surfaceCode": "C",
+              "prizeMoney": 15000.0,
+              "surface": "Clay",
+              "venueTypeCode": "O",
+              "venueType": "Outdoor",
+              "entryData": [
+                {
+                  "entryId": "4e77b184-4700-4e21-8a39-70893a5887bc",
+                  "entryListId": "90b327e5-d8c3-4578-a2ba-146b9d753116",
+                  "tournamentId": "00000000-0000-0000-0000-000000000000",
+                  "priority": 1,
+                  "matchType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Singles",
+                    "code": "S"
+                  },
+                  "playerType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Men",
+                    "code": "M"
+                  },
+                  "ageCategory": null,
+                  "entryStatus": "Confirmed",
+                  "partnerId": null,
+                  "partnerName": "",
+                  "isProtectedRanking": false,
+                  "isMainDrawOnly": false,
+                  "publicPaymentId": null,
+                  "paymentProviderPublicPaymentId": null
+                }
+              ],
+              "supportsMainDrawOnly": false,
+              "supportsProtectedRanking": false,
+              "supportsDoublesProtectedRanking": false,
+              "entrySupported": true,
+              "startDate": "2026-04-20T00:00:00",
+              "endDate": "2026-04-26T00:00:00",
+              "withdrawalDeadlineDate": "2026-04-07T14:00:00",
+              "freezeDeadlineDate": "2026-04-16T14:00:00",
+              "sectionCode": "A",
+              "maxYearlyTournamentEntriesReached": false,
+              "ageEligibility": {
+                "isTooYoung": false,
+                "isTooOld": false,
+                "isEligible": true
+              },
+              "statusCode": "",
+              "isFactsheetPublished": true,
+              "isWorldChampionship": false,
+              "seniorsWorldChampionshipEntryFee": 150.0,
+              "seniorsWorldChampionshipItfFee": 0.0,
+              "isPaidTournament": false,
+              "seniorsPaidTournamentItfFee": 12.0,
+              "singleMainDrawFormatCode": null,
+              "singleMainDrawFormat": null
+            }
+          ],
+          "suspended": false
+        }
+      ]
+    },
+    {
+      "date": "2026-04-27T00:00:00",
+      "circuits": [
+        {
+          "key": "20260427",
+          "id": "4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+          "code": "J",
+          "name": "Junior",
+          "deadlineDays": 10,
+          "deadlineCountdown": {
+            "deadlineDate": "2026-04-22T14:00:00",
+            "deadlineType": "freeze"
+          },
+          "doublesDeadlineCountdown": null,
+          "nextEntryPriority": 2,
+          "maxEntriesPerWeek": 3,
+          "tournaments": [
+            {
+              "tennisEventId": "417c717e-b51e-4c72-92ce-f58473a61a43",
+              "name": "J200 Sumter",
+              "meta": [
+                "27/04/2026 - 03/05/2026",
+                "Sumter",
+                "USA",
+                "J200",
+                "Clay",
+                "Outdoor",
+                "North America",
+                "Main Draw: 2"
+              ],
+              "enter": false,
+              "withdraw": true,
+              "factsheet": "/factsheet?tournamentId=417c717e-b51e-4c72-92ce-f58473a61a43&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "entry": "/entries?tournamentId=417c717e-b51e-4c72-92ce-f58473a61a43&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "categoryCode": "J200",
+              "category": "J200",
+              "countryCode": "USA",
+              "country": "USA",
+              "surfaceCode": "C",
+              "prizeMoney": null,
+              "surface": "Clay",
+              "venueTypeCode": "O",
+              "venueType": "Outdoor",
+              "entryData": [
+                {
+                  "entryId": "bfbe4b83-a660-40ca-939d-f94336e8d8a5",
+                  "entryListId": "c9742002-8040-42d9-a7f1-d37ce2f34297",
+                  "tournamentId": "00000000-0000-0000-0000-000000000000",
+                  "priority": 2,
+                  "matchType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Singles",
+                    "code": "S"
+                  },
+                  "playerType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Boys",
+                    "code": "B"
+                  },
+                  "ageCategory": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "18 and under",
+                    "code": "18U"
+                  },
+                  "entryStatus": "None",
+                  "partnerId": null,
+                  "partnerName": "",
+                  "isProtectedRanking": false,
+                  "isMainDrawOnly": false,
+                  "publicPaymentId": null,
+                  "paymentProviderPublicPaymentId": null
+                }
+              ],
+              "supportsMainDrawOnly": false,
+              "supportsProtectedRanking": false,
+              "supportsDoublesProtectedRanking": false,
+              "entrySupported": true,
+              "startDate": "2026-04-27T00:00:00",
+              "endDate": "2026-05-03T00:00:00",
+              "withdrawalDeadlineDate": "2026-04-14T14:00:00",
+              "freezeDeadlineDate": "2026-04-22T14:00:00",
+              "sectionCode": "M",
+              "maxYearlyTournamentEntriesReached": false,
+              "ageEligibility": {
+                "isTooYoung": false,
+                "isTooOld": false,
+                "isEligible": true
+              },
+              "statusCode": "",
+              "isFactsheetPublished": true,
+              "isWorldChampionship": false,
+              "seniorsWorldChampionshipEntryFee": 150.0,
+              "seniorsWorldChampionshipItfFee": 0.0,
+              "isPaidTournament": false,
+              "seniorsPaidTournamentItfFee": 12.0,
+              "singleMainDrawFormatCode": "KO",
+              "singleMainDrawFormat": "Elimination"
+            }
+          ],
+          "suspended": false
+        }
+      ]
+    },
+    {
+      "date": "2026-05-04T00:00:00",
+      "circuits": [
+        {
+          "key": "20260504",
+          "id": "4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+          "code": "J",
+          "name": "Junior",
+          "deadlineDays": 10,
+          "deadlineCountdown": {
+            "deadlineDate": "2026-04-21T14:00:00",
+            "deadlineType": "withdrawal"
+          },
+          "doublesDeadlineCountdown": null,
+          "nextEntryPriority": 4,
+          "maxEntriesPerWeek": 3,
+          "tournaments": [
+            {
+              "tennisEventId": "f089b065-276c-4fda-ba8b-1a41c692859a",
+              "name": "J200 St. Poelten",
+              "meta": [
+                "05/05/2026 - 09/05/2026",
+                "St. Poelten",
+                "Austria",
+                "J200",
+                "Clay",
+                "Outdoor",
+                "Europe",
+                "Main Draw: 5"
+              ],
+              "enter": false,
+              "withdraw": true,
+              "factsheet": "/factsheet?tournamentId=f089b065-276c-4fda-ba8b-1a41c692859a&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "entry": "/entries?tournamentId=f089b065-276c-4fda-ba8b-1a41c692859a&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "categoryCode": "J200",
+              "category": "J200",
+              "countryCode": "AUT",
+              "country": "Austria",
+              "surfaceCode": "C",
+              "prizeMoney": null,
+              "surface": "Clay",
+              "venueTypeCode": "O",
+              "venueType": "Outdoor",
+              "entryData": [
+                {
+                  "entryId": "3c3a1af0-dd7e-4b8a-b902-42000036778a",
+                  "entryListId": "ad873175-d1ba-4526-98d7-fae8903ebe8c",
+                  "tournamentId": "00000000-0000-0000-0000-000000000000",
+                  "priority": 1,
+                  "matchType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Singles",
+                    "code": "S"
+                  },
+                  "playerType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Boys",
+                    "code": "B"
+                  },
+                  "ageCategory": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "18 and under",
+                    "code": "18U"
+                  },
+                  "entryStatus": "None",
+                  "partnerId": null,
+                  "partnerName": "",
+                  "isProtectedRanking": false,
+                  "isMainDrawOnly": false,
+                  "publicPaymentId": null,
+                  "paymentProviderPublicPaymentId": null
+                }
+              ],
+              "supportsMainDrawOnly": false,
+              "supportsProtectedRanking": false,
+              "supportsDoublesProtectedRanking": false,
+              "entrySupported": true,
+              "startDate": "2026-05-05T00:00:00",
+              "endDate": "2026-05-09T00:00:00",
+              "withdrawalDeadlineDate": "2026-04-21T14:00:00",
+              "freezeDeadlineDate": "2026-04-29T14:00:00",
+              "sectionCode": "M",
+              "maxYearlyTournamentEntriesReached": false,
+              "ageEligibility": {
+                "isTooYoung": false,
+                "isTooOld": false,
+                "isEligible": true
+              },
+              "statusCode": "",
+              "isFactsheetPublished": true,
+              "isWorldChampionship": false,
+              "seniorsWorldChampionshipEntryFee": 150.0,
+              "seniorsWorldChampionshipItfFee": 0.0,
+              "isPaidTournament": false,
+              "seniorsPaidTournamentItfFee": 12.0,
+              "singleMainDrawFormatCode": "KO",
+              "singleMainDrawFormat": "Elimination"
+            },
+            {
+              "tennisEventId": "c854cf90-7907-49ce-9f82-39a141acb998",
+              "name": "J500 Offenbach",
+              "meta": [
+                "04/05/2026 - 10/05/2026",
+                "Offenbach",
+                "Germany",
+                "J500",
+                "Clay",
+                "Outdoor",
+                "Europe",
+                "Main Draw: 21"
+              ],
+              "enter": false,
+              "withdraw": true,
+              "factsheet": "/factsheet?tournamentId=c854cf90-7907-49ce-9f82-39a141acb998&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "entry": "/entries?tournamentId=c854cf90-7907-49ce-9f82-39a141acb998&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "categoryCode": "J500",
+              "category": "J500",
+              "countryCode": "GER",
+              "country": "Germany",
+              "surfaceCode": "C",
+              "prizeMoney": null,
+              "surface": "Clay",
+              "venueTypeCode": "O",
+              "venueType": "Outdoor",
+              "entryData": [
+                {
+                  "entryId": "4621534e-97c9-4f1f-8e50-76fab2affb32",
+                  "entryListId": "967aa529-19d4-49dd-8e21-930663953430",
+                  "tournamentId": "00000000-0000-0000-0000-000000000000",
+                  "priority": 2,
+                  "matchType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Singles",
+                    "code": "S"
+                  },
+                  "playerType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Boys",
+                    "code": "B"
+                  },
+                  "ageCategory": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "18 and under",
+                    "code": "18U"
+                  },
+                  "entryStatus": "None",
+                  "partnerId": null,
+                  "partnerName": "",
+                  "isProtectedRanking": false,
+                  "isMainDrawOnly": false,
+                  "publicPaymentId": null,
+                  "paymentProviderPublicPaymentId": null
+                }
+              ],
+              "supportsMainDrawOnly": false,
+              "supportsProtectedRanking": false,
+              "supportsDoublesProtectedRanking": false,
+              "entrySupported": true,
+              "startDate": "2026-05-04T00:00:00",
+              "endDate": "2026-05-10T00:00:00",
+              "withdrawalDeadlineDate": "2026-04-21T14:00:00",
+              "freezeDeadlineDate": "2026-04-29T14:00:00",
+              "sectionCode": "M",
+              "maxYearlyTournamentEntriesReached": false,
+              "ageEligibility": {
+                "isTooYoung": false,
+                "isTooOld": false,
+                "isEligible": true
+              },
+              "statusCode": "",
+              "isFactsheetPublished": true,
+              "isWorldChampionship": false,
+              "seniorsWorldChampionshipEntryFee": 150.0,
+              "seniorsWorldChampionshipItfFee": 0.0,
+              "isPaidTournament": false,
+              "seniorsPaidTournamentItfFee": 12.0,
+              "singleMainDrawFormatCode": "KO",
+              "singleMainDrawFormat": "Elimination"
+            },
+            {
+              "tennisEventId": "d8ab33e3-e20d-40c9-8885-4007d7209985",
+              "name": "J200 College Grove",
+              "meta": [
+                "04/05/2026 - 10/05/2026",
+                "College Grove",
+                "USA",
+                "J200",
+                "Clay",
+                "Outdoor",
+                "North America",
+                "Main Draw: 3"
+              ],
+              "enter": false,
+              "withdraw": true,
+              "factsheet": "/factsheet?tournamentId=d8ab33e3-e20d-40c9-8885-4007d7209985&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "entry": "/entries?tournamentId=d8ab33e3-e20d-40c9-8885-4007d7209985&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "categoryCode": "J200",
+              "category": "J200",
+              "countryCode": "USA",
+              "country": "USA",
+              "surfaceCode": "C",
+              "prizeMoney": null,
+              "surface": "Clay",
+              "venueTypeCode": "O",
+              "venueType": "Outdoor",
+              "entryData": [
+                {
+                  "entryId": "42385d40-b0ac-47d6-bc04-abda2dc93464",
+                  "entryListId": "b292a5f0-b108-4175-90bd-3cc840607cd9",
+                  "tournamentId": "00000000-0000-0000-0000-000000000000",
+                  "priority": 3,
+                  "matchType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Singles",
+                    "code": "S"
+                  },
+                  "playerType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Boys",
+                    "code": "B"
+                  },
+                  "ageCategory": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "18 and under",
+                    "code": "18U"
+                  },
+                  "entryStatus": "None",
+                  "partnerId": null,
+                  "partnerName": "",
+                  "isProtectedRanking": false,
+                  "isMainDrawOnly": false,
+                  "publicPaymentId": null,
+                  "paymentProviderPublicPaymentId": null
+                }
+              ],
+              "supportsMainDrawOnly": false,
+              "supportsProtectedRanking": false,
+              "supportsDoublesProtectedRanking": false,
+              "entrySupported": true,
+              "startDate": "2026-05-04T00:00:00",
+              "endDate": "2026-05-10T00:00:00",
+              "withdrawalDeadlineDate": "2026-04-21T14:00:00",
+              "freezeDeadlineDate": "2026-04-29T14:00:00",
+              "sectionCode": "M",
+              "maxYearlyTournamentEntriesReached": false,
+              "ageEligibility": {
+                "isTooYoung": false,
+                "isTooOld": false,
+                "isEligible": true
+              },
+              "statusCode": "",
+              "isFactsheetPublished": true,
+              "isWorldChampionship": false,
+              "seniorsWorldChampionshipEntryFee": 150.0,
+              "seniorsWorldChampionshipItfFee": 0.0,
+              "isPaidTournament": false,
+              "seniorsPaidTournamentItfFee": 12.0,
+              "singleMainDrawFormatCode": "KO",
+              "singleMainDrawFormat": "Elimination"
+            }
+          ],
+          "suspended": false
+        }
+      ]
+    },
+    {
+      "date": "2026-05-11T00:00:00",
+      "circuits": [
+        {
+          "key": "20260511",
+          "id": "4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+          "code": "J",
+          "name": "Junior",
+          "deadlineDays": 10,
+          "deadlineCountdown": {
+            "deadlineDate": "2026-04-21T14:00:00",
+            "deadlineType": "entry"
+          },
+          "doublesDeadlineCountdown": null,
+          "nextEntryPriority": 3,
+          "maxEntriesPerWeek": 3,
+          "tournaments": [
+            {
+              "tennisEventId": "0f60f2a2-86ef-42ed-b822-6ed64139a5d1",
+              "name": "J200 Hanover",
+              "meta": [
+                "11/05/2026 - 16/05/2026",
+                "Hanover",
+                "Germany",
+                "J200",
+                "Clay",
+                "Outdoor",
+                "Europe"
+              ],
+              "enter": false,
+              "withdraw": true,
+              "factsheet": "/factsheet?tournamentId=0f60f2a2-86ef-42ed-b822-6ed64139a5d1&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "entry": "/entries?tournamentId=0f60f2a2-86ef-42ed-b822-6ed64139a5d1&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "categoryCode": "J200",
+              "category": "J200",
+              "countryCode": "GER",
+              "country": "Germany",
+              "surfaceCode": "C",
+              "prizeMoney": null,
+              "surface": "Clay",
+              "venueTypeCode": "O",
+              "venueType": "Outdoor",
+              "entryData": [
+                {
+                  "entryId": "206541fa-6e98-48c3-bc9f-617dedb9cab6",
+                  "entryListId": "f0b42060-6be4-4bd8-a173-511f61556d27",
+                  "tournamentId": "00000000-0000-0000-0000-000000000000",
+                  "priority": 1,
+                  "matchType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Singles",
+                    "code": "S"
+                  },
+                  "playerType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Boys",
+                    "code": "B"
+                  },
+                  "ageCategory": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "18 and under",
+                    "code": "18U"
+                  },
+                  "entryStatus": "None",
+                  "partnerId": null,
+                  "partnerName": "",
+                  "isProtectedRanking": false,
+                  "isMainDrawOnly": false,
+                  "publicPaymentId": null,
+                  "paymentProviderPublicPaymentId": null
+                }
+              ],
+              "supportsMainDrawOnly": false,
+              "supportsProtectedRanking": false,
+              "supportsDoublesProtectedRanking": false,
+              "entrySupported": true,
+              "startDate": "2026-05-11T00:00:00",
+              "endDate": "2026-05-16T00:00:00",
+              "withdrawalDeadlineDate": "2026-04-28T14:00:00",
+              "freezeDeadlineDate": "2026-05-06T14:00:00",
+              "sectionCode": null,
+              "maxYearlyTournamentEntriesReached": false,
+              "ageEligibility": {
+                "isTooYoung": false,
+                "isTooOld": false,
+                "isEligible": true
+              },
+              "statusCode": "",
+              "isFactsheetPublished": true,
+              "isWorldChampionship": false,
+              "seniorsWorldChampionshipEntryFee": 150.0,
+              "seniorsWorldChampionshipItfFee": 0.0,
+              "isPaidTournament": false,
+              "seniorsPaidTournamentItfFee": 12.0,
+              "singleMainDrawFormatCode": "KO",
+              "singleMainDrawFormat": "Elimination"
+            },
+            {
+              "tennisEventId": "f247e96f-bda1-452f-a3be-c8d832221458",
+              "name": "J300 Santa Croce Sull’Arno",
+              "meta": [
+                "11/05/2026 - 16/05/2026",
+                "Santa Croce Sull’Arno",
+                "Italy",
+                "J300",
+                "Clay",
+                "Outdoor",
+                "Europe"
+              ],
+              "enter": false,
+              "withdraw": true,
+              "factsheet": "/factsheet?tournamentId=f247e96f-bda1-452f-a3be-c8d832221458&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "entry": "/entries?tournamentId=f247e96f-bda1-452f-a3be-c8d832221458&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "categoryCode": "J300",
+              "category": "J300",
+              "countryCode": "ITA",
+              "country": "Italy",
+              "surfaceCode": "C",
+              "prizeMoney": null,
+              "surface": "Clay",
+              "venueTypeCode": "O",
+              "venueType": "Outdoor",
+              "entryData": [
+                {
+                  "entryId": "1031dd04-a97f-4ba1-88da-f937270f27b9",
+                  "entryListId": "edf3c912-9198-43c5-acb4-6992192a03af",
+                  "tournamentId": "00000000-0000-0000-0000-000000000000",
+                  "priority": 2,
+                  "matchType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Singles",
+                    "code": "S"
+                  },
+                  "playerType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Boys",
+                    "code": "B"
+                  },
+                  "ageCategory": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "18 and under",
+                    "code": "18U"
+                  },
+                  "entryStatus": "None",
+                  "partnerId": null,
+                  "partnerName": "",
+                  "isProtectedRanking": false,
+                  "isMainDrawOnly": false,
+                  "publicPaymentId": null,
+                  "paymentProviderPublicPaymentId": null
+                }
+              ],
+              "supportsMainDrawOnly": false,
+              "supportsProtectedRanking": false,
+              "supportsDoublesProtectedRanking": false,
+              "entrySupported": true,
+              "startDate": "2026-05-11T00:00:00",
+              "endDate": "2026-05-16T00:00:00",
+              "withdrawalDeadlineDate": "2026-04-28T14:00:00",
+              "freezeDeadlineDate": "2026-05-06T14:00:00",
+              "sectionCode": null,
+              "maxYearlyTournamentEntriesReached": false,
+              "ageEligibility": {
+                "isTooYoung": false,
+                "isTooOld": false,
+                "isEligible": true
+              },
+              "statusCode": "",
+              "isFactsheetPublished": true,
+              "isWorldChampionship": false,
+              "seniorsWorldChampionshipEntryFee": 150.0,
+              "seniorsWorldChampionshipItfFee": 0.0,
+              "isPaidTournament": false,
+              "seniorsPaidTournamentItfFee": 12.0,
+              "singleMainDrawFormatCode": "KO",
+              "singleMainDrawFormat": "Elimination"
+            }
+          ],
+          "suspended": false
+        }
+      ]
+    },
+    {
+      "date": "2026-05-18T00:00:00",
+      "circuits": [
+        {
+          "key": "20260518",
+          "id": "4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+          "code": "J",
+          "name": "Junior",
+          "deadlineDays": 10,
+          "deadlineCountdown": {
+            "deadlineDate": "2026-04-21T14:00:00",
+            "deadlineType": "entry"
+          },
+          "doublesDeadlineCountdown": null,
+          "nextEntryPriority": 3,
+          "maxEntriesPerWeek": 3,
+          "tournaments": [
+            {
+              "tennisEventId": "3ffa43de-67be-4a0e-bff5-481364e292f7",
+              "name": "J500 Milan",
+              "meta": [
+                "18/05/2026 - 24/05/2026",
+                "Milan",
+                "Italy",
+                "J500",
+                "Clay",
+                "Outdoor",
+                "Europe"
+              ],
+              "enter": false,
+              "withdraw": true,
+              "factsheet": "/factsheet?tournamentId=3ffa43de-67be-4a0e-bff5-481364e292f7&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "entry": "/entries?tournamentId=3ffa43de-67be-4a0e-bff5-481364e292f7&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "categoryCode": "J500",
+              "category": "J500",
+              "countryCode": "ITA",
+              "country": "Italy",
+              "surfaceCode": "C",
+              "prizeMoney": null,
+              "surface": "Clay",
+              "venueTypeCode": "O",
+              "venueType": "Outdoor",
+              "entryData": [
+                {
+                  "entryId": "911106b2-7d7d-4e22-9255-c47b11b9310c",
+                  "entryListId": "26064b8e-3ce3-4e51-9970-f13bee4620bb",
+                  "tournamentId": "00000000-0000-0000-0000-000000000000",
+                  "priority": 1,
+                  "matchType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Singles",
+                    "code": "S"
+                  },
+                  "playerType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Boys",
+                    "code": "B"
+                  },
+                  "ageCategory": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "18 and under",
+                    "code": "18U"
+                  },
+                  "entryStatus": "None",
+                  "partnerId": null,
+                  "partnerName": "",
+                  "isProtectedRanking": false,
+                  "isMainDrawOnly": false,
+                  "publicPaymentId": null,
+                  "paymentProviderPublicPaymentId": null
+                }
+              ],
+              "supportsMainDrawOnly": false,
+              "supportsProtectedRanking": false,
+              "supportsDoublesProtectedRanking": false,
+              "entrySupported": true,
+              "startDate": "2026-05-18T00:00:00",
+              "endDate": "2026-05-24T00:00:00",
+              "withdrawalDeadlineDate": "2026-05-05T14:00:00",
+              "freezeDeadlineDate": "2026-05-13T14:00:00",
+              "sectionCode": null,
+              "maxYearlyTournamentEntriesReached": false,
+              "ageEligibility": {
+                "isTooYoung": false,
+                "isTooOld": false,
+                "isEligible": true
+              },
+              "statusCode": "",
+              "isFactsheetPublished": true,
+              "isWorldChampionship": false,
+              "seniorsWorldChampionshipEntryFee": 150.0,
+              "seniorsWorldChampionshipItfFee": 0.0,
+              "isPaidTournament": false,
+              "seniorsPaidTournamentItfFee": 12.0,
+              "singleMainDrawFormatCode": "KO",
+              "singleMainDrawFormat": "Elimination"
+            },
+            {
+              "tennisEventId": "621bd13c-4312-4d45-a7fd-9e6519d1a454",
+              "name": "J200 Targu Jiu",
+              "meta": [
+                "18/05/2026 - 22/05/2026",
+                "Targu Jiu",
+                "Romania",
+                "J200",
+                "Clay",
+                "Outdoor",
+                "Europe"
+              ],
+              "enter": false,
+              "withdraw": true,
+              "factsheet": "/factsheet?tournamentId=621bd13c-4312-4d45-a7fd-9e6519d1a454&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "entry": "/entries?tournamentId=621bd13c-4312-4d45-a7fd-9e6519d1a454&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "categoryCode": "J200",
+              "category": "J200",
+              "countryCode": "ROU",
+              "country": "Romania",
+              "surfaceCode": "C",
+              "prizeMoney": null,
+              "surface": "Clay",
+              "venueTypeCode": "O",
+              "venueType": "Outdoor",
+              "entryData": [
+                {
+                  "entryId": "1c576a36-25c2-452b-84de-dc2ca482dc58",
+                  "entryListId": "179b3d89-d329-4f6a-8150-185c5d21d2fb",
+                  "tournamentId": "00000000-0000-0000-0000-000000000000",
+                  "priority": 2,
+                  "matchType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Singles",
+                    "code": "S"
+                  },
+                  "playerType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Boys",
+                    "code": "B"
+                  },
+                  "ageCategory": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "18 and under",
+                    "code": "18U"
+                  },
+                  "entryStatus": "None",
+                  "partnerId": null,
+                  "partnerName": "",
+                  "isProtectedRanking": false,
+                  "isMainDrawOnly": false,
+                  "publicPaymentId": null,
+                  "paymentProviderPublicPaymentId": null
+                }
+              ],
+              "supportsMainDrawOnly": false,
+              "supportsProtectedRanking": false,
+              "supportsDoublesProtectedRanking": false,
+              "entrySupported": true,
+              "startDate": "2026-05-18T00:00:00",
+              "endDate": "2026-05-22T00:00:00",
+              "withdrawalDeadlineDate": "2026-05-05T14:00:00",
+              "freezeDeadlineDate": "2026-05-13T14:00:00",
+              "sectionCode": null,
+              "maxYearlyTournamentEntriesReached": false,
+              "ageEligibility": {
+                "isTooYoung": false,
+                "isTooOld": false,
+                "isEligible": true
+              },
+              "statusCode": "",
+              "isFactsheetPublished": true,
+              "isWorldChampionship": false,
+              "seniorsWorldChampionshipEntryFee": 150.0,
+              "seniorsWorldChampionshipItfFee": 0.0,
+              "isPaidTournament": false,
+              "seniorsPaidTournamentItfFee": 12.0,
+              "singleMainDrawFormatCode": "KO",
+              "singleMainDrawFormat": "Elimination"
+            }
+          ],
+          "suspended": false
+        }
+      ]
+    },
+    {
+      "date": "2026-05-25T00:00:00",
+      "circuits": [
+        {
+          "key": "20260525",
+          "id": "4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+          "code": "J",
+          "name": "Junior",
+          "deadlineDays": 10,
+          "deadlineCountdown": {
+            "deadlineDate": "2026-05-05T14:00:00",
+            "deadlineType": "entry"
+          },
+          "doublesDeadlineCountdown": null,
+          "nextEntryPriority": 2,
+          "maxEntriesPerWeek": 3,
+          "tournaments": [
+            {
+              "tennisEventId": "147603e3-278b-4da5-ba9f-eb6054d45339",
+              "name": "J300 Charleroi-Marcinelle",
+              "meta": [
+                "25/05/2026 - 30/05/2026",
+                "Charleroi-Marcinelle",
+                "Belgium",
+                "J300",
+                "Clay",
+                "Outdoor",
+                "Europe"
+              ],
+              "enter": false,
+              "withdraw": true,
+              "factsheet": "/factsheet?tournamentId=147603e3-278b-4da5-ba9f-eb6054d45339&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "entry": "/entries?tournamentId=147603e3-278b-4da5-ba9f-eb6054d45339&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "categoryCode": "J300",
+              "category": "J300",
+              "countryCode": "BEL",
+              "country": "Belgium",
+              "surfaceCode": "C",
+              "prizeMoney": null,
+              "surface": "Clay",
+              "venueTypeCode": "O",
+              "venueType": "Outdoor",
+              "entryData": [
+                {
+                  "entryId": "4dee70a6-fa55-4a2b-b1b5-5b64de5a08de",
+                  "entryListId": "5a8fa564-5796-487d-90db-b2e5de141299",
+                  "tournamentId": "00000000-0000-0000-0000-000000000000",
+                  "priority": 1,
+                  "matchType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Singles",
+                    "code": "S"
+                  },
+                  "playerType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Boys",
+                    "code": "B"
+                  },
+                  "ageCategory": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "18 and under",
+                    "code": "18U"
+                  },
+                  "entryStatus": "None",
+                  "partnerId": null,
+                  "partnerName": "",
+                  "isProtectedRanking": false,
+                  "isMainDrawOnly": false,
+                  "publicPaymentId": null,
+                  "paymentProviderPublicPaymentId": null
+                }
+              ],
+              "supportsMainDrawOnly": false,
+              "supportsProtectedRanking": false,
+              "supportsDoublesProtectedRanking": false,
+              "entrySupported": true,
+              "startDate": "2026-05-25T00:00:00",
+              "endDate": "2026-05-30T00:00:00",
+              "withdrawalDeadlineDate": "2026-05-12T14:00:00",
+              "freezeDeadlineDate": "2026-05-20T14:00:00",
+              "sectionCode": null,
+              "maxYearlyTournamentEntriesReached": false,
+              "ageEligibility": {
+                "isTooYoung": false,
+                "isTooOld": false,
+                "isEligible": true
+              },
+              "statusCode": "",
+              "isFactsheetPublished": true,
+              "isWorldChampionship": false,
+              "seniorsWorldChampionshipEntryFee": 150.0,
+              "seniorsWorldChampionshipItfFee": 0.0,
+              "isPaidTournament": false,
+              "seniorsPaidTournamentItfFee": 12.0,
+              "singleMainDrawFormatCode": "KO",
+              "singleMainDrawFormat": "Elimination"
+            }
+          ],
+          "suspended": false
+        }
+      ]
+    },
+    {
+      "date": "2026-06-01T00:00:00",
+      "circuits": [
+        {
+          "key": "20260601",
+          "id": "4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+          "code": "J",
+          "name": "Junior",
+          "deadlineDays": 10,
+          "deadlineCountdown": {
+            "deadlineDate": "2026-04-28T14:00:00",
+            "deadlineType": "entry"
+          },
+          "doublesDeadlineCountdown": null,
+          "nextEntryPriority": 2,
+          "maxEntriesPerWeek": 3,
+          "tournaments": [
+            {
+              "tennisEventId": "7027b627-0126-43cc-bca2-e51b4985dbe3",
+              "name": "Roland Garros Junior Championships",
+              "meta": [
+                "31/05/2026 - 06/06/2026",
+                "Paris",
+                "France",
+                "JGS",
+                "Clay",
+                "Outdoor",
+                "Europe"
+              ],
+              "enter": false,
+              "withdraw": true,
+              "factsheet": "/factsheet?tournamentId=7027b627-0126-43cc-bca2-e51b4985dbe3&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "entry": "/entries?tournamentId=7027b627-0126-43cc-bca2-e51b4985dbe3&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "categoryCode": "JGS",
+              "category": "JGS",
+              "countryCode": "FRA",
+              "country": "France",
+              "surfaceCode": "C",
+              "prizeMoney": null,
+              "surface": "Clay",
+              "venueTypeCode": "O",
+              "venueType": "Outdoor",
+              "entryData": [
+                {
+                  "entryId": "4b3cbb3d-cab4-485d-b8b3-e91118239730",
+                  "entryListId": "4e3a2300-1901-4778-9c59-1a7f5e129b2b",
+                  "tournamentId": "00000000-0000-0000-0000-000000000000",
+                  "priority": 1,
+                  "matchType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Singles",
+                    "code": "S"
+                  },
+                  "playerType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Boys",
+                    "code": "B"
+                  },
+                  "ageCategory": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "18 and under",
+                    "code": "18U"
+                  },
+                  "entryStatus": "None",
+                  "partnerId": null,
+                  "partnerName": "",
+                  "isProtectedRanking": false,
+                  "isMainDrawOnly": false,
+                  "publicPaymentId": null,
+                  "paymentProviderPublicPaymentId": null
+                }
+              ],
+              "supportsMainDrawOnly": false,
+              "supportsProtectedRanking": false,
+              "supportsDoublesProtectedRanking": false,
+              "entrySupported": true,
+              "startDate": "2026-05-31T00:00:00",
+              "endDate": "2026-06-06T00:00:00",
+              "withdrawalDeadlineDate": "2026-05-19T14:00:00",
+              "freezeDeadlineDate": "2026-05-20T14:00:00",
+              "sectionCode": null,
+              "maxYearlyTournamentEntriesReached": false,
+              "ageEligibility": {
+                "isTooYoung": false,
+                "isTooOld": false,
+                "isEligible": true
+              },
+              "statusCode": "",
+              "isFactsheetPublished": true,
+              "isWorldChampionship": false,
+              "seniorsWorldChampionshipEntryFee": 150.0,
+              "seniorsWorldChampionshipItfFee": 0.0,
+              "isPaidTournament": false,
+              "seniorsPaidTournamentItfFee": 12.0,
+              "singleMainDrawFormatCode": "KO",
+              "singleMainDrawFormat": "Elimination"
+            }
+          ],
+          "suspended": false
+        }
+      ]
+    },
+    {
+      "date": "2026-06-08T00:00:00",
+      "circuits": [
+        {
+          "key": "20260608",
+          "id": "4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+          "code": "J",
+          "name": "Junior",
+          "deadlineDays": 10,
+          "deadlineCountdown": {
+            "deadlineDate": "2026-05-19T14:00:00",
+            "deadlineType": "entry"
+          },
+          "doublesDeadlineCountdown": null,
+          "nextEntryPriority": 2,
+          "maxEntriesPerWeek": 3,
+          "tournaments": [
+            {
+              "tennisEventId": "9ffcf72f-fbf7-47f4-b35d-aa310b0da36c",
+              "name": "J300 Bamberg",
+              "meta": [
+                "09/06/2026 - 14/06/2026",
+                "Bamberg",
+                "Germany",
+                "J300",
+                "Clay",
+                "Outdoor",
+                "Europe"
+              ],
+              "enter": false,
+              "withdraw": true,
+              "factsheet": "/factsheet?tournamentId=9ffcf72f-fbf7-47f4-b35d-aa310b0da36c&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "entry": "/entries?tournamentId=9ffcf72f-fbf7-47f4-b35d-aa310b0da36c&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "categoryCode": "J300",
+              "category": "J300",
+              "countryCode": "GER",
+              "country": "Germany",
+              "surfaceCode": "C",
+              "prizeMoney": null,
+              "surface": "Clay",
+              "venueTypeCode": "O",
+              "venueType": "Outdoor",
+              "entryData": [
+                {
+                  "entryId": "bb89f797-94cc-4a72-9960-fd34c9dac2cf",
+                  "entryListId": "6c2b60ca-66fc-4a4c-9b87-a25640ae75df",
+                  "tournamentId": "00000000-0000-0000-0000-000000000000",
+                  "priority": 1,
+                  "matchType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Singles",
+                    "code": "S"
+                  },
+                  "playerType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Boys",
+                    "code": "B"
+                  },
+                  "ageCategory": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "18 and under",
+                    "code": "18U"
+                  },
+                  "entryStatus": "None",
+                  "partnerId": null,
+                  "partnerName": "",
+                  "isProtectedRanking": false,
+                  "isMainDrawOnly": false,
+                  "publicPaymentId": null,
+                  "paymentProviderPublicPaymentId": null
+                }
+              ],
+              "supportsMainDrawOnly": false,
+              "supportsProtectedRanking": false,
+              "supportsDoublesProtectedRanking": false,
+              "entrySupported": true,
+              "startDate": "2026-06-09T00:00:00",
+              "endDate": "2026-06-14T00:00:00",
+              "withdrawalDeadlineDate": "2026-05-26T14:00:00",
+              "freezeDeadlineDate": "2026-06-03T14:00:00",
+              "sectionCode": null,
+              "maxYearlyTournamentEntriesReached": false,
+              "ageEligibility": {
+                "isTooYoung": false,
+                "isTooOld": false,
+                "isEligible": true
+              },
+              "statusCode": "",
+              "isFactsheetPublished": true,
+              "isWorldChampionship": false,
+              "seniorsWorldChampionshipEntryFee": 150.0,
+              "seniorsWorldChampionshipItfFee": 0.0,
+              "isPaidTournament": false,
+              "seniorsPaidTournamentItfFee": 12.0,
+              "singleMainDrawFormatCode": "KO",
+              "singleMainDrawFormat": "Elimination"
+            }
+          ],
+          "suspended": false
+        }
+      ]
+    },
+    {
+      "date": "2026-06-15T00:00:00",
+      "circuits": [
+        {
+          "key": "20260615",
+          "id": "4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+          "code": "J",
+          "name": "Junior",
+          "deadlineDays": 10,
+          "deadlineCountdown": {
+            "deadlineDate": "2026-05-26T14:00:00",
+            "deadlineType": "entry"
+          },
+          "doublesDeadlineCountdown": null,
+          "nextEntryPriority": 3,
+          "maxEntriesPerWeek": 3,
+          "tournaments": [
+            {
+              "tennisEventId": "c91651a1-0d61-4516-8413-0091553e4b8c",
+              "name": "J200 Mason",
+              "meta": [
+                "15/06/2026 - 21/06/2026",
+                "Mason",
+                "USA",
+                "J200",
+                "Hard",
+                "Outdoor",
+                "North America"
+              ],
+              "enter": false,
+              "withdraw": true,
+              "factsheet": "/factsheet?tournamentId=c91651a1-0d61-4516-8413-0091553e4b8c&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "entry": "/entries?tournamentId=c91651a1-0d61-4516-8413-0091553e4b8c&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "categoryCode": "J200",
+              "category": "J200",
+              "countryCode": "USA",
+              "country": "USA",
+              "surfaceCode": "H",
+              "prizeMoney": null,
+              "surface": "Hard",
+              "venueTypeCode": "O",
+              "venueType": "Outdoor",
+              "entryData": [
+                {
+                  "entryId": "13cf6894-0eee-4e29-beab-eae34b9b0e80",
+                  "entryListId": "09bc4d44-414e-49e9-be21-4061b864a840",
+                  "tournamentId": "00000000-0000-0000-0000-000000000000",
+                  "priority": 1,
+                  "matchType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Singles",
+                    "code": "S"
+                  },
+                  "playerType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Boys",
+                    "code": "B"
+                  },
+                  "ageCategory": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "18 and under",
+                    "code": "18U"
+                  },
+                  "entryStatus": "None",
+                  "partnerId": null,
+                  "partnerName": "",
+                  "isProtectedRanking": false,
+                  "isMainDrawOnly": false,
+                  "publicPaymentId": null,
+                  "paymentProviderPublicPaymentId": null
+                }
+              ],
+              "supportsMainDrawOnly": false,
+              "supportsProtectedRanking": false,
+              "supportsDoublesProtectedRanking": false,
+              "entrySupported": true,
+              "startDate": "2026-06-15T00:00:00",
+              "endDate": "2026-06-21T00:00:00",
+              "withdrawalDeadlineDate": "2026-06-02T14:00:00",
+              "freezeDeadlineDate": "2026-06-10T14:00:00",
+              "sectionCode": null,
+              "maxYearlyTournamentEntriesReached": false,
+              "ageEligibility": {
+                "isTooYoung": false,
+                "isTooOld": false,
+                "isEligible": true
+              },
+              "statusCode": "",
+              "isFactsheetPublished": true,
+              "isWorldChampionship": false,
+              "seniorsWorldChampionshipEntryFee": 150.0,
+              "seniorsWorldChampionshipItfFee": 0.0,
+              "isPaidTournament": false,
+              "seniorsPaidTournamentItfFee": 12.0,
+              "singleMainDrawFormatCode": "KO",
+              "singleMainDrawFormat": "Elimination"
+            },
+            {
+              "tennisEventId": "8e52c54d-0297-49db-b7b8-740465790f93",
+              "name": "J200 Gladbeck",
+              "meta": [
+                "15/06/2026 - 21/06/2026",
+                "Gladbeck",
+                "Germany",
+                "J200",
+                "Clay",
+                "Outdoor",
+                "Europe"
+              ],
+              "enter": false,
+              "withdraw": true,
+              "factsheet": "/factsheet?tournamentId=8e52c54d-0297-49db-b7b8-740465790f93&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "entry": "/entries?tournamentId=8e52c54d-0297-49db-b7b8-740465790f93&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "categoryCode": "J200",
+              "category": "J200",
+              "countryCode": "GER",
+              "country": "Germany",
+              "surfaceCode": "C",
+              "prizeMoney": null,
+              "surface": "Clay",
+              "venueTypeCode": "O",
+              "venueType": "Outdoor",
+              "entryData": [
+                {
+                  "entryId": "7da7c205-6cf6-4505-8da0-29f204a6f29c",
+                  "entryListId": "90d68205-928c-41df-8500-3754c33e058a",
+                  "tournamentId": "00000000-0000-0000-0000-000000000000",
+                  "priority": 2,
+                  "matchType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Singles",
+                    "code": "S"
+                  },
+                  "playerType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Boys",
+                    "code": "B"
+                  },
+                  "ageCategory": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "18 and under",
+                    "code": "18U"
+                  },
+                  "entryStatus": "None",
+                  "partnerId": null,
+                  "partnerName": "",
+                  "isProtectedRanking": false,
+                  "isMainDrawOnly": false,
+                  "publicPaymentId": null,
+                  "paymentProviderPublicPaymentId": null
+                }
+              ],
+              "supportsMainDrawOnly": false,
+              "supportsProtectedRanking": false,
+              "supportsDoublesProtectedRanking": false,
+              "entrySupported": true,
+              "startDate": "2026-06-15T00:00:00",
+              "endDate": "2026-06-21T00:00:00",
+              "withdrawalDeadlineDate": "2026-06-02T14:00:00",
+              "freezeDeadlineDate": "2026-06-10T14:00:00",
+              "sectionCode": null,
+              "maxYearlyTournamentEntriesReached": false,
+              "ageEligibility": {
+                "isTooYoung": false,
+                "isTooOld": false,
+                "isEligible": true
+              },
+              "statusCode": "",
+              "isFactsheetPublished": true,
+              "isWorldChampionship": false,
+              "seniorsWorldChampionshipEntryFee": 150.0,
+              "seniorsWorldChampionshipItfFee": 0.0,
+              "isPaidTournament": false,
+              "seniorsPaidTournamentItfFee": 12.0,
+              "singleMainDrawFormatCode": "KO",
+              "singleMainDrawFormat": "Elimination"
+            }
+          ],
+          "suspended": false
+        }
+      ]
+    },
+    {
+      "date": "2026-06-22T00:00:00",
+      "circuits": [
+        {
+          "key": "20260622",
+          "id": "4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+          "code": "J",
+          "name": "Junior",
+          "deadlineDays": 10,
+          "deadlineCountdown": {
+            "deadlineDate": "2026-06-02T14:00:00",
+            "deadlineType": "entry"
+          },
+          "doublesDeadlineCountdown": null,
+          "nextEntryPriority": 2,
+          "maxEntriesPerWeek": 3,
+          "tournaments": [
+            {
+              "tennisEventId": "688c8768-3cf0-4d64-9dcb-2876bad6dc98",
+              "name": "J200 Pilsen",
+              "meta": [
+                "22/06/2026 - 28/06/2026",
+                "Pilsen",
+                "Czechia",
+                "J200",
+                "Clay",
+                "Outdoor",
+                "Europe"
+              ],
+              "enter": false,
+              "withdraw": true,
+              "factsheet": "/factsheet?tournamentId=688c8768-3cf0-4d64-9dcb-2876bad6dc98&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "entry": "/entries?tournamentId=688c8768-3cf0-4d64-9dcb-2876bad6dc98&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "categoryCode": "J200",
+              "category": "J200",
+              "countryCode": "CZE",
+              "country": "Czechia",
+              "surfaceCode": "C",
+              "prizeMoney": null,
+              "surface": "Clay",
+              "venueTypeCode": "O",
+              "venueType": "Outdoor",
+              "entryData": [
+                {
+                  "entryId": "0616dbb4-e405-431e-bab7-18dfb68de8c2",
+                  "entryListId": "581506ff-c498-4f30-a480-26c7862915e9",
+                  "tournamentId": "00000000-0000-0000-0000-000000000000",
+                  "priority": 1,
+                  "matchType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Singles",
+                    "code": "S"
+                  },
+                  "playerType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Boys",
+                    "code": "B"
+                  },
+                  "ageCategory": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "18 and under",
+                    "code": "18U"
+                  },
+                  "entryStatus": "None",
+                  "partnerId": null,
+                  "partnerName": "",
+                  "isProtectedRanking": false,
+                  "isMainDrawOnly": false,
+                  "publicPaymentId": null,
+                  "paymentProviderPublicPaymentId": null
+                }
+              ],
+              "supportsMainDrawOnly": false,
+              "supportsProtectedRanking": false,
+              "supportsDoublesProtectedRanking": false,
+              "entrySupported": true,
+              "startDate": "2026-06-22T00:00:00",
+              "endDate": "2026-06-28T00:00:00",
+              "withdrawalDeadlineDate": "2026-06-09T14:00:00",
+              "freezeDeadlineDate": "2026-06-17T14:00:00",
+              "sectionCode": null,
+              "maxYearlyTournamentEntriesReached": false,
+              "ageEligibility": {
+                "isTooYoung": false,
+                "isTooOld": false,
+                "isEligible": true
+              },
+              "statusCode": "",
+              "isFactsheetPublished": true,
+              "isWorldChampionship": false,
+              "seniorsWorldChampionshipEntryFee": 150.0,
+              "seniorsWorldChampionshipItfFee": 0.0,
+              "isPaidTournament": false,
+              "seniorsPaidTournamentItfFee": 12.0,
+              "singleMainDrawFormatCode": "KO",
+              "singleMainDrawFormat": "Elimination"
+            }
+          ],
+          "suspended": false
+        }
+      ]
+    },
+    {
+      "date": "2026-06-29T00:00:00",
+      "circuits": [
+        {
+          "key": "20260629",
+          "id": "4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+          "code": "J",
+          "name": "Junior",
+          "deadlineDays": 10,
+          "deadlineCountdown": {
+            "deadlineDate": "2026-06-09T14:00:00",
+            "deadlineType": "entry"
+          },
+          "doublesDeadlineCountdown": null,
+          "nextEntryPriority": 3,
+          "maxEntriesPerWeek": 3,
+          "tournaments": [
+            {
+              "tennisEventId": "46b011af-2a9e-43a3-9f7e-23884c2828da",
+              "name": "J300 Roehampton",
+              "meta": [
+                "28/06/2026 - 03/07/2026",
+                "Roehampton",
+                "Great Britain",
+                "J300",
+                "Grass",
+                "Outdoor",
+                "Europe"
+              ],
+              "enter": false,
+              "withdraw": true,
+              "factsheet": "/factsheet?tournamentId=46b011af-2a9e-43a3-9f7e-23884c2828da&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "entry": "/entries?tournamentId=46b011af-2a9e-43a3-9f7e-23884c2828da&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "categoryCode": "J300",
+              "category": "J300",
+              "countryCode": "GBR",
+              "country": "Great Britain",
+              "surfaceCode": "G",
+              "prizeMoney": null,
+              "surface": "Grass",
+              "venueTypeCode": "O",
+              "venueType": "Outdoor",
+              "entryData": [
+                {
+                  "entryId": "e4e60ec2-e278-4814-9070-a9c4adca8e89",
+                  "entryListId": "7ef6d7fa-147f-4c87-9f16-fcf5cec866f1",
+                  "tournamentId": "00000000-0000-0000-0000-000000000000",
+                  "priority": 1,
+                  "matchType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Singles",
+                    "code": "S"
+                  },
+                  "playerType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Boys",
+                    "code": "B"
+                  },
+                  "ageCategory": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "18 and under",
+                    "code": "18U"
+                  },
+                  "entryStatus": "None",
+                  "partnerId": null,
+                  "partnerName": "",
+                  "isProtectedRanking": false,
+                  "isMainDrawOnly": false,
+                  "publicPaymentId": null,
+                  "paymentProviderPublicPaymentId": null
+                }
+              ],
+              "supportsMainDrawOnly": false,
+              "supportsProtectedRanking": false,
+              "supportsDoublesProtectedRanking": false,
+              "entrySupported": true,
+              "startDate": "2026-06-28T00:00:00",
+              "endDate": "2026-07-03T00:00:00",
+              "withdrawalDeadlineDate": "2026-06-16T14:00:00",
+              "freezeDeadlineDate": "2026-06-17T14:00:00",
+              "sectionCode": null,
+              "maxYearlyTournamentEntriesReached": false,
+              "ageEligibility": {
+                "isTooYoung": false,
+                "isTooOld": false,
+                "isEligible": true
+              },
+              "statusCode": "",
+              "isFactsheetPublished": true,
+              "isWorldChampionship": false,
+              "seniorsWorldChampionshipEntryFee": 150.0,
+              "seniorsWorldChampionshipItfFee": 0.0,
+              "isPaidTournament": false,
+              "seniorsPaidTournamentItfFee": 12.0,
+              "singleMainDrawFormatCode": "KO",
+              "singleMainDrawFormat": "Elimination"
+            },
+            {
+              "tennisEventId": "902c574b-f2c7-4862-870b-f9d9e95d119a",
+              "name": "J200 Castricum",
+              "meta": [
+                "30/06/2026 - 05/07/2026",
+                "Castricum",
+                "Netherlands",
+                "J200",
+                "Clay",
+                "Outdoor",
+                "Europe"
+              ],
+              "enter": false,
+              "withdraw": true,
+              "factsheet": "/factsheet?tournamentId=902c574b-f2c7-4862-870b-f9d9e95d119a&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "entry": "/entries?tournamentId=902c574b-f2c7-4862-870b-f9d9e95d119a&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "categoryCode": "J200",
+              "category": "J200",
+              "countryCode": "NED",
+              "country": "Netherlands",
+              "surfaceCode": "C",
+              "prizeMoney": null,
+              "surface": "Clay",
+              "venueTypeCode": "O",
+              "venueType": "Outdoor",
+              "entryData": [
+                {
+                  "entryId": "a92a9102-2a96-4c8d-9c51-9544e10b7eb0",
+                  "entryListId": "83c02819-e867-4f09-95ac-cc7a3da4d874",
+                  "tournamentId": "00000000-0000-0000-0000-000000000000",
+                  "priority": 2,
+                  "matchType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Singles",
+                    "code": "S"
+                  },
+                  "playerType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Boys",
+                    "code": "B"
+                  },
+                  "ageCategory": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "18 and under",
+                    "code": "18U"
+                  },
+                  "entryStatus": "None",
+                  "partnerId": null,
+                  "partnerName": "",
+                  "isProtectedRanking": false,
+                  "isMainDrawOnly": false,
+                  "publicPaymentId": null,
+                  "paymentProviderPublicPaymentId": null
+                }
+              ],
+              "supportsMainDrawOnly": false,
+              "supportsProtectedRanking": false,
+              "supportsDoublesProtectedRanking": false,
+              "entrySupported": true,
+              "startDate": "2026-06-30T00:00:00",
+              "endDate": "2026-07-05T00:00:00",
+              "withdrawalDeadlineDate": "2026-06-16T14:00:00",
+              "freezeDeadlineDate": "2026-06-24T14:00:00",
+              "sectionCode": null,
+              "maxYearlyTournamentEntriesReached": false,
+              "ageEligibility": {
+                "isTooYoung": false,
+                "isTooOld": false,
+                "isEligible": true
+              },
+              "statusCode": "",
+              "isFactsheetPublished": true,
+              "isWorldChampionship": false,
+              "seniorsWorldChampionshipEntryFee": 150.0,
+              "seniorsWorldChampionshipItfFee": 0.0,
+              "isPaidTournament": false,
+              "seniorsPaidTournamentItfFee": 12.0,
+              "singleMainDrawFormatCode": "KO",
+              "singleMainDrawFormat": "Elimination"
+            }
+          ],
+          "suspended": false
+        }
+      ]
+    },
+    {
+      "date": "2026-07-06T00:00:00",
+      "circuits": [
+        {
+          "key": "20260706",
+          "id": "4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+          "code": "J",
+          "name": "Junior",
+          "deadlineDays": 10,
+          "deadlineCountdown": {
+            "deadlineDate": "2026-06-09T14:00:00",
+            "deadlineType": "entry"
+          },
+          "doublesDeadlineCountdown": null,
+          "nextEntryPriority": 2,
+          "maxEntriesPerWeek": 3,
+          "tournaments": [
+            {
+              "tennisEventId": "c2b6ba35-0255-4cd4-819c-9d37731bf780",
+              "name": "The Junior Championships, Wimbledon",
+              "meta": [
+                "04/07/2026 - 12/07/2026",
+                "London",
+                "Great Britain",
+                "JGS",
+                "Grass",
+                "Outdoor",
+                "Europe"
+              ],
+              "enter": false,
+              "withdraw": true,
+              "factsheet": "/factsheet?tournamentId=c2b6ba35-0255-4cd4-819c-9d37731bf780&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "entry": "/entries?tournamentId=c2b6ba35-0255-4cd4-819c-9d37731bf780&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "categoryCode": "JGS",
+              "category": "JGS",
+              "countryCode": "GBR",
+              "country": "Great Britain",
+              "surfaceCode": "G",
+              "prizeMoney": null,
+              "surface": "Grass",
+              "venueTypeCode": "O",
+              "venueType": "Outdoor",
+              "entryData": [
+                {
+                  "entryId": "fd65b1db-7aa7-4ac7-9f41-0bf79364b333",
+                  "entryListId": "d46dbdf9-25fd-4d45-8160-8bab066aaee5",
+                  "tournamentId": "00000000-0000-0000-0000-000000000000",
+                  "priority": 1,
+                  "matchType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Singles",
+                    "code": "S"
+                  },
+                  "playerType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Boys",
+                    "code": "B"
+                  },
+                  "ageCategory": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "18 and under",
+                    "code": "18U"
+                  },
+                  "entryStatus": "None",
+                  "partnerId": null,
+                  "partnerName": "",
+                  "isProtectedRanking": false,
+                  "isMainDrawOnly": false,
+                  "publicPaymentId": null,
+                  "paymentProviderPublicPaymentId": null
+                }
+              ],
+              "supportsMainDrawOnly": false,
+              "supportsProtectedRanking": false,
+              "supportsDoublesProtectedRanking": false,
+              "entrySupported": true,
+              "startDate": "2026-07-04T00:00:00",
+              "endDate": "2026-07-12T00:00:00",
+              "withdrawalDeadlineDate": "2026-06-23T14:00:00",
+              "freezeDeadlineDate": "2026-06-24T14:00:00",
+              "sectionCode": null,
+              "maxYearlyTournamentEntriesReached": false,
+              "ageEligibility": {
+                "isTooYoung": false,
+                "isTooOld": false,
+                "isEligible": true
+              },
+              "statusCode": "",
+              "isFactsheetPublished": true,
+              "isWorldChampionship": false,
+              "seniorsWorldChampionshipEntryFee": 150.0,
+              "seniorsWorldChampionshipItfFee": 0.0,
+              "isPaidTournament": false,
+              "seniorsPaidTournamentItfFee": 12.0,
+              "singleMainDrawFormatCode": "KO",
+              "singleMainDrawFormat": "Elimination"
+            }
+          ],
+          "suspended": false
+        }
+      ]
+    },
+    {
+      "date": "2026-07-20T00:00:00",
+      "circuits": [
+        {
+          "key": "20260720",
+          "id": "4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+          "code": "J",
+          "name": "Junior",
+          "deadlineDays": 10,
+          "deadlineCountdown": {
+            "deadlineDate": "2026-06-30T14:00:00",
+            "deadlineType": "entry"
+          },
+          "doublesDeadlineCountdown": null,
+          "nextEntryPriority": 2,
+          "maxEntriesPerWeek": 3,
+          "tournaments": [
+            {
+              "tennisEventId": "eb63d67d-d2e1-492f-8dfa-5dbc9d2b2c60",
+              "name": "J300 Bytom",
+              "meta": [
+                "21/07/2026 - 26/07/2026",
+                "Bytom",
+                "Poland",
+                "J300",
+                "Clay",
+                "Outdoor",
+                "Europe"
+              ],
+              "enter": false,
+              "withdraw": true,
+              "factsheet": "/factsheet?tournamentId=eb63d67d-d2e1-492f-8dfa-5dbc9d2b2c60&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "entry": "/entries?tournamentId=eb63d67d-d2e1-492f-8dfa-5dbc9d2b2c60&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "categoryCode": "J300",
+              "category": "J300",
+              "countryCode": "POL",
+              "country": "Poland",
+              "surfaceCode": "C",
+              "prizeMoney": null,
+              "surface": "Clay",
+              "venueTypeCode": "O",
+              "venueType": "Outdoor",
+              "entryData": [
+                {
+                  "entryId": "5a0f91c0-72d8-4ba2-9cdd-49212bf43009",
+                  "entryListId": "6cfc31a2-e63b-43f3-8c99-aa7bb51fdba3",
+                  "tournamentId": "00000000-0000-0000-0000-000000000000",
+                  "priority": 1,
+                  "matchType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Singles",
+                    "code": "S"
+                  },
+                  "playerType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Boys",
+                    "code": "B"
+                  },
+                  "ageCategory": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "18 and under",
+                    "code": "18U"
+                  },
+                  "entryStatus": "None",
+                  "partnerId": null,
+                  "partnerName": "",
+                  "isProtectedRanking": false,
+                  "isMainDrawOnly": false,
+                  "publicPaymentId": null,
+                  "paymentProviderPublicPaymentId": null
+                }
+              ],
+              "supportsMainDrawOnly": false,
+              "supportsProtectedRanking": false,
+              "supportsDoublesProtectedRanking": false,
+              "entrySupported": true,
+              "startDate": "2026-07-21T00:00:00",
+              "endDate": "2026-07-26T00:00:00",
+              "withdrawalDeadlineDate": "2026-07-07T14:00:00",
+              "freezeDeadlineDate": "2026-07-15T14:00:00",
+              "sectionCode": null,
+              "maxYearlyTournamentEntriesReached": false,
+              "ageEligibility": {
+                "isTooYoung": false,
+                "isTooOld": false,
+                "isEligible": true
+              },
+              "statusCode": "",
+              "isFactsheetPublished": true,
+              "isWorldChampionship": false,
+              "seniorsWorldChampionshipEntryFee": 150.0,
+              "seniorsWorldChampionshipItfFee": 0.0,
+              "isPaidTournament": false,
+              "seniorsPaidTournamentItfFee": 12.0,
+              "singleMainDrawFormatCode": "KO",
+              "singleMainDrawFormat": "Elimination"
+            }
+          ],
+          "suspended": false
+        }
+      ]
+    },
+    {
+      "date": "2026-08-17T00:00:00",
+      "circuits": [
+        {
+          "key": "20260817",
+          "id": "4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+          "code": "J",
+          "name": "Junior",
+          "deadlineDays": 10,
+          "deadlineCountdown": {
+            "deadlineDate": "2026-07-28T14:00:00",
+            "deadlineType": "entry"
+          },
+          "doublesDeadlineCountdown": null,
+          "nextEntryPriority": 2,
+          "maxEntriesPerWeek": 3,
+          "tournaments": [
+            {
+              "tennisEventId": "4fffe3fa-1701-4960-a345-7402b20e04ff",
+              "name": "J300 Pancevo",
+              "meta": [
+                "17/08/2026 - 23/08/2026",
+                "Pancevo",
+                "Serbia",
+                "J300",
+                "Clay",
+                "Outdoor",
+                "Europe"
+              ],
+              "enter": false,
+              "withdraw": true,
+              "factsheet": "/factsheet?tournamentId=4fffe3fa-1701-4960-a345-7402b20e04ff&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "entry": "/entries?tournamentId=4fffe3fa-1701-4960-a345-7402b20e04ff&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "categoryCode": "J300",
+              "category": "J300",
+              "countryCode": "SRB",
+              "country": "Serbia",
+              "surfaceCode": "C",
+              "prizeMoney": null,
+              "surface": "Clay",
+              "venueTypeCode": "O",
+              "venueType": "Outdoor",
+              "entryData": [
+                {
+                  "entryId": "d2f31203-9043-49fd-8826-bb893dd96c6e",
+                  "entryListId": "00704c4f-2600-4ee9-a585-02cd88ddbdf1",
+                  "tournamentId": "00000000-0000-0000-0000-000000000000",
+                  "priority": 1,
+                  "matchType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Singles",
+                    "code": "S"
+                  },
+                  "playerType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Boys",
+                    "code": "B"
+                  },
+                  "ageCategory": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "18 and under",
+                    "code": "18U"
+                  },
+                  "entryStatus": "None",
+                  "partnerId": null,
+                  "partnerName": "",
+                  "isProtectedRanking": false,
+                  "isMainDrawOnly": false,
+                  "publicPaymentId": null,
+                  "paymentProviderPublicPaymentId": null
+                }
+              ],
+              "supportsMainDrawOnly": false,
+              "supportsProtectedRanking": false,
+              "supportsDoublesProtectedRanking": false,
+              "entrySupported": true,
+              "startDate": "2026-08-17T00:00:00",
+              "endDate": "2026-08-23T00:00:00",
+              "withdrawalDeadlineDate": "2026-08-04T14:00:00",
+              "freezeDeadlineDate": "2026-08-12T14:00:00",
+              "sectionCode": null,
+              "maxYearlyTournamentEntriesReached": false,
+              "ageEligibility": {
+                "isTooYoung": false,
+                "isTooOld": false,
+                "isEligible": true
+              },
+              "statusCode": "",
+              "isFactsheetPublished": true,
+              "isWorldChampionship": false,
+              "seniorsWorldChampionshipEntryFee": 150.0,
+              "seniorsWorldChampionshipItfFee": 0.0,
+              "isPaidTournament": false,
+              "seniorsPaidTournamentItfFee": 12.0,
+              "singleMainDrawFormatCode": "KO",
+              "singleMainDrawFormat": "Elimination"
+            }
+          ],
+          "suspended": false
+        }
+      ]
+    },
+    {
+      "date": "2026-08-24T00:00:00",
+      "circuits": [
+        {
+          "key": "20260824",
+          "id": "4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+          "code": "J",
+          "name": "Junior",
+          "deadlineDays": 10,
+          "deadlineCountdown": {
+            "deadlineDate": "2026-08-04T14:00:00",
+            "deadlineType": "entry"
+          },
+          "doublesDeadlineCountdown": null,
+          "nextEntryPriority": 2,
+          "maxEntriesPerWeek": 3,
+          "tournaments": [
+            {
+              "tennisEventId": "1bd13ee6-9019-4d02-b4ce-2356ded63bf8",
+              "name": "J200 Belgrade",
+              "meta": [
+                "24/08/2026 - 30/08/2026",
+                "Belgrade",
+                "Serbia",
+                "J200",
+                "Clay",
+                "Outdoor",
+                "Europe"
+              ],
+              "enter": false,
+              "withdraw": true,
+              "factsheet": "/factsheet?tournamentId=1bd13ee6-9019-4d02-b4ce-2356ded63bf8&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "entry": "/entries?tournamentId=1bd13ee6-9019-4d02-b4ce-2356ded63bf8&circuitId=4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+              "categoryCode": "J200",
+              "category": "J200",
+              "countryCode": "SRB",
+              "country": "Serbia",
+              "surfaceCode": "C",
+              "prizeMoney": null,
+              "surface": "Clay",
+              "venueTypeCode": "O",
+              "venueType": "Outdoor",
+              "entryData": [
+                {
+                  "entryId": "49353eb0-e06e-4dc8-b797-0ef8f002bf69",
+                  "entryListId": "9bc4fa57-ed80-4046-aebb-289d478f7d82",
+                  "tournamentId": "00000000-0000-0000-0000-000000000000",
+                  "priority": 1,
+                  "matchType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Singles",
+                    "code": "S"
+                  },
+                  "playerType": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "Boys",
+                    "code": "B"
+                  },
+                  "ageCategory": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "name": "18 and under",
+                    "code": "18U"
+                  },
+                  "entryStatus": "None",
+                  "partnerId": null,
+                  "partnerName": "",
+                  "isProtectedRanking": false,
+                  "isMainDrawOnly": false,
+                  "publicPaymentId": null,
+                  "paymentProviderPublicPaymentId": null
+                }
+              ],
+              "supportsMainDrawOnly": false,
+              "supportsProtectedRanking": false,
+              "supportsDoublesProtectedRanking": false,
+              "entrySupported": true,
+              "startDate": "2026-08-24T00:00:00",
+              "endDate": "2026-08-30T00:00:00",
+              "withdrawalDeadlineDate": "2026-08-11T14:00:00",
+              "freezeDeadlineDate": "2026-08-19T14:00:00",
+              "sectionCode": null,
+              "maxYearlyTournamentEntriesReached": false,
+              "ageEligibility": {
+                "isTooYoung": false,
+                "isTooOld": false,
+                "isEligible": true
+              },
+              "statusCode": "",
+              "isFactsheetPublished": true,
+              "isWorldChampionship": false,
+              "seniorsWorldChampionshipEntryFee": 150.0,
+              "seniorsWorldChampionshipItfFee": 0.0,
+              "isPaidTournament": false,
+              "seniorsPaidTournamentItfFee": 12.0,
+              "singleMainDrawFormatCode": "KO",
+              "singleMainDrawFormat": "Elimination"
+            }
+          ],
+          "suspended": false
+        }
+      ]
+    }
+  ],
+  "circuitViewModels": [
+    {
+      "id": "4a17c0c7-3dd4-4193-b868-dadfdf16732f",
+      "name": "Junior",
+      "code": "J"
+    },
+    {
+      "id": "462b4eb7-a5b8-42dc-9ba0-95a855690a7f",
+      "name": "Pro",
+      "code": "M"
+    }
+  ]
+}

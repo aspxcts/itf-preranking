@@ -9,6 +9,7 @@ from the captured browser requests in the companion *.js files.
 from __future__ import annotations
 
 import asyncio
+import datetime
 import json as _json
 
 from src.browser import BrowserSession, SessionError
@@ -267,7 +268,11 @@ async def fetch_drawsheets_via_page(
                     _JS,
                     {"tournamentId": tid, "tourType": ttyp, "pt": pt, "mt": mt},
                 )
-                await page.wait_for_timeout(2_000)
+                # Random wait between each of the 4 event fetch() calls.
+                # A flat 4s was still too fast — Incapsula flags the burst.
+                # 6–14s mimics a human clicking through tabs.
+                import random as _random
+                await page.wait_for_timeout(int(_random.uniform(6_000, 14_000)))
 
         title = await page.title()
     except Exception as e:

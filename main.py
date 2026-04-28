@@ -24,6 +24,7 @@ import argparse
 import asyncio
 import datetime
 import json
+import random
 from pathlib import Path
 
 from src.browser import BrowserSession
@@ -46,10 +47,27 @@ def week_range(anchor: datetime.date) -> tuple[datetime.date, datetime.date]:
     return monday, monday + datetime.timedelta(days=6)
 
 
-async def _limited(sem: asyncio.Semaphore, coro):
-    """Acquire *sem* before awaiting *coro* to cap concurrent requests."""
-    async with sem:
-        return await coro
+# Category → sort priority (lower = fetched first = highest points value)
+_CATEGORY_PRIORITY: dict[str, int] = {
+    "J500": 0,
+    "J300": 1,
+    "J200": 2,
+    "J100": 3,
+    "J60":  4,
+    "J30":  5,
+}
+
+
+def _category_priority(tournament: dict) -> int:
+    """Return sort key for a tournament dict — lower = higher priority."""
+    cat = (tournament.get("category") or "").upper()
+    # Exact match first; fall back to prefix match for e.g. "J500 Regional"
+    if cat in _CATEGORY_PRIORITY:
+        return _CATEGORY_PRIORITY[cat]
+    for key, pri in _CATEGORY_PRIORITY.items():
+        if cat.startswith(key):
+            return pri
+    return 99  # unknown category → deprioritised to end
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -65,9 +83,6 @@ async def run(headless: bool, week_anchor: datetime.date) -> None:
     points_table = load_points_table()
     output_dir = Path("output")
     output_dir.mkdir(exist_ok=True)
-
-    # Semaphore: cap concurrent API requests to avoid rate-limiting
-    sem = asyncio.Semaphore(5)
 
     async with BrowserSession(headless=headless) as session:
 
@@ -86,37 +101,111 @@ async def run(headless: bool, week_anchor: datetime.date) -> None:
         print("[main] Fetching calendar…")
         tournaments = await fetch_calendar(session, date_from, date_to)
         print(f"[main] Tournaments this week: {len(tournaments)}")
+
+        # Sort highest-value categories first so J500 → J300 → … → J30.
+        # If the session degrades mid-run the most important tournaments will
+        # already be in the cache when problems begin.
+        tournaments = sorted(tournaments, key=_category_priority)
         for t in tournaments:
             print(f"       {t['category']:5s}  {t['name']}")
 
-        # ── 3. Fetch draw pages for all tournaments (parallel, rate-limited) ──
-        # Navigate to each tournament's draws-and-results page.  The React app
-        # fires GetEventFilters + GetDrawsheet natively; we intercept both
-        # responses.  We then use the intercepted tournamentId to fire in-page
-        # fetch() calls for any events not auto-loaded (GS / BD / GD).
-        # No external GetEventFilters burst → no rewarms → cleaner session.
+        # ── 3. Fetch draw pages in batches of 2 tournaments ───────────────
+        # Incapsula pattern: first few requests are fine, then the session
+        # gets flagged when we hammer it continuously.  Strategy:
+        #   • Fetch 2 full tournaments (all 4 events each) back-to-back.
+        #   • Close the browser context, wait 60–120 s (true cooldown).
+        #   • Re-warm a brand-new context with fresh fingerprint + cookies.
+        #   • Repeat until all tournaments are done.
+        # Within each tournament the 4 event fetches are also spaced out
+        # (see fetch_drawsheets_via_page in api.py).
 
         _STANDARD_EVENTS = [("B", "S"), ("G", "S"), ("B", "D"), ("G", "D")]
+        _BATCH_SIZE = 2           # tournaments per session window
+        _COOLDOWN_MIN = 60.0      # seconds to wait between batches
+        _COOLDOWN_MAX = 120.0
 
-        draw_page_tasks: list = []   # gathered coroutines
         draw_page_meta: list = []    # (tournament_dict, [(pt, mt)])
+        draw_page_results: list = [] # parallel with draw_page_meta
 
-        for tournament in tournaments:
-            tournament_link = tournament.get("tournamentLink", "")
-            if not tournament_link:
+        linkable = [t for t in tournaments if t.get("tournamentLink")]
+        total = len(linkable)
+        print(f"[main] Fetching {total} tournament draw pages "
+              f"(batches of {_BATCH_SIZE}, cooldown {_COOLDOWN_MIN:.0f}–{_COOLDOWN_MAX:.0f}s)…")
+
+        for batch_start in range(0, total, _BATCH_SIZE):
+            batch = linkable[batch_start:batch_start + _BATCH_SIZE]
+
+            # ── Cooldown + session restart between batches ─────────────────
+            if batch_start > 0:
+                cooldown = random.uniform(_COOLDOWN_MIN, _COOLDOWN_MAX)
+                print(
+                    f"[main] ── Batch {batch_start // _BATCH_SIZE + 1} of "
+                    f"{(total + _BATCH_SIZE - 1) // _BATCH_SIZE} ──"
+                )
+                print(
+                    f"[main] Cooldown {cooldown:.0f}s — closing context, "
+                    f"clearing cookies, waiting…"
+                )
+                # Close the current context and wipe Firestore cookies so the
+                # next warm-up starts with a completely fresh fingerprint.
+                if session.context is not None:
+                    try:
+                        await asyncio.wait_for(session.context.close(), timeout=10.0)
+                    except Exception:
+                        pass
+                    session.context = None
+                from src.browser import clear_session_cache
+                clear_session_cache()
+                await asyncio.sleep(cooldown)
+
+                # Re-warm: perform a full login and seed new Incapsula cookies.
+                print("[main] Re-warming session for next batch…")
+                await session._warm_up()
+
+            for idx, tournament in enumerate(batch):
+                global_idx = batch_start + idx + 1
+
+                # Small jitter between tournaments within the same batch.
+                if idx > 0:
+                    jitter = random.uniform(5.0, 12.0)
+                    print(f"[main] Intra-batch pause {jitter:.1f}s…")
+                    await asyncio.sleep(jitter)
+
+                print(
+                    f"[main] [{global_idx}/{total}] "
+                    f"{tournament.get('category', '?'):5s}  "
+                    f"{tournament.get('name', '?')}"
+                )
+                try:
+                    result = await fetch_drawsheets_via_page(
+                        session, tournament["tournamentLink"]
+                    )
+                except Exception as exc:
+                    result = exc
+
+                draw_page_meta.append((tournament, _STANDARD_EVENTS))
+                draw_page_results.append(result)
+
+        # ── 5. Collect resolved draws from fresh captures ───────────────────
+        resolved_draws: dict[tuple[str, str, str], dict] = {}
+
+        for (tournament, events), fresh_draws in zip(
+            draw_page_meta, draw_page_results
+        ):
+            tkey = tournament["tournamentKey"]
+
+            if isinstance(fresh_draws, Exception):
+                print(f"[warn] Drawsheet error {tkey}: {fresh_draws}")
                 continue
-            draw_page_tasks.append(
-                _limited(sem, fetch_drawsheets_via_page(session, tournament_link))
-            )
-            draw_page_meta.append((tournament, _STANDARD_EVENTS))
 
-        # ── 4. Wait for all draw pages ──────────────────────────────────────
-        print(f"[main] Fetching {len(draw_page_tasks)} tournament draw pages…")
-        draw_page_results = await asyncio.gather(
-            *draw_page_tasks, return_exceptions=True
-        )
+            for pt_code, mt_code in events:
+                draw = fresh_draws.get((pt_code, mt_code))
+                if draw is not None:
+                    resolved_draws[(tkey, pt_code, mt_code)] = draw
+                else:
+                    print(f"[warn] No drawsheet captured for {tkey} {pt_code}{mt_code}")
 
-        # ── 5. Parse results, map to points ──────────────────────────────────
+        # ── 6. Parse results, map to points ──────────────────────────────────
         # Pre-populate ALL calendar tournaments so they appear in the output
         # even when their drawsheets haven't been published yet or returned
         # no results (the UI renders them as "pending" cards).
@@ -133,39 +222,33 @@ async def run(headless: bool, week_anchor: datetime.date) -> None:
                 "results":        [],
             }
 
-        for (tournament, events), draws_by_event in zip(
-            draw_page_meta, draw_page_results
-        ):
-            tkey     = tournament["tournamentKey"]
-            category = tournament["category"]
+        # Build a lookup from tournament key → category for the resolved loop
+        category_by_key: dict[str, str] = {
+            t["tournamentKey"]: t["category"] for t in tournaments
+        }
 
-            if isinstance(draws_by_event, Exception):
-                print(f"[warn] Drawsheet error {tkey}: {draws_by_event}")
+        for (tkey, pt_code, mt_code), drawsheet in resolved_draws.items():
+            category = category_by_key.get(tkey)
+            if category is None:
                 continue
 
-            for pt_code, mt_code in events:
-                drawsheet = draws_by_event.get((pt_code, mt_code))
-                if drawsheet is None:
-                    print(f"[warn] No drawsheet captured for {tkey} {pt_code}{mt_code}")
-                    continue
+            player_results: list[PlayerResult] = parse_drawsheet(
+                drawsheet, category, pt_code, mt_code, points_table
+            )
 
-                player_results: list[PlayerResult] = parse_drawsheet(
-                    drawsheet, category, pt_code, mt_code, points_table
-                )
-
-                for pr in player_results:
-                    ranked = rankings_by_id.get(pr.player_id, {})
-                    tournament_output[tkey]["results"].append({
-                        "player_id":      pr.player_id,
-                        "name":           f"{pr.given_name} {pr.family_name}".strip(),
-                        "nationality":    pr.nationality,
-                        "event":          pr.event,
-                        "round_reached":  pr.round_reached,
-                        "points":         pr.points,
-                        "draw_position":  pr.draw_position,
-                        "current_rank":   ranked.get("rank"),
-                        "current_points": ranked.get("points"),
-                    })
+            for pr in player_results:
+                ranked = rankings_by_id.get(pr.player_id, {})
+                tournament_output[tkey]["results"].append({
+                    "player_id":      pr.player_id,
+                    "name":           f"{pr.given_name} {pr.family_name}".strip(),
+                    "nationality":    pr.nationality,
+                    "event":          pr.event,
+                    "round_reached":  pr.round_reached,
+                    "points":         pr.points,
+                    "draw_position":  pr.draw_position,
+                    "current_rank":   ranked.get("rank"),
+                    "current_points": ranked.get("points"),
+                })
 
         # ── 7. Write output ───────────────────────────────────────────────────
         output = {
@@ -208,7 +291,20 @@ def main() -> None:
         metavar="YYYY-MM-DD",
         help="Any date in the target week. Defaults to today.",
     )
+    parser.add_argument(
+        "--fresh",
+        action="store_true",
+        help=(
+            "Clear all Firestore session cookie caches before starting. "
+            "Use this for local runs to prevent burned GCP session cookies "
+            "from poisoning the local browser warm-up."
+        ),
+    )
     args = parser.parse_args()
+
+    if args.fresh:
+        from src.browser import clear_session_cache
+        clear_session_cache()
 
     anchor = (
         datetime.date.fromisoformat(args.week)

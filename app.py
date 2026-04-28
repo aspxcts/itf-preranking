@@ -249,17 +249,18 @@ async def _do_refresh() -> None:
 
         _set_status("main")
         await main_run(headless=True, week_anchor=monday)
-        # Upload only latest_points_earned.json immediately so the bracket tab
-        # reflects new results as soon as drawsheets are parsed, without
-        # waiting for the slower calculate / merge phases.
-        # Do NOT upload merged_rankings or player_breakdowns here — they contain
-        # data from the previous run (loaded from GCS at startup) and would
-        # create a GCS inconsistency if calc/merge later fails or produces
-        # different data.
-        await asyncio.to_thread(_gcs_upload_sync, ["latest_points_earned.json"])
+        # Upload latest_points_earned.json immediately after main_run so the
+        # bracket tab reflects new results right away.
+        await asyncio.to_thread(
+            _gcs_upload_sync,
+            ["latest_points_earned.json"],
+        )
 
         _set_status("calculate")
-        await calc_run(headless=True, week_monday=monday)
+        # Full GetRankingPoints fetch only on Mondays; all other days load the
+        # cached breakdowns written on Monday and need no browser session at all.
+        is_monday = datetime.datetime.now(datetime.timezone.utc).weekday() == 0
+        await calc_run(headless=True, week_monday=monday, full_breakdown=is_monday)
 
         _set_status("merge")
         await merge_run(headless=True, week_monday=monday)
